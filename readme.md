@@ -1,5 +1,5 @@
 # COOK IT
-
+Choose it. Take it. Cook it. 
 
 # Primer Sprint (24/05)
 
@@ -22,4 +22,4 @@ https://www.rickstein.com/steins-at-home/
 https://www.hellofresh.com
 https://simpleat.com.ar/
 
-Estas páginas web las elegimos no solo por su contenido similar al que ofrecemos en nuestro sitio web, sino por el fronts en el que estan armados, sus imagenes coloridas y una experiencia gratificante para el usuario.  
+Estas páginas web las elegimos no solo por su contenido similar al que ofrecemos en nuestro sitio web, sino por el front en el que estan armados, sus imagenes coloridas y una experiencia gratificante para el usuario. A su vez, la variedad de páginas ayuda a decidir que es lo que buscamos, queremos y sumamos a nuestra página. 
