@@ -1,13 +1,13 @@
 # COOK IT
-## *Choose it. Take it. Cook it.*
+*Choose it. Take it. Cook it.*
 
 # Primer Sprint (24/05)
 
 
 # Integrantes
-    * Fernández, Guadalupe;
-    * Gatto, Lucas;
-    * Mena, Eric. 
+    - Fernández, Guadalupe;
+    - Gatto, Lucas;
+    - Mena, Eric. 
 
 
 # Temática del sitio y público al que se apunta
