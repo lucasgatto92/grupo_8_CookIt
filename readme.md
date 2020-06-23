@@ -2,7 +2,7 @@
 *Choose it. Take it. Cook it.*
 
 
-# Primer Sprint (24/05)
+## Primer Sprint (24/05)
 
 
 # Integrantes
