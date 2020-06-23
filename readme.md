@@ -6,9 +6,9 @@
 
 
 # Integrantes
-    > Fernández, Guadalupe;
-    > Gatto, Lucas;
-    > Mena, Eric. 
+* Fernández, Guadalupe;
+* Gatto, Lucas;
+* Mena, Eric. 
 
 
 # Temática del sitio y público al que se apunta
