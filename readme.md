@@ -5,19 +5,19 @@
 ## Primer Sprint (24/05)
 
 
-# Integrantes
+## Integrantes
 * Fernández, Guadalupe;
 * Gatto, Lucas;
 * Mena, Eric. 
 
 
-# Temática del sitio y público al que se apunta
+## Temática del sitio y público al que se apunta
 
 La empresa se dedicara a la elaboración del producto, su posterior envasado al vacío y el envío del mismo a los clientes. El kit de los alimentos ira acompañado por las instrucciones para su posterior cocción. Ademas, sugerencias de recetas donde puedan utilizar los alimentos y contiene una recomendación de vinos .
 
 Público en general, pero preferentemente para personas que no tienen tiempo para cocinar, personas que no le gustan cocinar, personas que quieran comer gourment (+18).
 
-# Listado de 5 páginas referentes 
+## Listado de 5 páginas referentes 
 - https://www.julianalopezmaytienda.com.ar;
 - https://www.lafuerza.com.ar
 - https://www.blueapron.com/
