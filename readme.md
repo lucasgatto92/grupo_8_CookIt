@@ -1,5 +1,5 @@
 # COOK IT
-*Choose it. Take it. Cook it.*
+*Choose it. Take it. Cook it. Eat it*
 
 
 ## Primer Sprint (24/05)
