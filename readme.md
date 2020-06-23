@@ -18,7 +18,7 @@ Público en general, ya que, la propuesta a la que estamos abarcando puede ser t
 # Listado de 5 páginas referentes 
 - https://www.julianalopezmaytienda.com.ar;
 - https://www.lafuerza.com.ar
-- https://www.rickstein.com/steins-at-home/
+- https://www.blueapron.com/
 - https://www.hellofresh.com
 - https://simpleat.com.ar/
 
