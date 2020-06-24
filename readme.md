@@ -6,9 +6,21 @@
 
 
 ## Integrantes
-* Fernández, Guadalupe
-* Gatto, Lucas
-* Mena, Eric
+
+### Fernández, Guadalupe
+- 26 años
+- Camarera
+
+
+### Gatto, Lucas
+- 27 años
+- Técnico especializado en planta externa - Movistar
+
+
+### Mena, Eric
+- 44 años
+- Desarrollador web
+
 
 
 ## Temática del sitio y audiencia
