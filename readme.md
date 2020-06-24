@@ -6,22 +6,43 @@
 
 
 ## Integrantes
-* Fernández, Guadalupe;
-* Gatto, Lucas;
-* Mena, Eric. 
+* Fernández, Guadalupe
+* Gatto, Lucas
+* Mena, Eric
 
 
-## Temática del sitio y público al que se apunta
+## Temática del sitio y audiencia
 
-La empresa se dedicara a la elaboración del producto, su posterior envasado al vacío y el envío del mismo a los clientes. El kit de los alimentos ira acompañado por las instrucciones para su posterior cocción. Ademas, sugerencias de recetas donde puedan utilizar los alimentos y contiene una recomendación de vinos .
+El sitio comercializará productos alimenticios envasados al vacío para su posterior preparación y consumo. Los kits de alimentos iran acompañados por instructivos o recetas para su posterior preparación.
 
-Público en general, pero preferentemente para personas que no tienen tiempo para cocinar, personas que no le gustan cocinar, personas que quieran comer gourment (+18).
+La audiencia objetivo serán personas adultas ya sean familias o individuos que trabajan o estudian y carecen de tiempo para preparar su comida diaria, o simplemente no les gusta hacerlo, pero desean alimentarse adecuadamente y con una dieta variada sin salir de su casa, en cualquier horario y sin esperar un delivery.
 
 ## Listado de 5 páginas referentes 
-- https://www.julianalopezmaytienda.com.ar;
-- https://www.lafuerza.com.ar
-- https://www.blueapron.com/
-- https://www.hellofresh.com
-- https://www.simpleat.com.ar/
 
-Las páginas que utilizamos como referentes estan vinculadas con la temática del sitio. No solo eso, sino que también por su wireframe, las imagenes, el frond-end que utilizan, la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas. 
+- [Juliana Lopez May](https://www.julianalopezmaytienda.com.ar)
+- [La Fueza](https://www.lafuerza.com.ar)
+- [Blue Apron](https://www.blueapron.com/)
+- [Hello Fresh](https://www.hellofresh.com)
+- [Simpleat](https://www.simpleat.com.ar/)
+
+Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan, la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
+
+
+## Wireframe
+
+- [Home](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/home.png)
+- [Detalle de producto](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/detalleProducto.png)
+- [Carrito de compras](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/carritoCompras.png)
+- [Formulario de registro](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/register.png)
+- [Formulario de carga de producto](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/ingresoProductos.png)
+
+
+## Diseño (en proceso)
+
+- [Logos](https://github.com/lucasgatto92/-grupo_8_CookIt/tree/master/design/logos)
+- [Colores](https://github.com/lucasgatto92/-grupo_8_CookIt/tree/master/design/colors)
+- Fuentes:
+    - [Faustina](https://fonts.google.com/specimen/Faustina?query=faustina&preview.text=Cook+it&preview.text_type=custom)
+    - [Gayathri](https://fonts.google.com/specimen/Gayathri?query=gaya&preview.text=Cook+it&preview.text_type=custom)
+    - [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=playfa&preview.text=Cook+it&preview.text_type=custom)
+    - [Reem Kufi](https://fonts.google.com/specimen/Reem+Kufi?query=reem&preview.text=Cook+it&preview.text_type=custom)
