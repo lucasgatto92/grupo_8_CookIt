@@ -60,4 +60,6 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
     - [Reem Kufi](https://fonts.google.com/specimen/Reem+Kufi?query=reem&preview.text=Cook+it&preview.text_type=custom)
 
 
+## Segundo Sprint (10/07)
+
 ### [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
