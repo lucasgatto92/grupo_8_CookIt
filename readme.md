@@ -58,3 +58,5 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
     - [Gayathri](https://fonts.google.com/specimen/Gayathri?query=gaya&preview.text=Cook+it&preview.text_type=custom)
     - [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=playfa&preview.text=Cook+it&preview.text_type=custom)
     - [Reem Kufi](https://fonts.google.com/specimen/Reem+Kufi?query=reem&preview.text=Cook+it&preview.text_type=custom)
+
+## [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
