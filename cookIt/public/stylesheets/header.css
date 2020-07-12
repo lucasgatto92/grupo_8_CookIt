@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0, auto;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #fcf9ea;
+    justify-content: center;
+}
+
+.header .marca {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: Playfair;
+    font-style: italic;
+}
+
+.header .marca .logo {
+    width: 150px;
+}
+
+.header .menu {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Faustina;
+    font-size: 1.2rem;
+}
+
+.header .menu .formulario {
+    display: flex;
+    flex-direction: row;
+}
+
+.header .menu .formulario .nutri {
+    margin-top: 60px;
+    border-radius: 20px;
+}
+
+.header .menu .buscador {
+    width: 450px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.header .menu .navbar {
+    margin-top: 0px;
+}
+
+.header .iconos {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.header .iconos h2 a {
+    color: saddlebrown;
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+.smallMenu {
+    display: none;
+}
+
+.movilMenu {
+    display: none;
+}
+
+@media(max-width:1024px) {
+    .header .marca {
+        width: 30%;
+    }
+    .header .marca div .slogan {
+        font-size: 1.1rem;
+    }
+    .header .menu {
+        width: 50%;
+    }
+    .header .menu .formulario .buscador {
+        width: 300px;
+    }
+    .header .iconos {
+        margin-top: 30px;
+        align-items: center;
+        width: 20%;
+    }
+    .navbarMenu {
+        display: none;
+    }
+    .header .menu nav ul li {
+        list-style: none;
+    }
+    .smallMenu {
+        display: block;
+    }
+    .smallMenu ul {
+        display: flex;
+        justify-content: center;
+    }
+    .smallMenu ul li a {
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+        font-family: Faustina;
+    }
+}
+
+@media(max-width:768px) {
+    .header .marca .slogan {
+        font-size: 1rem;
+    }
+    .header .menu .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header .menu .formulario .buscador {
+        margin-top: 45px;
+        width: 250px;
+        font-size: 1rem;
+    }
+    .header .menu .formulario .nutri {
+        width: 250px;
+        font-size: 1rem;
+        margin-top: 0;
+    }
+    .header .iconos {
+        margin-top: 55px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 20%;
+    }
+    .smallMenu ul li a {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:480px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header .iconos {
+        order: 0;
+    }
+    .header .menu {
+        order: 1
+    }
+    .header .marca {
+        width: 100%;
+    }
+    .header .marca .logo {
+        width: 350px;
+    }
+    .header .marca .slogan {
+        font-size: 2rem;
+    }
+    .header .menu {
+        margin: 0;
+        display: inline;
+    }
+    .header .menu .formulario .buscador {
+        width: 350px;
+    }
+    .header .menu .formulario .nutri {
+        width: 350px;
+    }
+    .header .iconos {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .header .iconos h2 a {
+        font-size: 3rem;
+        padding: 0;
+    }
+    .smallMenu {
+        display: none;
+    }
+    .movilMenu {
+        display: block;
+        margin-top: 50px;
+    }
+    .glyphicon {
+        margin-right: 10px;
+    }
+    .panel-body {
+        padding: 0px;
+    }
+    .panel-body table tr td {
+        padding-left: 15px
+    }
+    .panel-body .table {
+        margin-bottom: 0px;
+        background-color: #ffc5a1;
+        text-align: center;
+    }
+    .panel-body .table a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .panel-heading {
+        background-color: sienna;
+        padding: 10px 0px;
+        margin: 2px 0px;
+    }
+    .panel-title {
+        text-align: center;
+    }
+    h4.panel-title a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-family: Reem Kufi;
+    }
+}
+
+@media(max-width:375px) {
+    .header .marca .slogan {
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width:320px) {
+    .header .marca .slogan {
+        font-size: 1.5rem;
+    }
+    .header .menu .formulario .buscador {
+        width: 250px;
+    }
+    .header .menu .formulario .nutri {
+        width: 250px;
+    }
+}
