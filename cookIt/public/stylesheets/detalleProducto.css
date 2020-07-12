@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,562;0,600;0,700;1,400;1,500;1,562;1,600;1,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
+.detalleProducto {
+    background-color: #fcf9ea;
+    font-family: "faustina";
+    box-sizing: border-box;
+}
+
+.detalleProducto .menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detalleProducto .nav-link {
+    color: black;
+}
+
+.detalleProducto .navegador {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detalleProducto .fotoDescripcion {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+}
+
+.detalleProducto .descripcion h4 {
+    font-size: large;
+}
+
+.detalleProducto .descripcion h6 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.detalleProducto .descripcion h5 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.detalleProducto .descripcion a {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+.detalleProducto .descripcion a:hover {
+    text-decoration: none;
+}
+
+.detalleProducto .far {
+    padding-right: 10px;
+}
+
+.detalleProducto .fas {
+    padding-right: 10px;
+}
+
+.detalleProducto .barrita {
+    max-width: 65%;
+    padding-left: 25px;
+    justify-content: space-between;
+}
+
+.detalleProducto input[type=range]::-webkit-slider-thumb {
+    background: #28a745;
+}
+
+.detalleProducto .barrita h5 {
+    display: inline;
+}
+
+.detalleProducto input {
+    max-width: 50%;
+}
+
+.detalleProducto .inferior {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15px;
+    border-top: 2px solid #badfdb;
+}
+
+.detalleProducto .precio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalleProducto .precio h3 {
+    padding-right: 15px;
+    font-size: 40px;
+}
+
+.detalleProducto .precio h5 {
+    padding-right: 10px;
+    text-decoration: line-through;
+}
+
+.detalleProducto .botones {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    display: flex;
+}
+
+.detalleProducto .articulos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.detalleProducto .vino {
+    display: flex;
+    flex-direction: row;
+    border: solid black 1px;
+    padding: 10px;
+    margin: 1%;
+    width: 23%;
+}
+
+.detalleProducto .vino img {
+    width: 40%;
+    height: 90%;
+}
+
+.detalleProducto .vino h5 {
+    margin-left: 20px;
+}
+
+.detalleProducto .vino .media-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+@media(max-width:768px) {
+    .detalleProducto .vino {
+        width: 30%;
+    }
+}
+
+@media(max-width:425px) {
+    .detalleProducto .vino {
+        width: 100%;
+    }
+    .detalleProducto .vino img {
+        width: 20%;
+    }
+}
