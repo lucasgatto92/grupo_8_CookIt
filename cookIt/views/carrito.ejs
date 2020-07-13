@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <div class="carrito">
+                <div class="container bg-white">
+                    <div class="row">
+                        <div class="productos col-xl-8 col-md-12">
+                            <div class="row my-3">
+                                <div class="imagen col-xl-5 col-lg-4 col-md-4 col-sm-12">
+                                    <img class="img-fluid w-100 h-100" src="/images/productos/blog-img-1.jpg" alt="">
+                                </div>
+                                <div class="datos col-xl-7 col-lg-8 col-md-8 col-sm-12">
+                                    <h3>Lorem ipsum dolor sit amet.</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, vero. Recusandae aliquam omnis numquam, eum accusamus, culpa ex mollitia exercitationem repellat quidem voluptatibus alias vitae.</p>
+                                    <div>
+
+                                    </div>
+                                    <div class="botones d-flex justify-content-around">
+                                        <div class="form-inline">
+                                            <label for="my-select">Comenzales:</label>
+                                            <select id="my-select" class="form-control-sm ml-3" name="">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                            </select>
+                                        </div>
+                                        <h3>$ 1.000</h3>
+                                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                        <button type="button" class="btn btn-outline-success"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row my-3">
+                                <div class="imagen col-xl-5 col-lg-4 col-md-4">
+                                    <img class="img-fluid w-100 h-100" src="/images/productos/blog-img-1.jpg" alt="">
+                                </div>
+                                <div class="datos col-xl-7 col-lg-8 col-md-8">
+                                    <h3>Lorem ipsum dolor sit amet.</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, vero. Recusandae aliquam omnis numquam, eum accusamus, culpa ex mollitia exercitationem repellat quidem voluptatibus alias vitae.</p>
+                                    <div>
+
+                                    </div>
+                                    <div class="botones d-flex justify-content-around">
+                                        <div class="form-inline">
+                                            <label for="my-select">Comenzales:</label>
+                                            <select id="my-select" class="form-control-sm ml-3" name="">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                            </select>
+                                        </div>
+                                        <h3>$ 1.500</h3>
+                                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                        <button type="button" class="btn btn-outline-success"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="ticket col-xl-4 col-md-12 py-3 bg-light">
+                            <div class="detalles">
+                                <h4 class="text-uppercase">Detalle de la compra</h4>
+                                <hr>
+                                <h5>Productos</h5>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                </ul>
+                                <hr>
+                                <h5>Adicionales</h5>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                </ul>
+                                <hr>
+                            </div>
+                            <div class="total d-flex flex-row justify-content-around">
+                                <h4 class="">Total compra:</h4>
+                                <h4>$ 2.500</h4>
+                            </div>
+                            <div class="text-center"><button class="btn-sm btn-outline-secondary w-50 ">Continuar</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('partials/footer') %>
+
+    </body>
+
+</html>

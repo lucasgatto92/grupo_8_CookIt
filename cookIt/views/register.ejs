@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <%- include('partials/head') %>
 
+    <body>
+        <%- include('partials/header') %>
 
-<body>
+            <div id="logreg-forms">
+                <form class="form-signin">
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> REGISTRO DE USUARIO</h1>
+                    <div class="social-login">
 
-    <div id="logreg-forms">
-        <form class="form-signin">
-             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> REGISTRO DE USUARIO</h1>
-            <div class="social-login">
-
-                <a href = "https://www.facebook.com">
-                    <button  class="btn facebook-btn social-btn" type= "button"><span><i class="fab fa-facebook-f"></i> Ingrese con Facebook</span></a></a>
+                        <a href="https://www.facebook.com">
+                            <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Ingrese con Facebook</span></a></a>
                 
                         <a href = "https://www.google.com">
                             <button  class="btn google-btn social-btn" type= "button"><span><i class="fab fa-google-plus-g"></i> Ingrese con Google</span></a></a>
@@ -29,9 +27,9 @@
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             
             <button class="btn btn-link btn-block" type="submit"> Registrarse</button>
-            <a href="#" id="forgot_pswd">¿Olvidaste la contraseña?</a>
-            <hr>
-<!--
+                            <a href="#" id="forgot_pswd">¿Olvidaste la contraseña?</a>
+                            <hr>
+                            <!--
              <p>Don't have an account!</p>  
             <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Registro cuenta nueva</button>
             </form>
@@ -111,7 +109,9 @@ $(()=>{
 
 
 -->
-<%- include('partials/footer') %>
+                    </div>
+                    <%- include('partials/footer') %>
 
-</body>
+    </body>
+
 </html>

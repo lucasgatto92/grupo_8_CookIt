@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //RUTAS
-router.get('/carga', cargaController.carga)
+router.get('/', cargaController.carga)
 
 
 module.exports = router;
