@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,562;0,600;1,400;1,500;1,562;1,600;1,700&display=swap');
+
+.form-cargabody {
+    font-family: "faustina" , serif;
+    background-color: #fcf9ea;
+}
+
+.form-cargabody h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 900;
+}
+
+.form-carga {
+    font-weight: bolder;
+}
+
+.form-carga div input {
+    align-content: center;
+}
+
+.upload {
+    padding-top: 3px;
+    padding-left: inherit;
+}
+
+.input-group-text {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.derecha {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+    
+}
+
+.checks {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.botones {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.cargar {
+    margin-right: 5px;
+}
+
+.limpiar {
+    margin-left: 5px;
+}
+
+.form-row {
+    border-bottom: 1px solid black;
+    margin-top: 40px;
+}
+
+@media(max-width:768px) {
+
+    .form-row {
+        border-bottom: none;
+        margin-top: 15px;
+    }
+
+    .col-md-4 {
+        border-bottom: 1px dashed black;
+        padding-bottom: 20px;
+    }
+    
+}
