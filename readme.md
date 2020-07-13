@@ -63,3 +63,11 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 ## Segundo Sprint (10/07)
 
 ### [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
+
+### Retrospectiva: retro.md
+### Paginas (views)
+- HOME: home.ejs
+- DETALLE PRODUCTO: detalle.ejs
+- CARRITO DE COMPRAS: carrito.ejs
+- CARGA DE PRODUCTOS: carga.ejs
+- REGISTRO DE USUARIOS: registro.ejs
