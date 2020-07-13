@@ -64,7 +64,8 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
 
-### Retrospectiva: retro.md
+### Retrospectiva: [retro.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/retro.md)
+
 ### Paginas (views)
 - HOME: home.ejs
 - DETALLE PRODUCTO: detalle.ejs
