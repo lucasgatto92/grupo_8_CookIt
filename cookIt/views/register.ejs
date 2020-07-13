@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('partials/head') %>
+
+
+<body>
+
+    <div id="logreg-forms">
+        <form class="form-signin">
+             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> REGISTRO DE USUARIO</h1>
+            <div class="social-login">
+
+                <a href = "https://www.facebook.com">
+                    <button  class="btn facebook-btn social-btn" type= "button"><span><i class="fab fa-facebook-f"></i> Ingrese con Facebook</span></a></a>
+                
+                        <a href = "https://www.google.com">
+                            <button  class="btn google-btn social-btn" type= "button"><span><i class="fab fa-google-plus-g"></i> Ingrese con Google</span></a></a>
+
+                                <a href = "https://www.twitter.com">
+                                    <button  class="btn twitter-btn social-btn" type= "button"><span><i class="fab fa-twitter"></i> Ingrese con Twitter</span></a></a>
+
+            </div>
+            <p style="text-align:center"> OR   </p>
+
+            <input type="email" id="inputEmail" class="form-control" placeholder="Nombre de usuario" required="" autofocus="">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            
+            <button class="btn btn-link btn-block" type="submit"> Registrarse</button>
+            <a href="#" id="forgot_pswd">¿Olvidaste la contraseña?</a>
+            <hr>
+<!--
+             <p>Don't have an account!</p>  
+            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Registro cuenta nueva</button>
+            </form>
+
+            <form action="/reset/password/" class="form-reset">
+                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <button class="btn btn-primary btn-block" type="submit">Resetear contraseña</button>
+                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Volver</a>
+            </form>
+            
+            <form action="/signup/" class="form-signup">
+                <div class="social-login">
+                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Ingrese con Facebook</span> </button>
+                </div>
+                <div class="social-login">
+                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Ingrese con Google+</span> </button>
+                </div>
+                
+                <p style="text-align:center">OR</p>
+
+                <input type="text" id="user-name" class="form-control" placeholder="Nombre de usuario" required="" autofocus="">
+                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+                <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+
+                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+            </form>
+            <br>
+            
+        </div> 
+
+        <script> function toggleResetPswd(e){
+            e.preventDefault();
+            $('#logreg-forms .form-signin').toggle() // display:block or none
+            $('#logreg-forms .form-reset').toggle() // display:block or none
+        }
+        
+        function toggleSignUp(e){
+            e.preventDefault();
+            $('#logreg-forms .form-signin').toggle(); // display:block or none
+            $('#logreg-forms .form-signup').toggle(); // display:block or none
+        }
+        
+        $(()=>{
+            // Login Register Form
+            $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+            $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+            $('#logreg-forms #btn-signup').click(toggleSignUp);
+            $('#logreg-forms #cancel_signup').click(toggleSignUp);
+        }) 
+    </script>
+          
+
+    <p style="text-align:center">
+        <a href="http://bit.ly/2RjWFMfunction toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})g" 
+</p>
+
+
+
+-->
+<%- include('partials/footer') %>
+
+</body>
+</html>
