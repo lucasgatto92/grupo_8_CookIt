@@ -27,8 +27,12 @@
     padding-bottom: 15px;
 }
 
+.fotoDescripcion article div div div img {
+    height: 100%;
+}
+
 .detalleProducto .descripcion h4 {
-    font-size: large;
+    font-size: 20px;
 }
 
 .detalleProducto .descripcion h6 {
@@ -60,9 +64,15 @@
 }
 
 .detalleProducto .barrita {
-    max-width: 65%;
-    padding-left: 25px;
+    max-width: 50%;
+    margin: 0px;
+    padding: 0px 5px;
+    display: flex;
     justify-content: space-between;
+}
+
+.txt-barrita {
+    font-size: 20px;
 }
 
 .detalleProducto input[type=range]::-webkit-slider-thumb {
@@ -144,12 +154,35 @@
 }
 
 @media(max-width:768px) {
+    .descripcion {
+        text-align: center;
+    }
+    .detalleProducto .barrita {
+        max-width: 69%;
+        display: flex;
+        padding-left: 0px;
+        margin-left: 16.5%;
+        justify-content: space-between;
+    }
+    .detalleProducto input {
+        max-width: 70%;
+    }
     .detalleProducto .vino {
-        width: 30%;
+        width: 48%;
     }
 }
 
 @media(max-width:425px) {
+    .detalleProducto input {
+        max-width: 100%;
+    }
+    .detalleProducto .barrita {
+        max-width: 100%;
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+        justify-content: space-between;
+    }
     .detalleProducto .vino {
         width: 100%;
     }
@@ -157,3 +190,4 @@
         width: 20%;
     }
 }
+
