@@ -1,8 +1,8 @@
 # Sprint 2: Retro
 
-## **Basandonos en  la Starfish retrospective obtivimos las siguientes conclusiones:**
+## **Basandonos en  la Starfish retrospective obtuvimos las siguientes conclusiones:**
 
-:heavy_check_mark: **Comenzar a hacer:**
+:heavy_check_mark: '''ruby **Comenzar a hacer:**
 - Creemos que nos seria de mucha utilidad implementar un espacio de trabajo en Slack con el objetivo de compartir bloques de código para lograr que el trabajo en equipo sea lo mas colaborativo y ágil posible.
 
 :heavy_check_mark: **Hacer más:**
