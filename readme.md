@@ -68,7 +68,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### Paginas (views)
 - HOME: home.ejs
-- DETALLE PRODUCTO: detalle.ejs
-- CARRITO DE COMPRAS: carrito.ejs
-- CARGA DE PRODUCTOS: carga.ejs
-- REGISTRO DE USUARIOS: registro.ejs
+- DETALLE PRODUCTO: detalle.ejs         (/producto/detalle)
+- CARRITO DE COMPRAS: carrito.ejs       (/carrito)
+- CARGA DE PRODUCTOS: carga.ejs         (/carga)
+- REGISTRO DE USUARIOS: registro.ejs    (/usuarios/registro)
