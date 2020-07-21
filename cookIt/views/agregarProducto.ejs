@@ -7,15 +7,15 @@
         <%- include('partials/header') %>
             <h2 class="titulocarga container">Carga de producto</h2>
             <div class="form-carga container">
-                <form>
+                <form action="/productos" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="titulo col-md-4 mb-3">
                             <label for="titulo">Título *</label>
-                            <input type="text" class="form-control" id="titulo-producto" placeholder="Ej. Tagliatelle" required>
+                            <input type="text" class="form-control" id="titulo-producto" placeholder="Ej. Tagliatelle" name="titulo">
                         </div>
                         <div class="ingredientes col-md-4 mb-3">
-                            <label for="ingredientes">Ingredientes principales *</label>
-                            <input type="text" class="form-control" id="ingredientes" placeholder="Ej. zucchini, tomate y queso..." required>
+                            <label for="ingredientes">Descripción *</label>
+                            <input type="text" class="form-control" id="descripcion" placeholder="Ej. zucchini, tomate y queso..." name="descripcion">
                         </div>
                         <div class="precio col-md-4 mb-3">
                             <label for="precio">Precio *</label>
@@ -23,7 +23,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                 </div>
-                                <input type="number" class="form-control" id="precio" placeholder="Ej. 399,99" required>
+                                <input type="number" class="form-control" id="precio" placeholder="Ej. 399,99" name="precio">
                             </div>
                         </div>
                     </div>
@@ -31,26 +31,26 @@
                         <div class="descuento col-md-4 mb-3">
                             <label for="descuento">Descuento</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="descuento" placeholder="Ej. 15">
+                                <input type="number" class="form-control" id="descuento" placeholder="Ej. 15" name="discount">
                                 <div class="input-group-prepend">
                                     <span class="derecha input-group-text">%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="foto1 col-md-4 mb-3">
-                            <label for="foto1">Foto Principal *</label>
-                            <input type="file" class="form-control upload" id="foto1" accept="image/*" required>
+                            <label for="image">Foto Principal *</label>
+                            <input type="file" class="form-control upload" id="imagen" accept="image/*" name="image">
                         </div>
-                        <div class="fotos2 col-md-4 mb-3">
+                        <div class="images col-md-4 mb-3">
                             <label for="foto2">Fotos adicionales</label>
-                            <input type="file" class="form-control upload" id="foto2" accept="image/*" multiple="multiple">
+                            <input type="file" class="form-control upload" id="imagenes" accept="image/*" multiple="multiple" name="images" disabled>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="seccion col-md-4 mb-3">
-                            <label for="seccion">Sección *</label>
+                            <label for="seccion">Categoría *</label>
                             <div class="input-group">
-                                <select id="seccion" name="seccion" required>
+                                <select id="seccion" name="categoria">
                                 <option value="">Seleccionar..</option>
                                 <option value="med">Mediterranea</option>
                                 <option value="mex">Mexicana</option>
@@ -67,7 +67,7 @@
                         <div class="tiempo col-md-4 mb-3">
                             <label for="tiempo-prep">Tiempo de preparación</label>
                             <div class="input-group">
-                                <select id="tiempo-prep" name="tiempo-prep">
+                                <select id="tiempo-prep" name="tiempo">
                                     <option value="">Seleccionar..</option>
                                     <option value="15">15 minutos</option>
                                     <option value="20">20 minutos</option>
@@ -82,11 +82,11 @@
                             <label for="mostrar">Mostrar en</label>
                             <div class="input-group">
                                 <label for="mostrar-1" class="checks">
-                                <input type="checkbox" name="mostrar1" id="oferta" value="oferta">
+                                <input type="checkbox" name="oferta" id="oferta" disabled>
                                 Ofertas
                             </label>
                                 <label for="mostrar-2" class="checks">
-                                <input type="checkbox" name="mostrar2" id="especialidades" value="especialidades">
+                                <input type="checkbox" name="especial" id="especialidades" disabled>
                                 Especialidades
                             </label>
                             </div>
@@ -97,16 +97,16 @@
                         <div class="apto col-md-4 mb-3">
                             <label for="apto">Apto</label>
                             <div class="input-group">
-                                <label for="apto-1" class="checks">
-                                <input type="checkbox" name="apto1" id="vegano" value="vegano">
+                                <label for="bajosodio" class="checks">
+                                <input type="checkbox" name="bajosodio" id="bajosodio" disabled>
+                                Bajo en sodio
+                            </label>
+                                <label for="vegano" class="checks">
+                                <input type="checkbox" name="vegano" id="vegano" disabled>
                                 Vegano
                             </label>
-                                <label for="apto-2" class="checks">
-                                <input type="checkbox" name="apto2" id="vegetariano" value="vegetariano">
-                                Vegetariano
-                            </label>
-                                <label for="apto-3" class="checks">
-                                <input type="checkbox" name="apto3" id="tacc" value="tacc">
+                                <label for="celiaco" class="checks">
+                                <input type="checkbox" name="celiaco" id="celiaco" disabled>
                                 Sin TACC
                             </label>
                             </div>
@@ -114,7 +114,7 @@
                         <div class="porciones col-md-4 mb-3">
                             <label for="porciones">Porciones por unidad *</label>
                             <div class="input group">
-                                <select id="porciones" name="porciones" required>
+                                <select id="porciones" name="porciones" disabled> 
                                 <option value=""></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -128,7 +128,7 @@
                         <div class="calorias col-md-4 mb-3">
                             <label for="calorias">Calorías</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="calorias" placeholder="Ej. 650">
+                                <input type="number" class="form-control" id="calorias" placeholder="Ej. 650" name="calorias" disabled>
                                 <div class="input-group-prepend">
                                     <span class="derecha input-group-text">calorías / porción</span>
                                 </div>
@@ -139,7 +139,7 @@
                         <div class="maridaje col-md-4 mb-3">
                             <label for="maridaje">Maridaje</label>
                             <div class="input-group">
-                                <select id="seccion" name="seccion">
+                                <select id="seccion" name="maridaje" disabled>
                                 <option value="">Seleccionar..</option>
                                 <option value="tint-all">Tintos</option>
                                 <option value="tint-jov">Tintos Joven</option>
@@ -154,15 +154,10 @@
                         </div>
                         <div class="receta col-md-4 mb-3">
                             <label for="receta">Receta *</label>
-                            <input type="file" class="form-control upload" id="receta" accept="application/pdf">
+                            <input type="file" class="form-control upload" id="receta" accept="application/pdf" name="receta" disabled>
                         </div>
 
                     </div>
-
-
-
-
-
 
                     <div class="botones container">
                         <div class="cargar">

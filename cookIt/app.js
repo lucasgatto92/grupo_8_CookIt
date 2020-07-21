@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 
 //RUTEADORES PROPIOS
 let mainRouter = require('./routes/main');
-let productoRouter = require('./routes/producto');
+let productosRouter = require('./routes/productos');
 let usuariosRouter = require('./routes/usuarios');
 let cargaRouter = require('./routes/carga')
 
@@ -35,9 +35,9 @@ app.use('/users', usersRouter);
 
 //RUTAS PROPIAS
 app.use('/', mainRouter);
-app.use('/producto', productoRouter);
+app.use('/productos', productosRouter);
 app.use('/usuarios', usuariosRouter);
-app.use('/carga', cargaRouter);
+//app.use('/carga', cargaRouter);
 
 
 // catch 404 and forward to error handler
