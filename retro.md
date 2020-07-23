@@ -1,6 +1,6 @@
 # Sprint 2: Retro
 
-## Continuamos con Starfish retrospective
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
 
 
 **Comenzar a hacer:**
@@ -23,7 +23,7 @@
 
 # Sprint 1: Retro
 
-## **Basandonos en  la Starfish retrospective obtuvimos las siguientes conclusiones:**
+## **Basandonos en  la Starfish retrospective obtuvimos las siguientes conclusiones:**:pencil:
 
 :heavy_check_mark:  **Comenzar a hacer:**
 - Creemos que nos seria de mucha utilidad implementar un espacio de trabajo en Slack con el objetivo de compartir bloques de código para lograr que el trabajo en equipo sea lo mas colaborativo y ágil posible.
