@@ -21,7 +21,7 @@
 - Observamos de manera objetiva que todas las herramientas aplicadas, nos son útiles para trabajar en equipo.
 
 
-# Sprint 1: Retro
+# :pushpin: Sprint 1: Retro
 
 ## **Basandonos en  la Starfish retrospective obtuvimos las siguientes conclusiones:**:pencil:
 
