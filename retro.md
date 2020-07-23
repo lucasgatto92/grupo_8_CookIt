@@ -1,5 +1,25 @@
 # Sprint 2: Retro
 
+
+**Comenzar a hacer:**
+- Organizar el trabajo con tiempo.
+
+**Hacer más:**}
+- Compartir código en el Slack grupal.
+- Mantener el tablero de trabajo ordenado y designadas las respectivas tareas.
+
+**Continuar haciendo:**
+- Conservar las reuniones diarias.
+
+**Hacer menos:**
+- Tanto las herramientas de trabajo como la comunicación, consideramos que son acordes para llevar adelante los diferentes sprints.
+
+**Dejar de hacer:**
+- Observamos de manera objetiva que todas las herramientas aplicadas, nos son útiles para trabajar en equipo.
+
+
+# Sprint 2: Retro
+
 ## **Basandonos en  la Starfish retrospective obtuvimos las siguientes conclusiones:**
 
 :heavy_check_mark:  **Comenzar a hacer:**
