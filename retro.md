@@ -1,23 +1,23 @@
-# Sprint 2: Retro
+ :pushpin: # Sprint 2: Retro
 
 ## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
 
 
-**Comenzar a hacer:**
+:heavy_check_mark: **Comenzar a hacer:**
 - Organizar el trabajo con tiempo.
 - Avanzar en el día a día con las tareas individuales.
 
-**Hacer más:**
+:heavy_check_mark: **Hacer más:**
 - Compartir código en el Slack grupal.
 - Mantener el tablero de trabajo ordenado y designadas las respectivas tareas.
 
-**Continuar haciendo:**
+:heavy_check_mark: **Continuar haciendo:**
 - Conservar y seguir realizando las reuniones diarias.
 
-**Hacer menos:**
+:heavy_check_mark:**Hacer menos:**
 - Tanto las herramientas de trabajo como la comunicación, consideramos que son acordes para llevar adelante los diferentes sprints.
 
-**Dejar de hacer:**
+:heavy_check_mark: **Dejar de hacer:**
 - Observamos de manera objetiva que todas las herramientas aplicadas, nos son útiles para trabajar en equipo.
 
 
