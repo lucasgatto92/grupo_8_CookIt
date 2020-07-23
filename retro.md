@@ -18,7 +18,7 @@
 - Tanto las herramientas de trabajo como la comunicación, consideramos que son acordes para llevar adelante los diferentes sprints.
 
 :heavy_check_mark: **Dejar de hacer:**
-- Observamos de manera objetiva que todas las herramientas aplicadas, nos son útiles para trabajar en equipo.
+- Observamos, de manera objetiva, que todas las herramientas aplicadas, nos son útiles para trabajar en equipo.
 
 
 # :pushpin: Sprint 1: Retro
