@@ -1,6 +1,6 @@
 # Sprint 2: Retro
 
-##
+## Continuamos con Starfish retrospective
 
 
 **Comenzar a hacer:**
