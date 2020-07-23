@@ -1,4 +1,4 @@
- :pushpin: # Sprint 2: Retro
+# :pushpin: Sprint 2: Retro
 
 ## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
 
