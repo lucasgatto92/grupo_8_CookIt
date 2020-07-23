@@ -4,7 +4,7 @@
 **Comenzar a hacer:**
 - Organizar el trabajo con tiempo.
 
-**Hacer más:**}
+**Hacer más:**
 - Compartir código en el Slack grupal.
 - Mantener el tablero de trabajo ordenado y designadas las respectivas tareas.
 
