@@ -1,4 +1,4 @@
-# :speaker: Daily standups
+# :sound: Daily standups
 
 
 ## Cada equipo habla como máximo 3 minutos de 3 temas puntuales:
