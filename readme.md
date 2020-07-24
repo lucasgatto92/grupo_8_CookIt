@@ -1,6 +1,7 @@
 # COOK IT
 *Choose it. Take it. Cook it.*
 
+![logotipo](/design/logos/casita.png)
 
 ## Primer Sprint (24/05)
 
