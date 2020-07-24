@@ -1,5 +1,5 @@
+let dbProductos = require('../data/dbProductos');
 const fs = require('fs');
-let dbProductos = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
 
 module.exports = {
     listar: (req, res) => {
@@ -14,21 +14,20 @@ module.exports = {
         res.render('listarProductos', { productos: productos });
     },
     agregar: (req, res) => {
-        res.render('agregarProducto');
+        res.render('agregarProducto', { productos: dbProductos });
     },
     detalle: (req, res) => {
         let idProducto = req.params.id;
         let producto = dbProductos.filter(producto => {
             return producto.id == Number(idProducto)
         })
-        res.render('detalleProducto', { producto: producto[0] });
+        res.render('detalleProducto', { producto: producto[0], productos: dbProductos });
     },
     guardar: (req, res, next) => {
         let id = 0;
         if (fs.existsSync('./data/products.json')) {
             let productos = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
             id = productos.length;
-            console.log(id)
             let producto = {
                 id: id + 1,
                 name: req.body.name,
@@ -74,8 +73,7 @@ module.exports = {
 
         }
 
-        res.redirect('productos')
-            //res.redirect('/productos/create')
+        res.redirect('/productos')
     },
     editar: (req, res) => {
         let idProducto = req.params.id;
@@ -93,13 +91,52 @@ module.exports = {
             return producto
         });
         console.log(producto[0].price)
-        res.render('editarProducto', { producto: producto[0] });
+        res.render('editarProducto', { producto: producto[0], productos: dbProductos });
     },
-    actualizar: (req, res) => {
-        console.log('actualizando datos')
+    actualizar: (req, res, next) => {
+        let id = Number(req.params.id);
+
+        dbProductos.forEach(producto => {
+            if (producto.id == id) {
+                dbProductos = dbProductos.filter(producto => {
+                    return producto.id != id
+                });
+                let productoActualizado = {
+                    id: id,
+                    name: req.body.name,
+                    description: req.body.descripcion,
+                    image: producto.image,
+                    category: req.body.categoria,
+                    price: req.body.precio,
+                    descuento: req.body.descuento,
+                    tiempo: req.body.tiempo,
+                    porciones: req.body.porciones,
+                    calorias: req.body.calorias,
+                    maridaje: req.body.maridaje,
+                    oferta: req.body.oferta,
+                    especial: req.body.especial,
+                    vegano: req.body.vegano,
+                    bajosodio: req.body.bajosodio,
+                    celiaco: req.body.celiaco,
+                }
+                dbProductos.push(productoActualizado);
+                fs.writeFileSync('./data/products.json', JSON.stringify(dbProductos), 'utf-8');
+                res.redirect('/productos');
+            }
+        })
+
     },
     borrar: (req, res) => {
-        console.log('eliminando datos')
+        let id = Number(req.params.id);
+        dbProductos.forEach(producto => {
+            if (producto.id == id) {
+                dbProductos = dbProductos.filter(producto => {
+                    return producto.id != id
+                })
+            }
+        })
+        fs.writeFileSync('./data/products.json', JSON.stringify(dbProductos), 'utf-8');
+        res.redirect('/productos');
     }
 
 }

@@ -24,7 +24,7 @@
                         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-interval="10000">
-                                    <img src="/images/detalleProducto/tagliatelle.jpg" class="d-block w-100" alt="foto principal">
+                                    <img src="/images/products/<%- producto.image %> " class="d-block w-100" alt="foto principal">
                                 </div>
                                 <div class="carousel-item" data-interval="2000">
                                     <img src="/images/detalleProducto/taglia.png" class="d-block w-100" alt="foto secundaria">
@@ -44,9 +44,12 @@
                         <h2>
                             <%- producto.name %>
                         </h2>
-                        <h3>Con zucchini, tomate y queso de cabra</h3>
+                        <h4>
+                            <%- producto.description %>
+                        </h4>
                         <br>
-                        <h4><i class="far fa-clock"></i> 20 minutos</h4>
+                        <h4><i class="far fa-clock"></i>
+                            <%- producto.tiempo %> minutos</h4>
                         <br>
                         <h4><i class="fas fa-seedling"></i> Vegetariano</h4>
                         <br>
@@ -76,8 +79,12 @@
 
                 <div class="container inferior">
                     <article class="precio col-12 col-sm-12 col-md-6 col-lg-6">
-                        <h3>$150</h3>
-                        <h5>$300</h5>
+                        <h3>$
+                            <%= producto.price/2 %>
+                        </h3>
+                        <h5>$
+                            <%- producto.price %>
+                        </h5>
                         <h4>50% OFF</h4>
                     </article>
                     <article class="botones col-12 col-sm-12 col-md-6 col-lg-6">

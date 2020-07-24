@@ -1,9 +1,11 @@
+let productos = require('../data/dbProductos');
+
 const mainController = {
     home: (req, res) => {
-        res.render('home')
+        res.render('home', { productos: productos })
     },
     carrito: (req, res) => {
-        res.render('carrito')
+        res.render('carrito', { productos: productos })
     }
 
 }

@@ -12,15 +12,15 @@
 }
 
 .detalleProducto .nav-link {
-    color: black;
     display: flex;
-    margin: 0px;
+    padding: 8px 8px;
 }
 
 .detalleProducto .navegador {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: flex-start;
 }
 
 .detalleProducto .fotoDescripcion {

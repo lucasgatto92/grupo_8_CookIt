@@ -1,0 +1,13 @@
+.fondoCarrito {
+    padding-top: 55px;
+    padding-bottom: 100px;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.fondoCarrito .container {
+    background-color: #fcf9ea;
+}

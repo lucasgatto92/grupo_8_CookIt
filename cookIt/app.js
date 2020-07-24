@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const methodOverride = require('method-override') //instalé y requerí este módulo para trabajar en los formularios los métodos PUT y DELETE
+
 //ruteadores por defecto
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,7 +15,6 @@ var usersRouter = require('./routes/users');
 let mainRouter = require('./routes/main');
 let productosRouter = require('./routes/productos');
 let usuariosRouter = require('./routes/usuarios');
-let cargaRouter = require('./routes/carga')
 
 
 var app = express();
@@ -27,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(methodOverride('_method'));
 
 
 //rutas por defecto
