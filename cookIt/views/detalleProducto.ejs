@@ -11,8 +11,11 @@
                     <nav class="container navegador">
                         <a class="nav-link active" href="#">Home ></a>
                         <a class="nav-link" href="#">Gourmet ></a>
-                        <a class="nav-link" href="#">Italiana ></a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tagliatelle</a>
+                        <a class="nav-link" href="#">
+                            <%- producto.category %> > </a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                            <%= producto.name %>
+                        </a>
                     </nav>
                 </div>
 
@@ -38,7 +41,9 @@
                         </div>
                     </article>
                     <article class="container descripcion col-12 col-sm-12 col-md-12 col-lg-6">
-                        <h2>Tagliatelle</h2>
+                        <h2>
+                            <%- producto.name %>
+                        </h2>
                         <h3>Con zucchini, tomate y queso de cabra</h3>
                         <br>
                         <h4><i class="far fa-clock"></i> 20 minutos</h4>

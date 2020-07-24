@@ -1,15 +1,27 @@
 const fs = require('fs');
-
+let dbProductos = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
 
 module.exports = {
     listar: (req, res) => {
-        res.render('listarProductos');
+        let productos = dbProductos.map(producto => {
+            switch (producto.category) {
+                case 'esp':
+                    producto.category = 'Española'
+                    break;
+            }
+            return producto
+        });
+        res.render('listarProductos', { productos: productos });
     },
     agregar: (req, res) => {
         res.render('agregarProducto');
     },
     detalle: (req, res) => {
-        res.render('detalleProducto');
+        let idProducto = req.params.id;
+        let producto = dbProductos.filter(producto => {
+            return producto.id == Number(idProducto)
+        })
+        res.render('detalleProducto', { producto: producto[0] });
     },
     guardar: (req, res, next) => {
         let id = 0;
@@ -62,11 +74,26 @@ module.exports = {
 
         }
 
-        res.redirect('productos/create')
+        res.redirect('productos')
             //res.redirect('/productos/create')
     },
     editar: (req, res) => {
-        res.render('editarProducto')
+        let idProducto = req.params.id;
+        let producto = dbProductos.filter(producto => {
+            return producto.id == Number(idProducto)
+        })
+        producto.map(producto => {
+            producto.price = Number(producto.price)
+
+            switch (producto.category) {
+                case 'esp':
+                    producto.category = 'Española'
+                    break;
+            }
+            return producto
+        });
+        console.log(producto[0].price)
+        res.render('editarProducto', { producto: producto[0] });
     },
     actualizar: (req, res) => {
         console.log('actualizando datos')

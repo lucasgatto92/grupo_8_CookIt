@@ -13,11 +13,14 @@
 
 .detalleProducto .nav-link {
     color: black;
+    display: flex;
+    margin: 0px;
 }
 
 .detalleProducto .navegador {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .detalleProducto .fotoDescripcion {
@@ -190,4 +193,3 @@
         width: 20%;
     }
 }
-

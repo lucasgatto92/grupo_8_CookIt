@@ -4,30 +4,58 @@
 
     <body>
         <%- include('partials/header') %>
+            <section id="tablero">
+                <div class="list-Prod">
+                    <% productos.forEach(producto => { %>
 
-            <div class="row">
-                <div class="col image">
-                    <img src="" alt="">
-                </div>
-                <div class="col data">
-                    <h2>nameProduct</h2>
-                    <h4>descriptionProduct</h4>
-                    <p>time</p>
-                    <p>class</p>
-                    <p>portions</p>
-                    <p>kalories</p>
-                    <a href="">receta</a>
-                </div>
-                <div class="col price">
-                    <h4>Price</h4>
-                    <h5>Discount</h5>
-                </div>
-                <div class="col control">
-                    <button>editar</button>
-                    <button>borrar</button>
-                </div>
-            </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 image">
+                                <img src="/images/products/<%- producto.image %> " alt="">
+                            </div>
+                            <div class="col-lg-7 col-md-6 data">
+                                <div class="titlePrice">
+                                    <h3>
+                                        <%- producto.name %>
+                                    </h3>
+                                    <h4>$
+                                        <%- producto.price %>
+                                    </h4>
+                                </div>
 
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                            <%- producto.description %>
+                                        </p>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-12">
+                                        <li>
+                                            tiempo de preparación:
+                                            <%- producto.tiempo%> min
+                                        </li>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-12">
+                                        <li>
+                                            categoria:
+                                            <%- producto.category %>
+                                        </li>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-2 control">
+
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                                <a href="/productos/<%- producto.id %>/edit "><i class="far fa-edit"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--finaliza el row-->
+                        <% }) %>
+                </div>
+            </section>
             <%- include('partials/footer') %>
     </body>
 

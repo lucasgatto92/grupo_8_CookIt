@@ -7,17 +7,17 @@
         <%- include('partials/header') %>
             <div class="fondoProducto">
                 <div class="formProducto">
-                    <h2 class="titulocarga container">Carga de producto</h2>
+                    <h2 class="titulocarga container">Editar de Producto</h2>
                     <div class="form-carga container">
                         <form action="/productos" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="titulo col-md-4 mb-3">
                                     <label for="titulo">Título *</label>
-                                    <input type="text" class="form-control" id="titulo-producto" placeholder="Ej. Tagliatelle" name="name">
+                                    <input type="text" class="form-control" id="titulo-producto" placeholder="Ej. Tagliatelle" name="name" value="<%- producto.name %> ">
                                 </div>
                                 <div class="ingredientes col-md-4 mb-3">
                                     <label for="ingredientes">Descripción *</label>
-                                    <input type="text" class="form-control" id="descripcion" placeholder="Ej. zucchini, tomate y queso..." name="descripcion">
+                                    <input type="text" class="form-control" id="descripcion" placeholder="Ej. zucchini, tomate y queso..." name="descripcion" value="<%- producto.description %> ">
                                 </div>
                                 <div class="precio col-md-4 mb-3">
                                     <label for="precio">Precio *</label>
@@ -25,7 +25,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="number" class="form-control" id="precio" placeholder="Ej. 399,99" name="precio">
+                                        <input type="text" class="form-control" id="precio" placeholder="Ej. 399,99" name="precio" value="<%- producto.price %> ">
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 <div class="descuento col-md-4 mb-3">
                                     <label for="descuento">Descuento</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="descuento" placeholder="Ej. 15" name="discount">
+                                        <input type="number" class="form-control" id="descuento" placeholder="Ej. 15" name="discount" disabled>
                                         <div class="input-group-prepend">
                                             <span class="derecha input-group-text">%</span>
                                         </div>
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="foto1 col-md-4 mb-3">
                                     <label for="image">Foto Principal *</label>
-                                    <input type="file" class="form-control upload" id="imagen" accept="image/*" name="image">
+                                    <input type="file" class="form-control upload" id="imagen" accept="image/*" name="image" value="<%- producto.image %> ">
                                 </div>
                                 <div class="images col-md-4 mb-3">
                                     <label for="foto2">Fotos adicionales</label>
@@ -53,7 +53,7 @@
                                     <label for="seccion">Categoría *</label>
                                     <div class="input-group">
                                         <select id="seccion" name="categoria">
-                                <option value="">Seleccionar..</option>
+                                <option value="<%- producto.category %> "><%- producto.category %> </option>
                                 <option value="med">Mediterranea</option>
                                 <option value="mex">Mexicana</option>
                                 <option value="ita">Italiana</option>
@@ -70,7 +70,7 @@
                                     <label for="tiempo-prep">Tiempo de preparación</label>
                                     <div class="input-group">
                                         <select id="tiempo-prep" name="tiempo">
-                                    <option value="">Seleccionar..</option>
+                                    <option value="<%- producto.tiempo %>"> <%- producto.tiempo %> minutos</option>
                                     <option value="15">15 minutos</option>
                                     <option value="20">20 minutos</option>
                                     <option value="30">30 minutos</option>
