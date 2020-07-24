@@ -45,11 +45,11 @@
                                 </div>
 
                             </div>
-                            <div class="col-lg-2 ">
-                                <form action="/productos/<%- producto.id %>?_method=DELETE" method="POST" class="control">
+                            <div class="col-lg-2 control ">
+                                <form action="/productos/<%- producto.id %>?_method=DELETE" method="POST">
                                     <a href=""> <button type="submit"><i class="fas fa-trash-alt"></i></button></a>
-                                    <a href="/productos/<%- producto.id %>/edit "> <button><i class="far fa-edit"></i></button></a>
                                 </form>
+                                <a href="/productos/<%- producto.id %>/edit "> <button><i class="far fa-edit"></i></button></a>
                             </div>
                         </div>
                         <hr>
