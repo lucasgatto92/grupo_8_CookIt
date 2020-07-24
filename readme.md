@@ -1,9 +1,9 @@
-# COOK IT 
+# :fork_and_knife: COOK IT 
 *Choose it. Take it. Cook it.*
 
 ![logotipo](/design/logos/casita.png)
 
-## Primer Sprint (24/05)
+## :pushpin: Primer Sprint (24/05)
 
 
 ## Integrantes
@@ -30,7 +30,7 @@ El sitio comercializará productos alimenticios envasados al vacío para su po
 
 La audiencia objetivo serán personas adultas ya sean familias o individuos que trabajan o estudian y carecen de tiempo para preparar su comida diaria, o simplemente no les gusta hacerlo, pero desean alimentarse adecuadamente y con una dieta variada sin salir de su casa, en cualquier horario y sin esperar un delivery.
 
-## Listado de 5 páginas referentes 
+## :page_facing_up: Listado de 5 páginas referentes 
 
 - [Juliana Lopez May](https://www.julianalopezmaytienda.com.ar)
 - [La Fueza](https://www.lafuerza.com.ar)
@@ -41,7 +41,7 @@ La audiencia objetivo serán personas adultas ya sean familias o individuos que 
 Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan, la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
 
 
-## Wireframe
+## :open_file_folder: Wireframe
 
 - [Home](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/home.png)
 - [Detalle de producto](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/detalleProducto.png)
@@ -50,7 +50,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - [Formulario de carga de producto](https://github.com/lucasgatto92/-grupo_8_CookIt/blob/master/wireframe/ingresoProductos.png)
 
 
-## Diseño (en proceso)
+## :pencil2: Diseño (en proceso)
 
 - [Logos](https://github.com/lucasgatto92/-grupo_8_CookIt/tree/master/design/logos)
 - [Colores](https://github.com/lucasgatto92/-grupo_8_CookIt/tree/master/design/colors)
@@ -61,13 +61,13 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
     - [Reem Kufi](https://fonts.google.com/specimen/Reem+Kufi?query=reem&preview.text=Cook+it&preview.text_type=custom)
 
 
-## Segundo Sprint (10/07)
+## :pushpin: Segundo Sprint (10/07)
 
-### [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
 
-### Retrospectiva: [retro.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/retro.md)
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/retro.md)
 
-### Paginas (views)
+### :page_facing_up: Páginas (views)
 - HOME: home.ejs
 - DETALLE PRODUCTO: detalle.ejs         (/producto/detalle)
 - CARRITO DE COMPRAS: carrito.ejs       (/carrito)
