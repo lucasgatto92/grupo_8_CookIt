@@ -1,4 +1,4 @@
-# COOK IT
+# COOK IT 
 *Choose it. Take it. Cook it.*
 
 ![logotipo](/design/logos/casita.png)
@@ -8,23 +8,23 @@
 
 ## Integrantes
 
-### Fernández, Guadalupe
+### :woman: Fernández, Guadalupe
 - 26 años
 - Camarera
 
 
-### Gatto, Lucas
+### :man: Gatto, Lucas
 - 27 años
 - Técnico especializado en planta externa - Movistar
 
 
-### Mena, Eric
+### :man: Mena, Eric
 - 44 años
 - Desarrollador web
 
 
 
-## Temática del sitio y audiencia
+## :speech_balloon: Temática del sitio y audiencia
 
 El sitio comercializará productos alimenticios envasados al vacío para su posterior preparación y consumo. Los kits de alimentos iran acompañados por instructivos o recetas para su posterior preparación.
 
