@@ -69,7 +69,35 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### :page_facing_up: Páginas (views)
 - HOME: home.ejs
-- DETALLE PRODUCTO: detalle.ejs         (/producto/detalle)
-- CARRITO DE COMPRAS: carrito.ejs       (/carrito)
-- CARGA DE PRODUCTOS: carga.ejs         (/carga)
-- REGISTRO DE USUARIOS: registro.ejs    (/usuarios/registro)
+- DETALLE PRODUCTO: detalle.ejs        
+- CARRITO DE COMPRAS: carrito.ejs      
+- CARGA DE PRODUCTOS: carga.ejs         
+- REGISTRO DE USUARIOS: registro.ejs    
+
+## :pushpin: Tercer Sprint (24/07)
+
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/retro.md)
+
+### :calendar: Daily [daily.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/daily.md)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
+
+### :briefcase: Archivos [products.json](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/cookIt/data/products.json) y [users.json](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/cookIt/data/users.json)
+
+### :fire: Aplicación Node + Express + EJS
+- Home
+- Listado de productos                          /productos
+- Detalle del producto                          /productos/:id
+- Formulario de carga y edición de productos    /productos/create   &   /productos/:id/edit
+- Formulario de registro y login                /users/registro
+
+### Funcionalidad de listado, detalle, alta, modificación y baja de productos.
+
+- /productos => (GET) muestra una lista de todos los productos. Se puede acceder desde la categoría "española" en el home o desde el header "nuestras delicias" y luego "ver todos"
+- /productos/:id => (GET) muestra el detalle de un producto. Se puede acceder desde el menú "NUESTRAS DELICIAS" o desde el listado de productos clickeando en el nombre de cada uno
+- /productos/create => (GET) muestra el formulario de carga de productos. Se puede acceder al mismo en el menú "ADMINISTRACIÓN" , "Añadir producto"
+- /productos => (POST) Método que guarda los datos luego de haber cargado los mismos a través del formulario
+- /productos/:id/edit =>(GET) muestra el formulario de edición de producto. Se accede al mismo desde el botón :pencil2: (editar) en el listado de productos.
+- /productos/:id => (PUT) método que actualiza la base de datos. (pendiente actualizar la imagen del producto)
+- /productos/:id => (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar (pendiente eliminar la imagen del producto)
+
