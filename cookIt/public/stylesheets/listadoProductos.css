@@ -43,14 +43,11 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    align-content: center;
 }
 
 .list-Prod a {
-    margin-top: 30px;
-    text-decoration: none;
-    font-size: 2em;
-    display: flex;
-    margin: 80px 0;
+    color: black;
 }
 
 .list-Prod a .fa-edit {
