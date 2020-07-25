@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    
+<body>
+    <%- include('partials/header') %>
+
+        <div class="container">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2>Listado de Usuarios</h2></div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Crear nuevo</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jose</td>
+                            <td>Ramirez</td>
+                            <td>jose@cito.com.ar</td>
+                            <td>
+                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pedro</td>
+                            <td>Samoa</td>
+                            <td>ped@ito.com.ar</td>
+                            <td>
+                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alberto</td>
+                            <td>Lopez</td>
+                            <td>alb@erto.com.ar</td>
+                            <td>
+                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                            </td>
+                        </tr>      
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+
+
+   
+    <%- include('partials/footer') %>    
+
+    
+    <script src="../javascripts/listusers-scripts.js"></script>
+    
+
+
+</body>
+</html>
