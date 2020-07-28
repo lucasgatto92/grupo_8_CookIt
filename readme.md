@@ -91,13 +91,13 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - Formulario de carga y edición de productos    /productos/create   &   /productos/:id/edit
 - Formulario de registro y login                /users/registro
 
-### Funcionalidad de listado, detalle, alta, modificación y baja de productos.
+### :scroll: Funcionalidad de listado, detalle, alta, modificación y baja de productos.
 
-- /productos => (GET) muestra una lista de todos los productos. Se puede acceder desde la categoría "española" en el home o desde el header "nuestras delicias" y luego "ver todos"
-- /productos/:id => (GET) muestra el detalle de un producto. Se puede acceder desde el menú "NUESTRAS DELICIAS" o desde el listado de productos clickeando en el nombre de cada uno
-- /productos/create => (GET) muestra el formulario de carga de productos. Se puede acceder al mismo en el menú "ADMINISTRACIÓN" , "Añadir producto"
-- /productos => (POST) Método que guarda los datos luego de haber cargado los mismos a través del formulario
-- /productos/:id/edit =>(GET) muestra el formulario de edición de producto. Se accede al mismo desde el botón :pencil2: (editar) en el listado de productos.
-- /productos/:id => (PUT) método que actualiza la base de datos. (pendiente actualizar la imagen del producto)
-- /productos/:id => (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar (pendiente eliminar la imagen del producto)
+- /productos :arrow_right: (GET) muestra una lista de todos los productos. Se puede acceder desde la categoría "española" en el home o desde el header "nuestras delicias" y luego "ver todos".
+- /productos/:id :arrow_right: (GET) muestra el detalle de un producto. Se puede acceder desde el menú "NUESTRAS DELICIAS" o desde el listado de productos clickeando en el nombre de cada uno.
+- /productos/create :arrow_right: (GET) muestra el formulario de carga de productos. Se puede acceder al mismo en el menú "ADMINISTRACIÓN" , "Añadir producto".
+- /productos :arrow_right: (POST) Método que guarda los datos luego de haber cargado los mismos a través del formulario.
+- /productos/:id/edit :arrow_right: (GET) muestra el formulario de edición de producto. Se accede al mismo desde el botón :pencil2: (editar) en el listado de productos.
+- /productos/:id :arrow_right: (PUT) método que actualiza la base de datos. (pendiente actualizar la imagen del producto).
+- /productos/:id :arrow_right: (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar (pendiente eliminar la imagen del producto).
 
