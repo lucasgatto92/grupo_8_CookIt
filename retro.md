@@ -1,3 +1,24 @@
+# :pushpin: Sprint 3: Retro
+
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
+
+:heavy_check_mark: **Comenzar a hacer:**
+- Empezar a pulir los detalles y las funcionalidades de cada botón, viws y rutas.
+- Chequear códigos.
+
+:heavy_check_mark: **Hacer más:**
+- Compartir código en nuestro Slack.
+
+:heavy_check_mark: **Continuar haciendo:**
+- Mantener los medios de comunicación activos y el diálogo fluido.
+- Conservar el Trello ordenado.
+- Sostener los daily meeting, por lo menos una vez por semana.
+
+:heavy_check_mark:**Hacer menos:**
+
+:heavy_check_mark: **Dejar de hacer:**
+
+
 # :pushpin: Sprint 2: Retro
 
 ## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
