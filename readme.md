@@ -37,6 +37,7 @@ La audiencia objetivo serán personas adultas ya sean familias o individuos que 
 - [Blue Apron](https://www.blueapron.com/)
 - [Hello Fresh](https://www.hellofresh.com)
 - [Simpleat](https://www.simpleat.com.ar/)
+- [Arcor] (https://arcorencasa.com)
 
 Las páginas que utilizamos como referentes estan vinculadas no sólo con la temática del sitio y con el público objetivo, sino también por su diseño, las imagenes, el frond-end que utilizan, la experiencia del usuario. Recopilamos distintos elementos de cada una de las páginas.
 
