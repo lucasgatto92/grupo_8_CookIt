@@ -1,5 +1,19 @@
 # :sound: Daily standups
+## :pushpin: Sprint 3: 
 
+
+## Cada equipo habla como máximo 3 minutos de 3 temas puntuales:
+_En este sprint, nos juntamos a ver las nuevas tareas y empezar una revisión de las tareas que aún faltan terminar._
+
+:books: **Qué hizo ayer:** En común acuerdo, coordinamos que las tareas deben estar terminadas para la próxima reunión a realizar dentro de tres días con el fin de poder distribuir nuevas tareas del nuevo sprint y comunicarnos cuando subimos algo al repositorio. 
+:books: **Si se encontró con algún impedimento:** No entendimos una de las consignas del sprint. Se procederá a preguntar en clase.
+:books: **Qué va a hacer hoy:** Reacomodar el Trello y actualizar rutas, views y fotos.
+
+
+ 
+
+# :sound: Daily standups
+## :pushpin: Sprint 2: 
 
 ## Cada equipo habla como máximo 3 minutos de 3 temas puntuales:
 _En nuestro caso, nos juntamos dos veces por semana por la plataforma de Zoom. En la cual, compartimos lo que hizo cada uno y exponemos dudas._
