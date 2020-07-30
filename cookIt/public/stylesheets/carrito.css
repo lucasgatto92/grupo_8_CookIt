@@ -11,3 +11,15 @@
 .fondoCarrito .container {
     background-color: #fcf9ea;
 }
+
+@media(max-width:320px) {
+    .priceOrigin {
+        font-size: large;
+    }
+    .comen {
+        font-size: small;
+    }
+    .butonRed{
+        margin-bottom: 50px;
+    }
+}
