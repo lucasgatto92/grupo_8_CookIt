@@ -110,12 +110,13 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NUESTRAS RECETAS</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRACIÓN</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/productos/create">Añadir producto</a>
+                        <a class="dropdown-item" href="/users/listado">Usuarios</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -222,7 +223,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
-                                </span>nuestras recetas</a>
+                                </span>Administración</a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
@@ -230,24 +231,14 @@
                                 <table class="table">
                                     <tr>
                                         <td>
-                                            <span class="glyphicon glyphicon-usd"></span><a href="">receta 1</a>
+                                            <span class="glyphicon glyphicon-usd"></span><a href="/productos/create">Añadir producto</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span class="glyphicon glyphicon-user"></span><a href="">receta 2</a>
+                                            <span class="glyphicon glyphicon-user"></span><a href="/users/listado">Usuarios</a>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="glyphicon glyphicon-tasks"></span><a href="">receta 3</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="glyphicon glyphicon-shopping-cart"></span><a href="">receta 4</a>
-                                        </td>
-                                    </tr>
+                                    </tr>                                    
                                 </table>
                             </div>
                         </div>
