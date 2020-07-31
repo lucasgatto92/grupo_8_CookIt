@@ -12,14 +12,29 @@
     background-color: #fcf9ea;
 }
 
-@media(max-width:320px) {
-    .priceOrigin {
-        font-size: large;
+.continueButtom {
+    width: 200px;
+}
+@media(max-width:320px){
+    .comen{
+        font-size: larger;
     }
-    .comen {
-        font-size: small;
+    .priceOrigin{
+        margin-left: 5px;
     }
-    .butonRed{
-        margin-bottom: 50px;
+    .caja {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     }
+   .butonGreen{
+       padding-left: 0.5cm;
+       padding-right: 0.4cm;
+       margin-left: 70px;
+   }
+   .butonRed{
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    margin-right: 70px;
+   }
 }
