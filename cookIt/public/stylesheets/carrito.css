@@ -16,7 +16,7 @@
     width: 200px;
 }
 @media(max-width:320px){
-    .comen{
+    .comenzalCarrito{
         font-size: larger;
     }
     .priceOrigin{
