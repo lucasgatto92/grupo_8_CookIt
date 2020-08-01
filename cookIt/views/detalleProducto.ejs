@@ -23,12 +23,17 @@
                     <article class="foto col-12 col-sm-12 col-md-12 col-lg-6">
                         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active" data-interval="10000">
-                                    <img src="/images/products/<%- producto.image %> " class="d-block w-100" alt="foto principal">
+                                <div class="carousel-item active" data-interval="2000">
+                                    <img src="/images/products/<%- producto.image[0] %> " class="d-block w-100" alt="foto principal">
                                 </div>
-                                <div class="carousel-item" data-interval="2000">
-                                    <img src="/images/detalleProducto/taglia.png" class="d-block w-100" alt="foto secundaria">
-                                </div>
+                                <% if (producto.image.length>1) { %>
+                                    <% for( let index = 1; index < producto.image.length; index++ ) { %>
+                                        <div class="carousel-item" data-interval="2000">
+                                            <img src="/images/products/<%- producto.image[index] %> " class="d-block w-100" alt="foto secundaria">
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

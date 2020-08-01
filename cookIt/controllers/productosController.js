@@ -27,12 +27,19 @@ module.exports = {
         let id = 0;
         if (fs.existsSync('./data/products.json')) {
             let productos = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
-            id = productos.length;
+            let id = productos[(productos.length) - 1].id; //capto el ultimo id registrado
+            let newImages = req.files;
+            let saveImages = [];
+            newImages.forEach(images => {
+                saveImages.push(images.filename);
+            })
+            console.log(saveImages);
             let producto = {
                 id: id + 1,
                 name: req.body.name,
                 description: req.body.descripcion,
-                image: req.files[0].filename,
+                //image: req.files[0].filename,
+                image: saveImages,
                 category: req.body.categoria,
                 price: req.body.precio,
                 descuento: req.body.descuento,
