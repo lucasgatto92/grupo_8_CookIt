@@ -33,7 +33,6 @@ module.exports = {
             newImages.forEach(images => {
                 saveImages.push(images.filename);
             })
-            console.log(saveImages);
             let producto = {
                 id: id + 1,
                 name: req.body.name,
@@ -102,12 +101,30 @@ module.exports = {
     },
     actualizar: (req, res, next) => {
         let id = Number(req.params.id);
-
         dbProductos.forEach(producto => {
             if (producto.id == id) {
                 dbProductos = dbProductos.filter(producto => {
                     return producto.id != id
                 });
+
+                let newImages = req.files;
+                newImages.forEach(images => {
+                    producto.image.push(images.filename);
+                })
+                if (req.body.elimina) {
+                    if (typeof req.body.elimina == "string") {
+                        let aEliminar = req.body.elimina;
+                        let position = producto.image.indexOf(aEliminar);
+                        producto.image.splice(position);
+                        fs.unlinkSync('./public/images/products/' + aEliminar)
+                    } else {
+                        let aEliminar = req.body.elimina;
+                        aEliminar.forEach(elimina => {
+                            console.log(elimina)
+                        })
+                    }
+                }
+
                 let productoActualizado = {
                     id: id,
                     name: req.body.name,
