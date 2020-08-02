@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <div id="fondoRegister">
+                <div id="logreg-forms">
+                    <form class="form-signin">
+                        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Iniciar sesión</h1>
+
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+
+                        <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
+                        <a href="#" id="forgot_pswd">Olvidaste tu contraseña?</a>
+
+                        <hr>
+
+                        <div class="social-login">
+                            <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Ingresar con Facebook</span> </button>
+                            <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google"></i> Ingresar con Google</span> </button>
+                        </div>
+                        <hr>
+                        <!-- <p>Don't have an account!</p>  -->
+                        <a href="/users/registro"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Soy nuevo!</button></a>
+                    </form>
+
+                    <!--<form action="/reset/password/" class="form-reset">
+                        <input type="email" id="resetEmail" class="form-control" placeholder="Email" required="" autofocus="">
+                        <button class="btn btn-primary btn-block" type="submit">Restablecer contraseña</button>
+                        <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Atrás</a>
+                    </form>-->
+                </div>
+            </div>
+
+
+
+            <%- include('partials/footer') %>
+
+                <!-- <script src="/javascripts/register-scripts.js"></script> -->
+    </body>
+
+</html>

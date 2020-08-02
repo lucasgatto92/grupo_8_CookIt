@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <div id="fondoRegister">
+                <div id="logreg-forms">
+                    <form action="/users/registro" class="form-signup" method="POST" enctype="multipart/form-data">
+
+                        <input type="text" id="user-name" class="form-control" placeholder="Nombre" required="" autofocus="" name="nombre">
+                        <input type="text" id="user-lastname" class="form-control" placeholder="Apellido" required="" autofocus="" name="apellido">
+                        <input type="email" id="user-email" class="form-control" placeholder="Email" required autofocus="" name="email">
+                        <input type="password" id="user-pass" class="form-control" placeholder="Contraseña" required autofocus="" name="pass">
+                        <input type="password" id="user-repeatpass" class="form-control" placeholder="Reingresá tu contraseña" required autofocus="" name="passrepeat">
+                        <div class="form-control">
+                        <p class="avatar">Avatar</p>
+                        <input type="file" accept="image/*" name="avatar">
+                        </div>     
+                        <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Registrarse!</button>
+                    
+                        <hr>
+                    
+                        <div class="social-login">
+                            <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Ingresar con Facebook</span> </button>
+                        </div>
+                        <div class="social-login">
+                            <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google"></i> Ingresar con Google</span> </button>
+                        </div>
+                    
+                    
+                        <a href="/users/login" id="cancel_signup"><i class="fas fa-angle-left"></i> Atrás</a>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <%- include('partials/footer') %>
+
+                <!-- <script src="/javascripts/register-scripts.js"></script> -->
+    </body>
+
+</html>

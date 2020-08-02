@@ -8,6 +8,10 @@
     position: relative;
 }
 
+.avatar {
+    color: #636c72;
+}
+
 #logreg-forms {
     width: 412px;
     margin: 0 auto;
@@ -82,8 +86,7 @@
     background-color: #DF4B3B;
 }
 
-#logreg-forms .form-reset,
-#logreg-forms .form-signup {
+#logreg-forms .form-reset, {
     display: none;
 }
 
