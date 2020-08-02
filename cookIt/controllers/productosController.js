@@ -1,5 +1,6 @@
 let dbProductos = require('../data/dbProductos');
 const fs = require('fs');
+const { equal } = require('assert');
 
 module.exports = {
     listar: (req, res) => {
@@ -53,6 +54,9 @@ module.exports = {
                 celiaco: req.body.celiaco,
             }
             productos.push(producto);
+            productos.sort(function(a, b) {
+                return ((a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0)
+            })
             fs.writeFileSync('./data/products.json', JSON.stringify(productos), 'utf-8')
         } else {
             let productos = [];
@@ -75,6 +79,9 @@ module.exports = {
                 celiaco: req.body.celiaco,
             }
             productos.push(producto);
+            productos.sort(function(a, b) {
+                return ((a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0)
+            })
             fs.writeFileSync('./data/products.json', JSON.stringify(productos), 'utf-8')
 
         }
@@ -106,11 +113,12 @@ module.exports = {
                 dbProductos = dbProductos.filter(producto => {
                     return producto.id != id
                 });
-
-                let newImages = req.files;
-                newImages.forEach(images => {
-                    producto.image.push(images.filename);
-                })
+                if (req.files) {
+                    let newImages = req.files;
+                    newImages.forEach(images => {
+                        producto.image.push(images.filename);
+                    })
+                }
                 if (req.body.elimina) {
                     if (typeof req.body.elimina == "string") {
                         let aEliminar = req.body.elimina;
@@ -120,7 +128,11 @@ module.exports = {
                     } else {
                         let aEliminar = req.body.elimina;
                         aEliminar.forEach(elimina => {
-                            console.log(elimina)
+                            let position = producto.image.indexOf(elimina);
+                            if (position != -1) {
+                                producto.image.splice(position);
+                                fs.unlinkSync('./public/images/products/' + elimina)
+                            }
                         })
                     }
                 }
@@ -144,6 +156,9 @@ module.exports = {
                     celiaco: req.body.celiaco,
                 }
                 dbProductos.push(productoActualizado);
+                dbProductos.sort(function(a, b) {
+                    return ((a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0)
+                })
                 fs.writeFileSync('./data/products.json', JSON.stringify(dbProductos), 'utf-8');
                 res.redirect('/productos');
             }
@@ -158,6 +173,9 @@ module.exports = {
                     return producto.id != id
                 })
             }
+        })
+        dbProductos.sort(function(a, b) {
+            return ((a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0)
         })
         fs.writeFileSync('./data/products.json', JSON.stringify(dbProductos), 'utf-8');
         res.redirect('/productos');
