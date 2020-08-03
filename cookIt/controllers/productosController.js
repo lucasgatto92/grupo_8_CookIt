@@ -4,6 +4,7 @@ const { equal } = require('assert');
 
 module.exports = {
     listar: (req, res) => {
+        dbProductos = require('../data/dbProductos');
         let productos = dbProductos.map(producto => {
             switch (producto.category) {
                 case 'esp':
@@ -112,7 +113,7 @@ module.exports = {
             if (producto.id == id) {
                 dbProductos = dbProductos.filter(producto => {
                     return producto.id != id
-                });
+                }); //filtro la base de datos para obtener todos los productos menos el que estoy actualizando
                 if (req.files) {
                     let newImages = req.files;
                     newImages.forEach(images => {
@@ -120,12 +121,17 @@ module.exports = {
                     })
                 }
                 if (req.body.elimina) {
+                    console.log(typeof req.body.elimina)
                     if (typeof req.body.elimina == "string") {
+                        console.log(req.body.elimina)
                         let aEliminar = req.body.elimina;
                         let position = producto.image.indexOf(aEliminar);
                         producto.image.splice(position);
+                        console.log(position);
                         fs.unlinkSync('./public/images/products/' + aEliminar)
-                    } else {
+                    }
+                    if (typeof req.body.elimina == "object") {
+                        console.log(req.body.elimina);
                         let aEliminar = req.body.elimina;
                         aEliminar.forEach(elimina => {
                             let position = producto.image.indexOf(elimina);

@@ -2,15 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 
+
 let dbProductos = require('../data/dbProductos');
+const { validationResult } = require('express-validator');
 let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 usuarios = JSON.parse(usuarios);
 
 
 
 module.exports = {
-    login: function(req,res) {
+    login: function(req, res) {
         res.render('login', { productos: dbProductos });
+    },
+    processLogin: function(req, res) {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) { //si el objeto 'errors' no está vacío redirecciona a la vista de login
+            return res.render('login', { errors: errors.errors }); //envía a la vista el array de errores
+        } else {
+            return res.redirect('/');
+        }
     },
     registro: function(req, res) {
         res.render('registro', { productos: dbProductos });

@@ -1,2 +1,4 @@
 .DS_Store
 cookit/node_modules
+cookit/data/users.json
+cookit/data/products.json

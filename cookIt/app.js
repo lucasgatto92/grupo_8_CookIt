@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const { check, validationResult, body } = require('express-validator'); //REQUIERO EXPRESS VALIDATOR USANDO DESTRUCTURING PARA ARMAR VARIAS CONSTANTES A LA VEZ DONDE CADA UNA DE ELLAS ES UN OBJETO LITERAL
+
+let session = require('session'); //REQUIERO SESSION LUEGO DE HABERLO INSTALADO
+
 const methodOverride = require('method-override') //instalé y requerí este módulo para trabajar en los formularios los métodos PUT y DELETE
 
 //ruteadores por defecto

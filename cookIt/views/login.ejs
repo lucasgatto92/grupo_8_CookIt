@@ -6,11 +6,11 @@
         <%- include('partials/header') %>
             <div id="fondoRegister">
                 <div id="logreg-forms">
-                    <form class="form-signin">
+                    <form class="form-signin" action="/users/login" method="POST">
                         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Iniciar sesión</h1>
 
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="email">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="" name="pass">
 
                         <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
                         <a href="#" id="forgot_pswd">Olvidaste tu contraseña?</a>
