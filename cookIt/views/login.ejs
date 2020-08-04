@@ -17,17 +17,21 @@
 
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
 
-                        <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
-                        <a href="#" id="forgot_pswd">Olvidaste tu contraseña?</a>
-                        <hr>
+                        <% if (typeof errorReg != 'undefined') { %>
+                            <span class="text-danger text-center"><%- errorReg %> </span>
+                            <% } %>
 
-                        <!--<div class="social-login">
+                                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
+                                <a href="#" id="forgot_pswd">Olvidaste tu contraseña?</a>
+                                <hr>
+
+                                <!--<div class="social-login">
                             <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Ingresar con Facebook</span> </button>
                             <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google"></i> Ingresar con Google</span> </button>
                         </div>
                         <hr>-->
-                        <!-- <p>Don't have an account!</p>  -->
-                        <a href="/users/registro"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Soy nuevo!</button></a>
+                                <!-- <p>Don't have an account!</p>  -->
+                                <a href="/users/registro"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Soy nuevo!</button></a>
                     </form>
 
                     <!--<form action="/reset/password/" class="form-reset">

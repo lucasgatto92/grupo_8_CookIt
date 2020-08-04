@@ -17,7 +17,15 @@ module.exports = {
     processLogin: function(req, res, next) {
         let errors = validationResult(req);
         if (errors.isEmpty()) { //si no hay errores
-            res.redirect('/'); //mientras tanto redirijo al home
+            usuarios.forEach(function(usuario) {
+                if (usuario.email == req.body.email && bcrypt.compareSync(req.body.pass, usuario.pass)) { //evalúo si el usuario está resgistrado y si es correcta la conraseña ingresada
+                    return res.redirect("/");
+                }
+            });
+            res.render('login', {
+                productos: dbProductos, //paso todos los productos
+                errorReg: "usuario y/o contraseña incorrecta" //envío un mensaje de error
+            });
         } else { //si hay errores los paso al login
             res.render('login', {
                 errors: errors.mapped(), //paso los errores en un objeto literal
