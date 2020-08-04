@@ -2,6 +2,9 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+
+//var bodyParser = require('body-parser')
+
 var logger = require('morgan');
 
 const { check, validationResult, body } = require('express-validator'); //REQUIERO EXPRESS VALIDATOR USANDO DESTRUCTURING PARA ARMAR VARIAS CONSTANTES A LA VEZ DONDE CADA UNA DE ELLAS ES UN OBJETO LITERAL
@@ -34,6 +37,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
+//app.use(bodyParser.json())
+
 
 
 //rutas por defecto
