@@ -5,7 +5,7 @@
     <body>
         <%- include('partials/header') %>
             <div id="fondoRegister">
-                <div id="logreg-forms">
+                <div id="logreg-forms" class="mt-5">
                     <form class="form-signin" method="POST" action="">
                         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Iniciar sesión</h1>
 
@@ -20,7 +20,10 @@
                         <% if (typeof errorReg != 'undefined') { %>
                             <span class="text-danger text-center"><%- errorReg %> </span>
                             <% } %>
-
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" name="recordarme">
+                                    <label class="custom-control-label" for="customCheck1">Recordarme</label>
+                                </div>
                                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
                                 <a href="#" id="forgot_pswd">Olvidaste tu contraseña?</a>
                                 <hr>

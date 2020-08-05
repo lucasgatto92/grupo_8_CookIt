@@ -86,7 +86,8 @@
     background-color: #DF4B3B;
 }
 
-#logreg-forms .form-reset, {
+#logreg-forms .form-reset,
+{
     display: none;
 }
 

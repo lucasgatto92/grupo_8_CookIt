@@ -19,6 +19,10 @@ module.exports = {
         if (errors.isEmpty()) { //si no hay errores
             usuarios.forEach(function(usuario) {
                 if (usuario.email == req.body.email && bcrypt.compareSync(req.body.pass, usuario.pass)) { //evalúo si el usuario está resgistrado y si es correcta la conraseña ingresada
+                    if (req.body.recordarme) {
+                        res.cookie('user', req.body.email, { maxAge: 1000 * 60 * 5 }) //creo una cookie usando el metódo cookie pasandole tres parametros: el nombre de la cookie, el dato que almacena y la duracion expresada en milisegundos dentro de un objeto literal con una propiedad llamada 'maxAge:'
+                    }
+                    req.session.user = req.body.email;
                     return res.redirect("/");
                 }
             });
@@ -33,6 +37,13 @@ module.exports = {
                 productos: dbProductos //paso todos los productos
             });
         }
+    },
+    logout: function(req, res) {
+        req.session.destroy() //destruyo la sesion
+        if (req.cookies.user) { //verifico que la cookie exista OJO: cuando se requiere la cookie se escribe res.cookieS "con SSSSS"
+            res.cookie('user', '', { maxAge: -1 }); //sobreescribo la cookie para eliminarla del sistema
+        }
+        res.redirect('/') //luego redirije al home
     },
     registro: function(req, res) {
         res.render('registro', { productos: dbProductos });

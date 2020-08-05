@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser'); //modulo para el manejo de cookies
 
 //var bodyParser = require('body-parser')
 
@@ -9,7 +9,7 @@ var logger = require('morgan');
 
 const { check, validationResult, body } = require('express-validator'); //REQUIERO EXPRESS VALIDATOR USANDO DESTRUCTURING PARA ARMAR VARIAS CONSTANTES A LA VEZ DONDE CADA UNA DE ELLAS ES UN OBJETO LITERAL
 
-let session = require('session'); //REQUIERO SESSION LUEGO DE HABERLO INSTALADO
+let session = require('express-session'); //REQUIERO EXPRESS-SESSION LUEGO DE HABERLO INSTALADO
 
 const methodOverride = require('method-override') //instalé y requerí este módulo para trabajar en los formularios los métodos PUT y DELETE
 
@@ -33,7 +33,10 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+app.use(session({ secret: "mi frase secreta" })) //uso express-session como middleware de aplicacion pasandole por parametro una frase secreta
+app.use(cookieParser()); //uso cookieParser como middleware de aplicacion
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));

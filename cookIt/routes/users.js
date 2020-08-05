@@ -13,11 +13,13 @@ router.get('/listado', usersController.listado);
 
 router.get('/login', usersController.login);
 
+router.get('/logout', usersController.logout); //creo un metodo que cierre session
+
 router.get('/registro', usersController.registro);
 
 router.post('/registro', avatarMulter.any(), registerValidator, usersController.guardar);
 
-router.post('/login', loginValidator, usersController.processLogin);
+router.post('/login', loginValidator, usersController.processLogin); //creo un metodo que reciba y valide los datos para loguearse
 
 
 module.exports = router;
