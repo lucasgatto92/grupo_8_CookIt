@@ -10,7 +10,7 @@ const loginValidator = require('../validations/loginValidator'); //validaciones 
 
 //RUTAS
 router.get('/', usersController.listar);
-router.get('/:id', usersController.perfil);
+router.get('/perfil/:id', usersController.perfil);
 
 router.get('/login', usersController.login);
 
