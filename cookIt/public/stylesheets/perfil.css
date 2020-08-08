@@ -1,0 +1,21 @@
+.perfilbody {
+    margin-top: 20px;
+    background: #f8f8f8;
+}
+
+.bgavatar {
+    height: 140px;
+    background-color: rgb(233, 236, 239);
+}
+
+.avatarperfil img {
+    height: 140px;
+}
+
+.solapa2 {
+    display: none;
+}
+
+ul {
+    cursor: pointer;
+}

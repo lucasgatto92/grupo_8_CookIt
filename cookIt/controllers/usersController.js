@@ -74,7 +74,13 @@ module.exports = {
 
     },
     listar: function(req, res) {
-
         res.render('users', { dbUsuarios, productos: dbProductos });
+    },
+    perfil: function(req, res) {
+        let idUsuario = req.params.id;
+        let usuario = dbUsuarios.filter(usuario => {
+            return usuario.id == Number(idUsuario)
+        })
+        res.render('perfil', { usuario: usuario[0], productos: dbProductos });
     }
 }
