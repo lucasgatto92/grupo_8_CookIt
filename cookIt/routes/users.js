@@ -9,7 +9,7 @@ const loginValidator = require('../validations/loginValidator'); //validaciones 
 
 
 //RUTAS
-router.get('/listado', usersController.listado);
+router.get('/', usersController.listar);
 
 router.get('/login', usersController.login);
 

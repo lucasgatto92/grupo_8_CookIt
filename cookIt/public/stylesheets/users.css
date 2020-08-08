@@ -1,0 +1,76 @@
+.bgimg {
+    padding-top: 55px;
+    padding-bottom: 100px;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.card {
+    border: none;
+    -webkit-box-shadow: 1px 0 20px rgba(96, 93, 175, .05);
+    box-shadow: 1px 0 20px rgba(96, 93, 175, .05);
+    margin-bottom: 30px;
+}
+
+.table th {
+    font-weight: 500;
+    color: #827fc0;
+}
+
+.table thead {
+    background-color: #f3f2f7;
+}
+
+.table>tbody>tr>td,
+.table>tfoot>tr>td,
+.table>thead>tr>td {
+    padding: 14px 12px;
+    vertical-align: middle;
+}
+
+.table tr td {
+    color: #8887a9;
+}
+
+.thumb-sm {
+    height: 32px;
+    width: 32px;
+}
+
+.badge-soft-warning {
+    background-color: rgba(248, 201, 85, .2);
+    color: #f8c955;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+.badge-soft-primary {
+    background-color: rgba(96, 93, 175, .2);
+    color: #605daf;
+}
+
+table.table td a.edit {
+    color: #FFC107;
+}
+
+table.table td a.delete {
+    color: #E34724;
+}
+
+td {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .grande {
+        display: none;
+    }
+}

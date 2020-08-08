@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <div class="bgimg users-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="header-title pb-3 mt-0">Usuarios</h5>
+                                    <div>
+                                        <table class="la-tabla table table-fixed table-hover">
+                                            <thead>
+                                                <tr class="align-self-center">
+                                                    <th class="grande"></th>
+                                                    <th class="grande">Apellido</th>
+                                                    <th class="grande">Nombre</th>
+                                                    <th>Email</th>
+                                                    <th>Acciones</th>
+
+                                                </tr>
+                                            </thead>
+                                            <div>
+                                                <% dbUsuarios.forEach(usuario => { %>
+                                                    <tr>
+                                                        <td class="grande"><img src="/images/avatars/<%- usuario.avatar %>" alt="" class="thumb-sm rounded-circle mr-2"></td>
+                                                        <td class="grande">
+                                                            <%- usuario.apellido %>
+                                                        </td>
+                                                        <td class="grande">
+                                                            <%- usuario.nombre %>
+                                                        </td>
+                                                        <td>
+                                                            <%- usuario.email %>
+                                                        </td>
+                                                        <td><a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <% }) %>
+                                            </div>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <%- include('partials/footer') %>
+    </body>
+
+</html>
