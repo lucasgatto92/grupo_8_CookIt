@@ -9,7 +9,7 @@
                     <form class="form-signin" method="POST" action="">
                         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Iniciar sesión</h1>
 
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="email">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="email" value="<%=(typeof old != 'undefined' && old.email)?old.email: '' %> ">
 
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
 

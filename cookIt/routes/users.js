@@ -8,8 +8,10 @@ const registerValidator = require('../validations/registerValidator'); //validac
 const loginValidator = require('../validations/loginValidator'); //validaciones para loguearse
 
 
+
 //RUTAS
 router.get('/', usersController.listar);
+
 router.get('/perfil/:id', usersController.perfil);
 
 router.get('/login', usersController.login);

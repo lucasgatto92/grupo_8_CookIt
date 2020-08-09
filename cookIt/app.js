@@ -13,6 +13,9 @@ let session = require('express-session'); //REQUIERO EXPRESS-SESSION LUEGO DE HA
 
 const methodOverride = require('method-override') //instalé y requerí este módulo para trabajar en los formularios los métodos PUT y DELETE
 
+const verifyUser = require('./validations/verifyUser');
+
+
 //ruteadores por defecto
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -43,7 +46,6 @@ app.use(methodOverride('_method'));
 //app.use(bodyParser.json())
 
 
-
 //rutas por defecto
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
@@ -54,6 +56,7 @@ app.use('/productos', productosRouter);
 //app.use('/usuarios', usuariosRouter);
 //app.use('/carga', cargaRouter);
 
+app.use(verifyUser)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

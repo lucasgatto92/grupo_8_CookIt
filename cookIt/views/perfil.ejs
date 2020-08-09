@@ -47,7 +47,14 @@
 
                                                     </div>
                                                     <div class="text-center text-sm-right">
-                                                        <span class="badge badge-secondary">administrador</span>
+
+                                                        <% if (usuario.rol == "user") { %>
+                                                            <span class="badge badge-sucess">usuario</span>
+                                                            <% } %>
+                                                                <% if (usuario.rol == "admin") { %>
+                                                                    <span class="badge badge-danger">administrador</span>
+                                                                    <% } %>
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -23,7 +23,7 @@ module.exports = {
                     if (req.body.recordarme) {
                         res.cookie('user', req.body.email, { maxAge: 1000 * 60 * 5 }) //creo una cookie usando el metódo cookie pasandole tres parametros: el nombre de la cookie, el dato que almacena y la duracion expresada en milisegundos dentro de un objeto literal con una propiedad llamada 'maxAge:'
                     }
-                    req.session.user = req.body.email;
+                    req.session.user = usuario;
                     return res.redirect("/");
                 }
             });
@@ -51,13 +51,16 @@ module.exports = {
     },
     guardar: function(req, res, next) {
         let errors = validationResult(req); //tengo el array de errores a la mano
+        let lastID = (usuarios.length);
         if (errors.isEmpty()) { //si no hay errores...
             let nuevoUsuario = {
+                id: lastID + 1,
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
                 pass: bcrypt.hashSync(req.body.pass, 10),
-                avatar: (req.files[0]) ? req.files[0].filename : 'default.png'
+                avatar: (req.files[0]) ? req.files[0].filename : 'default.png',
+                rol: "user"
             };
 
             usuarios.push(nuevoUsuario);

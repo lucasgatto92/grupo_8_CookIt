@@ -19,16 +19,13 @@ module.exports = [
 
     body('email') //chequeo que el email no esté registrado
     .custom(function(value) {
-        users.forEach(user => {
-            if (user.email == value) {
-                result = false;
+
+        for (let index = 0; index < users.length; index++) {
+            if (users[index].email == value) {
+                return false
             }
-        })
-        if (result == false) {
-            return false
-        } else {
-            return true
         }
+        return true
     })
     .withMessage('Este mail ya está registrado'),
 

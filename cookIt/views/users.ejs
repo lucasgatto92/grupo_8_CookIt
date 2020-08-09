@@ -15,7 +15,7 @@
                                         <table class="la-tabla table table-fixed table-hover">
                                             <thead>
                                                 <tr class="align-self-center">
-                                                    <th class="grande"></th>
+                                                    <th class="grande">ID</th>
                                                     <th class="grande">Apellido</th>
                                                     <th class="grande">Nombre</th>
                                                     <th>Email</th>
@@ -27,7 +27,8 @@
                                                 <% dbUsuarios.forEach(usuario => { %>
                                                     <tr>
                                                         <td class="grande">
-                                                            <a href="/users/perfil/ <%- usuario.id %>"><img src="/images/avatars/<%- usuario.avatar %>" alt="" class="thumb-sm rounded-circle mr-2"></a>
+                                                            <%= usuario.id %>
+                                                                <a href="/users/perfil/ <%- usuario.id %>"><img src="/images/avatars/<%- usuario.avatar %>" alt="" class="thumb-sm rounded-circle mr-2"></a>
                                                         </td>
                                                         <td class="grande">
                                                             <%- usuario.apellido %>
@@ -38,8 +39,19 @@
                                                         <td>
                                                             <%- usuario.email %>
                                                         </td>
-                                                        <td><a href="" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
-                                                            <a href="" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                        <td><a href="/users/perfil/<%= usuario.id %> " class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                            <a href="" class="delete ml-2" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                            <select class="form-control">
+                                                                <% if (usuario.rol == "user") { %>
+                                                                    <option selected><%= usuario.rol %> </option>
+                                                                    <option value="admin">admin</option>
+                                                                <% } %>
+                                                                <% if (usuario.rol == "admin") { %>
+                                                                    <option selected><%= usuario.rol %> </option>
+                                                                    <option value="user">user</option>
+                                                                    <% } %>
+                                                               
+                                                              </select>
                                                         </td>
                                                     </tr>
                                                     <% }) %>
