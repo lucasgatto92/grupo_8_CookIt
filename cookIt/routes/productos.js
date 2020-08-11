@@ -22,7 +22,7 @@ let upload = multer({ storage: storage });
 //RUTAS
 router.get('/', productoController.listar);
 router.get('/create', sessionCheck, productoController.agregar);
-router.get('/details/:id', productoController.detalle);
+router.get('/details/:id', sessionCheck, productoController.detalle);
 router.get('/:id/edit', sessionCheck, productoController.editar);
 
 router.post('/', upload.any(), productoController.guardar);

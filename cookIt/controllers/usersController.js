@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-let verifyUser = require('../validations/verifyUser')
+const render = require('../functions/render')
 
 
 
@@ -15,16 +15,7 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = {
     login: function(req, res) {
-        let session = verifyUser(req, res);
-        let rol = undefined
-        if (session != undefined) {
-            let rol = session.rol;
-        }
-        res.render('login', {
-            productos: dbProductos,
-            user: session,
-            rol: rol
-        });
+        render(req, res, 'login')
     },
     processLogin: function(req, res, next) {
         let errors = validationResult(req);
@@ -35,18 +26,23 @@ module.exports = {
                         res.cookie('user', req.body.email, { maxAge: 1000 * 60 * 5 }) //creo una cookie usando el metódo cookie pasandole tres parametros: el nombre de la cookie, el dato que almacena y la duracion expresada en milisegundos dentro de un objeto literal con una propiedad llamada 'maxAge:'
                     }
                     req.session.user = usuario;
+                    console.log(req.session.user);
                     return res.redirect("/");
                 }
             });
             res.render('login', {
                 productos: dbProductos, //paso todos los productos
-                errorReg: "usuario y/o contraseña incorrecta" //envío un mensaje de error
+                errorReg: "usuario y/o contraseña incorrecta", //envío un mensaje de error
+                rol: undefined,
+                user: undefined
             });
         } else { //si hay errores los paso al login
             res.render('login', {
                 errors: errors.mapped(), //paso los errores en un objeto literal
                 old: req.body, //paso la resistencia de los datos correctos
-                productos: dbProductos //paso todos los productos
+                productos: dbProductos, //paso todos los productos
+                rol: undefined,
+                user: undefined
             });
         }
     },
@@ -58,7 +54,8 @@ module.exports = {
         res.redirect('/') //luego redirije al home
     },
     registro: function(req, res) {
-        res.render('registro', { productos: dbProductos });
+        //res.render('registro', { productos: dbProductos });
+        render(req, res, 'registro')
     },
     guardar: function(req, res, next) {
         let errors = validationResult(req); //tengo el array de errores a la mano
@@ -88,13 +85,19 @@ module.exports = {
 
     },
     listar: function(req, res) {
-        res.render('users', { dbUsuarios, productos: dbProductos });
+        //res.render('users', { dbUsuarios, productos: dbProductos });
+        render(req, res, 'users')
     },
     perfil: function(req, res) {
         let idUsuario = req.params.id;
         let usuario = dbUsuarios.filter(usuario => {
             return usuario.id == Number(idUsuario)
         })
-        res.render('perfil', { usuario: usuario[0], productos: dbProductos });
+        res.render('perfil', {
+            usuario: usuario[0],
+            productos: dbProductos,
+            rol: req.session.user.rol,
+            user: req.session.user
+        });
     }
 }

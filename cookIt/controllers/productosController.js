@@ -1,6 +1,6 @@
 let dbProductos = require('../data/dbProductos');
 const fs = require('fs');
-const { equal } = require('assert');
+const render = require('../functions/render')
 
 module.exports = {
     listar: (req, res) => {
@@ -13,17 +13,24 @@ module.exports = {
             }
             return producto
         });
-        res.render('listarProductos', { productos: productos });
+        //res.render('listarProductos', { productos: productos });
+        render(req, res, 'listarProductos')
     },
     agregar: (req, res) => {
-        res.render('agregarProducto', { productos: dbProductos });
+        //res.render('agregarProducto', { productos: dbProductos });
+        render(req, res, 'agregarProducto')
     },
     detalle: (req, res) => {
         let idProducto = req.params.id;
         let producto = dbProductos.filter(producto => {
             return producto.id == Number(idProducto)
         })
-        res.render('detalleProducto', { producto: producto[0], productos: dbProductos });
+        res.render('detalleProducto', {
+            producto: producto[0],
+            productos: dbProductos,
+            rol: req.session.user.rol,
+            user: req.session.user
+        });
     },
     guardar: (req, res, next) => {
         let id = 0;
@@ -104,8 +111,12 @@ module.exports = {
             }
             return producto
         });
-        console.log(producto[0].price)
-        res.render('editarProducto', { producto: producto[0], productos: dbProductos });
+        res.render('editarProducto', {
+            producto: producto[0],
+            productos: dbProductos,
+            rol: req.session.user.rol,
+            user: req.session.user
+        });
     },
     actualizar: (req, res, next) => {
         let id = Number(req.params.id);
