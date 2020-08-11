@@ -56,7 +56,6 @@ app.use('/productos', productosRouter);
 //app.use('/usuarios', usuariosRouter);
 //app.use('/carga', cargaRouter);
 
-app.use(verifyUser)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

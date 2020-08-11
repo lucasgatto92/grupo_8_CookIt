@@ -4,10 +4,16 @@ let verifyUser = require('../validations/verifyUser')
 
 const mainController = {
     home: (req, res) => {
-        verifyUser(req, res);
+        let session = verifyUser(req, res);
+        let rol = undefined
+        if (session != undefined) {
+            rol = session.rol;
+        }
+        console.log(rol)
+
         res.render('home', {
             productos: productos,
-            session: session,
+            user: session,
             rol: rol
         })
     },

@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+let verifyUser = require('../validations/verifyUser')
+
 
 
 let dbProductos = require('../data/dbProductos');
@@ -13,7 +15,16 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = {
     login: function(req, res) {
-        res.render('login', { productos: dbProductos });
+        let session = verifyUser(req, res);
+        let rol = undefined
+        if (session != undefined) {
+            let rol = session.rol;
+        }
+        res.render('login', {
+            productos: dbProductos,
+            user: session,
+            rol: rol
+        });
     },
     processLogin: function(req, res, next) {
         let errors = validationResult(req);

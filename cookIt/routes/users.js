@@ -6,13 +6,14 @@ const avatarMulter = require('../middlewares/avatarMulter');
 
 const registerValidator = require('../validations/registerValidator'); //validaciones para el registro de usuarios
 const loginValidator = require('../validations/loginValidator'); //validaciones para loguearse
+const sessionCheck = require('../middlewares/sessionUserCheck');
 
 
 
 //RUTAS
 router.get('/', usersController.listar);
 
-router.get('/perfil/:id', usersController.perfil);
+router.get('/perfil/:id', sessionCheck, usersController.perfil);
 
 router.get('/login', usersController.login);
 

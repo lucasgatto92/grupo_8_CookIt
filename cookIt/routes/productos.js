@@ -5,6 +5,9 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+const sessionCheck = require('../middlewares/sessionUserCheck');
+
+
 let storage = multer.diskStorage({
     destination: function(req, file, callback) {
         callback(null, 'public/images/products')
@@ -18,9 +21,9 @@ let upload = multer({ storage: storage });
 
 //RUTAS
 router.get('/', productoController.listar);
-router.get('/create', productoController.agregar);
+router.get('/create', sessionCheck, productoController.agregar);
 router.get('/details/:id', productoController.detalle);
-router.get('/:id/edit', productoController.editar);
+router.get('/:id/edit', sessionCheck, productoController.editar);
 
 router.post('/', upload.any(), productoController.guardar);
 router.put('/:id', upload.any(), productoController.actualizar);
