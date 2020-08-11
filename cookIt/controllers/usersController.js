@@ -78,7 +78,10 @@ module.exports = {
             res.render('registro', {
                 errors: errors.mapped(), //paso los errores en un objeto literal
                 old: req.body, //paso la persistencia de los datos correctos
-                productos: dbProductos //paso los productos necesarios para mostrar en el menú
+                productos: dbProductos, //paso los productos necesarios para mostrar en el menú
+                rol: undefined,
+                id: undefined,
+                user: undefined
             })
         }
 
