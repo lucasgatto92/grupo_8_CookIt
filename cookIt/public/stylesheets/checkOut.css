@@ -1,0 +1,82 @@
+.cuadroDeDescuento{
+    margin-left: 2.5cm;
+    margin-right: 2.5cm;
+    position: relative;
+}
+.codigoDeCupon {
+    width: 5cm;
+    height: 1cm;
+    margin-top: 0.1cm;
+}
+.containerGral{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.botonDeCupon {
+    width: 4cm;
+    height: 1cm;
+}
+.colFirst {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.colMedio {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.colUltimo {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.datoEnvio {
+    background-color: lightgrey;
+    border: 15px solid lightgrey;
+}
+.streetEsta{
+    height: 5cm;
+}
+.infoAdd{
+    margin-top: 1.5cm;
+}
+
+.informacionDeEnvio {
+    height: 275px;
+    width: 375px;
+    background-color:lightgrey;
+    border: 15px solid lightgrey;
+}
+.resumenDelPedido{
+    width: 370px;
+}
+
+.letraPrecioTotal{
+    font-size: large;
+}
+
+.tituloDetalle{
+    margin-top: 1.5cm;
+}
+.detalleDeEnvio{
+    border-style: solid;
+}
+.formaTarjeta {
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.frame-tarjetas {
+    background-color: white;
+}
+.debitCard{
+    background-color: white;
+}
+.realizarCompra{
+    width: 370px;
+    font-size: larger;
+}
+
+@media (max-width: 320px){
+    .cuadroDeDescuento{
+        padding-left: 5cm;
+    }
+}
