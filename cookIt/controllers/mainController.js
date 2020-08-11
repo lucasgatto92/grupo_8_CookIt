@@ -10,6 +10,9 @@ const mainController = {
         render(req, res, 'carrito')
 
         //res.render('carrito', { productos: productos })
+    },
+    checkOut: (req, res) => {
+        render(req, res, 'checkOut')
     }
 
 }

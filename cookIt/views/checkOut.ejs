@@ -1,173 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/checkOut.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+=======
+>>>>>>> 140bdfb3a643d9d5f0457d10ffb4dfce7cee65c6
 
-    
-    <title>Check Out</title>
-</head>
+<%- include('partials/head') %>
 
 
-<body> 
-  <!--Empieza Cupón de descuento-->
-  <div class="container">
-      <div class="card-body cuadroDeDescuento">
-        <button class="btn btn-light btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-tag">
+    <body>
+        <%- include('partials/header') %>
+            <!--Empieza Cupón de descuento-->
+            <div class="container">
+                <div class="card-body cuadroDeDescuento">
+                    <button class="btn btn-light btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-tag">
           <strong> CUPÓN DE DESCUENTO </strong></i>
         </button>
 
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-            Si tienes un código de cupón, por favor, aplícalo abajo.
-              <label><input type="text" name="coupon_code" class="input-text codigoDeCupon" placeholder="Código de cupón" id="coupon_code" value="">
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Si tienes un código de cupón, por favor, aplícalo abajo.
+                            <label><input type="text" name="coupon_code" class="input-text codigoDeCupon" placeholder="Código de cupón" id="coupon_code" value="">
               <button type="submit" class="btn btn-success botonDeCupon" name="apply_coupon" value="Apply Coupon"> 
               Aplicar Cupón</button> </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-			</div>
-    </div>
-     <!-- Finalizacion de cupo de descuento-->
-     <!--Empieza datos de envio-->
+            <!-- Finalizacion de cupo de descuento-->
+            <!--Empieza datos de envio-->
 
-     <div class="container containerGral">
-      <div class="row">
-        <div class="col-md-4 colFirst">
-          One of three columns
-          
-          <h3>Datos de envío</h3>
-          <form class="datoEnvio">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputName">Nombre</label>
-                <input type="name" class="form-control" id="inputName">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputSurname">Apellido</label>
-                <input type="surname" class="form-control" id="inputSurname">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputDNI">DNI</label>
-              <input type="text" class="form-control" id="inputDNI" placeholder=" ">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputStreet">Calle</label>
-                <input type="text" class="form-control" id="inputStreet">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputNumberStreet">Número</label>
-              <input type="numberStreet" class="form-control" id="inputNumberStreet">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputStreet2">¿Entre qué calle está?</label>
-              <input type="text" class="form-control" id="inputStreet2">
-              <input type="text" class="form-control" id="inputStreet2 streetEsta">
-            </div>
-              <div class="form-group">
-                <label for="inputCity">Piso / Depto. - B. Privado /Lote</label>
-                <input type="text" class="form-control" id="inputFloor">
-              </div>
-              <div class="form-group">
-                <label for="inputState">Localidad / Ciudad </label>
-                <input type="text" class="form-control" id="inputFloor">
-              </div>
-              <div class="form-group">
-                <label for="inputProvince"> Región / Provincia</label>
-                <select id="inputState" class="form-control">
+            <div class="container containerGral">
+                <div class="row">
+                    <div class="col-md-4 colFirst">
+                        One of three columns
+
+                        <h3>Datos de envío</h3>
+                        <form class="datoEnvio">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputName">Nombre</label>
+                                    <input type="name" class="form-control" id="inputName">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputSurname">Apellido</label>
+                                    <input type="surname" class="form-control" id="inputSurname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDNI">DNI</label>
+                                <input type="text" class="form-control" id="inputDNI" placeholder=" ">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputStreet">Calle</label>
+                                    <input type="text" class="form-control" id="inputStreet">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputNumberStreet">Número</label>
+                                    <input type="numberStreet" class="form-control" id="inputNumberStreet">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStreet2">¿Entre qué calle está?</label>
+                                <input type="text" class="form-control" id="inputStreet2">
+                                <input type="text" class="form-control" id="inputStreet2 streetEsta">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCity">Piso / Depto. - B. Privado /Lote</label>
+                                <input type="text" class="form-control" id="inputFloor">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputState">Localidad / Ciudad </label>
+                                <input type="text" class="form-control" id="inputFloor">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputProvince"> Región / Provincia</label>
+                                <select id="inputState" class="form-control">
                   <option selected> </option>
                   <option>Buenos Aires</option>
                   <option>Catamarca</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="inputCode">Código postal</label>
-                <input type="text" class="form-control" id="inputProvince">
-              </div>
-              <div class="form-group">
-                <label for="inputPhone">Teléfono</label>
-                <input type="text" class="form-control" id="inputPhone">
-              </div>
-              <div class="form-group">
-                <label for="inputEmail">Dirección de correo electrónico</label>
-                <input type="text" class="form-control" id="inputEmail">
-              </div>
-          </form>
-    <!--Finaliza datos de envio-->
-      <!--Inicia informacion adicional-->
-  <form>
-    <div class="form-group">
-      <div class="container">
-        <div class="row">
-        <h4 class="infoAdd">Información adicional</h4>
-        <label for="exampleFormControlTextarea1" class="informacionDeEnvio">Agregar instrucciones de envío (opcional)
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCode">Código postal</label>
+                                <input type="text" class="form-control" id="inputProvince">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPhone">Teléfono</label>
+                                <input type="text" class="form-control" id="inputPhone">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">Dirección de correo electrónico</label>
+                                <input type="text" class="form-control" id="inputEmail">
+                            </div>
+                        </form>
+                        <!--Finaliza datos de envio-->
+                        <!--Inicia informacion adicional-->
+                        <form>
+                            <div class="form-group">
+                                <div class="container">
+                                    <div class="row">
+                                        <h4 class="infoAdd">Información adicional</h4>
+                                        <label for="exampleFormControlTextarea1" class="informacionDeEnvio">Agregar instrucciones de envío (opcional)
         <textarea name="order_comments" class="input-text textareaComments" id="order_comments" placeholder="¿ES UN REGALO? Indicalo en este espacio para que no incluyamos la factura, y el nombre de a quién está dirigido; o brindanos más información sobre la dirección o quién recibirá el pedido.
         Ej.: &quot;Es un regalo para Juan de Mariela&quot;
         Ej.: &quot;Es un barrio cerrado, anunciarse en portería&quot;
         Ej.: &quot;Puerta verde, el timbre no funciona&quot; " rows="9" cols="44"></textarea></label>
-       </div>
-      </div>
-    </div>
-  </form>
-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
 
 
-<!--Finalizacion de informacion adicional-->
-<!--Resumen del pedido-->
-  <div class="col-md-4 colMedio">
-  Two of three columns
-  <h4>Resumen del pedido</h4>
-  <table class="table table-bordered resumenDelPedido">
-    <thead>
-      <tr>
-        <th scope="col">Producto</th>
-        <th scope="col">Subtotal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Combo Napolitano</th>
-        <td>$2.200</td>
-      </tr>
-      <tr>
-        <th scope="row">Combo Palermitano</th>
-        <td>$2.200</td>
-      </tr>
-      <tr>
-        <th scope="row" class="table-active">Subtotal</th>
-        <td>$2.200</td>
-      </tr>
-      <tr>
-        <th scope="row" class="table-active">Total</th>
-        <td colspan="2" class="letraPrecioTotal"> <strong>$2.200</td></strong>
-      </tr>
-    </tbody>
-  </table>
-<!--Finalizacion de carrito resumido-->
-<!--Arranca detalles de envio-->
+                    <!--Finalizacion de informacion adicional-->
+                    <!--Resumen del pedido-->
+                    <div class="col-md-4 colMedio">
+                        Two of three columns
+                        <h4>Resumen del pedido</h4>
+                        <table class="table table-bordered resumenDelPedido">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Combo Napolitano</th>
+                                    <td>$2.200</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Combo Palermitano</th>
+                                    <td>$2.200</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="table-active">Subtotal</th>
+                                    <td>$2.200</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="table-active">Total</th>
+                                    <td colspan="2" class="letraPrecioTotal"> <strong>$2.200</td></strong>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--Finalizacion de carrito resumido-->
+                        <!--Arranca detalles de envio-->
 
-    <h3 class= "tituloDetalle">Detalles de envío</h3>
-      <div class="shop_table detalleDeEnvio" style="padding: 10px;">Te recordamos que una vez procesado el pago y de acuerdo a nuestras políticas de envío, las entregas en tu zona se harán de <span style="color: #009ac2; font-weight: 700;">lunes a viernes de 9 a 16 hs.</span><br>
-        El envío no tiene costo.<br>
-        En caso de no encontrarse la persona en el domicilio al momento de la entrega, te contactaremos para coordinar un segundo intento. 
-      </div>
-</div>
-<!--Finalizacion de detalles de envio-->
-<!--Arranca formas de pago-->
-<div class="col-md-4 colUltimo">
-  Three of three columns
-      <h3>Formas de pago</h3>
-        <div class="formaTarjeta">
-	        <input id="payment_method_woo-mercado-pago-basic" type="radio" class="input-radio" name="payment_method" value="woo-mercado-pago-basic" checked="checked" data-order_button_text="" style="display: none;">
-        	<label for="payment_method_woo-mercado-pago-basic"> Pago con tarjeta de débito o crédito 	</label>
-			    <div class="payment_box payment_method_woo-mercado-pago-basic">
-			    <label>
+                        <h3 class="tituloDetalle">Detalles de envío</h3>
+                        <div class="shop_table detalleDeEnvio" style="padding: 10px;">Te recordamos que una vez procesado el pago y de acuerdo a nuestras políticas de envío, las entregas en tu zona se harán de <span style="color: #009ac2; font-weight: 700;">lunes a viernes de 9 a 16 hs.</span><br> El envío no tiene
+                            costo.<br> En caso de no encontrarse la persona en el domicilio al momento de la entrega, te contactaremos para coordinar un segundo intento.
+                        </div>
+                    </div>
+                    <!--Finalizacion de detalles de envio-->
+                    <!--Arranca formas de pago-->
+                    <div class="col-md-4 colUltimo">
+                        Three of three columns
+                        <h3>Formas de pago</h3>
+                        <div class="formaTarjeta">
+                            <input id="payment_method_woo-mercado-pago-basic" type="radio" class="input-radio" name="payment_method" value="woo-mercado-pago-basic" checked="checked" data-order_button_text="" style="display: none;">
+                            <label for="payment_method_woo-mercado-pago-basic"> Pago con tarjeta de débito o crédito 	</label>
+                            <div class="payment_box payment_method_woo-mercado-pago-basic">
+                                <label>
             <small>Elegí tu medio de pago preferido; se realiza a través de MercadoPago aunque no es necesario tener cuenta. </small>
 <br>
 <div class="mp-panel-checkout">
