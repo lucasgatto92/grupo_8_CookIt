@@ -1,6 +1,15 @@
-.perfilbody {
+.perfil {
     margin-top: 20px;
-    background: #f8f8f8;
+}
+
+.bgimg {
+    padding-top: 55px;
+    padding-bottom: 100px;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
 }
 
 .bgavatar {
