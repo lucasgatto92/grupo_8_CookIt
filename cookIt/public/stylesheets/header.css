@@ -33,6 +33,12 @@ nav button i {
     display: none;
 }
 
+.slogan {
+    font-size: 0.8em;
+    color: black;
+    font-style: italic;
+}
+
 @media(min-width:768px) {
     .cabecera form {
         margin-top: 60px;
@@ -44,6 +50,9 @@ nav button i {
     a {
         color: sienna;
         font-size: 0.8em;
+    }
+    .slogan {
+        font-size: 1.2em;
     }
 }
 
@@ -58,5 +67,8 @@ nav button i {
     a {
         color: sienna;
         font-size: 1.2em;
+    }
+    .slogan {
+        font-size: 0.8em;
     }
 }
