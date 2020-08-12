@@ -19,7 +19,16 @@ _En esta meeting, nos juntamos para pulir lo ya hecho y acordar los próximos pa
 :books: **Si se encontró con algún impedimento:** Con respecto a la actualización de imágenes, surge un error del cual, aún no pudimos dar cuenta de qué ruta proviene. El check out no funciona y queda pendiente de hacerlo andar. 
 
 :books: **Qué va a hacer hoy:** Avanzar con las tareas y en la semana, volvernos a reunir. 
- 
+
+## Se realizo una daily meeting previa a entregar el sprint, el día 11 de Agosto: :watch:
+_Se pactó una nueva meeting con el fin de revisar lo hecho en el sprint vigente_
+
+:books: **Qué hizo ayer:** Tanto Lucas como Eric, habían terminado sus respectivas tareas. Las cuales, se propusieron realizar algunos arreglos. En el caso de Eric, mejorar el código del header para que sea más funcional visualmente y entendible; por el otro lado, Lucas se ocupó de mejorar la implementacion de las identidades de los usuarios y perfeccionar el formulario de carga de productos. Y, por último, a Guadalupe tenía que realizar la segunda parte del carrito.
+
+:books: **Si se encontró con algún impedimento:** No se encontró ningún impedimento. 
+
+:books: **Qué va a hacer hoy:** En conjunto, se repaso los items del sprint a entregar y actualizar el tablero de trabajo para el futuro sprint.
+
 
 # :sound: Daily standups
 ## :pushpin: Sprint 2: 
