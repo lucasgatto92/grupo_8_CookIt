@@ -102,3 +102,26 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 - /productos/:id :arrow_right: (PUT) método que actualiza la base de datos. (pendiente actualizar la imagen del producto).
 - /productos/:id :arrow_right: (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar (pendiente eliminar la imagen del producto).
 
+## :pushpin: Cuarto Sprint (11/08)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/g6PQOvmo/proyecto-integrador)
+
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/retro.md)
+
+### :calendar: Daily [daily.md](https://github.com/lucasgatto92/grupo_8_CookIt/blob/master/daily.md)
+
+### :bust_in_silhouette: Registro de usuarios
+
+- accesible desde /users/registro o desde el header, ingresando al login y luego a "soy nuevo", permite al usuario registrarse completando los datos, se verican que los mismos sean correctos y en caso de no serlo devuelve los errores debajo de cada campo del formulario, permite subir una imagen de perfil (si el usuario no lo hace se le asigna una por defecto), la contraseña es encriptada antes de guardarse en en JSON de usuarios
+
+### :closed_umbrella: Login de usuarios
+
+- accesible desde /users/login o desde el link homonimo en el header. Se verifica la información enviada por el usuario y en caso de haber un error lo devuelve debajo del input donde se produjo, en caso de login correcto, se redirije al home y en el caso de que el usuarios tenga privilegios de administrador le mostrara en el header un menú de "Administración"
+- función de recordar usuario implementada
+
+### :vertical_traffic_light: Rutas de huéspedes y de usuarios
+
+- los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
+- los usuarios logueados pueden acceder al detalle de los productos, y al carrito
+- los usuarios logueados como administrador pueden acceder a todo lo anterior + el menu de administración
+
