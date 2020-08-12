@@ -5,7 +5,9 @@
             <!--LOGOTIPO-->
             <div class="col-12 col-md-5 col-lg-3">
                 <a href="/"><img src="/images/logos/casita3.png" alt="logo Cook It" class="img-fluid logo"></a>
-                <h5 class="slogan text-right"> Choose It. Take It. Cook It</h>
+                <a href="/">
+                    <h5 class="slogan text-right"> Choose It. Take It. Cook It</h>
+                </a>
             </div>
 
             <!--NAVEGACION Y BUSCADOR-->
@@ -65,8 +67,6 @@
                                     <%- producto.name %>
                                 </a>
                                 <% }) %>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/productos">Ver todos</a>
                         </div>
                     </li>
                     <% if (rol == "admin") { %>
@@ -75,9 +75,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRACIÓN</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/productos/create">Añadir producto</a>
+                                <a class="dropdown-item" href="/productos">Listado de productos</a>
                                 <a class="dropdown-item" href="/users">Usuarios</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
                         <% } %>
