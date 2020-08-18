@@ -112,7 +112,7 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### :bust_in_silhouette: Registro de usuarios
 
-- accesible desde /users/registro o desde el header, ingresando al login y luego a "soy nuevo", permite al usuario registrarse completando los datos, se verican que los mismos sean correctos y en caso de no serlo devuelve los errores debajo de cada campo del formulario, permite subir una imagen de perfil (si el usuario no lo hace se le asigna una por defecto), la contraseña es encriptada antes de guardarse en en JSON de usuarios
+- Accesible desde /users/registro o desde el header, ingresando al login y luego a "soy nuevo", permite al usuario registrarse completando los datos, se verican que los mismos sean correctos y en caso de no serlo devuelve los errores debajo de cada campo del formulario, permite subir una imagen de perfil (si el usuario no lo hace se le asigna una por defecto), la contraseña es encriptada antes de guardarse en en JSON de usuarios
 
 ### :closed_umbrella: Login de usuarios
 
