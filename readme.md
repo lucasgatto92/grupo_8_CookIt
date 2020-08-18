@@ -116,12 +116,12 @@ Las páginas que utilizamos como referentes estan vinculadas no sólo con la tem
 
 ### :closed_umbrella: Login de usuarios
 
-- accesible desde /users/login o desde el link homonimo en el header. Se verifica la información enviada por el usuario y en caso de haber un error lo devuelve debajo del input donde se produjo, en caso de login correcto, se redirije al home y en el caso de que el usuarios tenga privilegios de administrador le mostrara en el header un menú de "Administración"
-- función de recordar usuario implementada
+- Accesible desde /users/login o desde el link homonimo en el header. Se verifica la información enviada por el usuario y en caso de haber un error lo devuelve debajo del input donde se produjo, en caso de login correcto, se redirije al home y en el caso de que el usuarios tenga privilegios de administrador le mostrara en el header un menú de "Administración"
+- Función de recordar usuario implementada
 
 ### :vertical_traffic_light: Rutas de huéspedes y de usuarios
 
-- los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
-- los usuarios logueados pueden acceder al detalle de los productos, y al carrito
-- los usuarios logueados como administrador pueden acceder a todo lo anterior + el menu de administración
+- Los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
+- Los usuarios logueados pueden acceder al detalle de los productos, y al carrito
+- Los usuarios logueados como administrador pueden acceder a todo lo anterior + el menu de administración
 
