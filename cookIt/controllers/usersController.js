@@ -18,6 +18,10 @@ module.exports = {
         render(req, res, 'login')
     },
     processLogin: function(req, res, next) {
+        let url = "/"
+        if (req.session.url) {
+            url = req.session.url;
+        } else {}
         let errors = validationResult(req);
         if (errors.isEmpty()) { //si no hay errores
             usuarios.forEach(function(usuario) {
@@ -27,7 +31,7 @@ module.exports = {
                     }
                     req.session.user = usuario;
                     console.log(req.session.user);
-                    return res.redirect("/");
+                    return res.redirect(url);
                 }
             });
             res.render('login', {

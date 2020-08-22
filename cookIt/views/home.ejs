@@ -169,60 +169,51 @@
                             <div class="block">
                                 <h1 class="heading">Nuestro amplio menú, solo para paladares exigentes</h1>
                                 <ul>
-                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
-                                        <div class="blog-img">
-                                            <img src="images/productos/blog-img-1.jpg" alt="blog-img">
-                                        </div>
-                                        <div class="content-right">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="400ms">
-                                        <div class="blog-img">
-                                            <img src="images/productos/blog-img-2.jpg" alt="blog-img">
-                                        </div>
-                                        <div class="content-right">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="500ms">
-                                        <div class="content-left">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                        <div class="blog-img-2">
-                                            <img src="images/productos/blog-img-3.jpg" alt="blog-img">
-                                        </div>
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="600ms">
-                                        <div class="content-left">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                        <div class="blog-img-2">
-                                            <img src="images/productos/blog-img-4.jpg" alt="blog-img">
-                                        </div>
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="700ms">
-                                        <div class="blog-img">
-                                            <img src="images/productos/blog-img-5.jpg" alt="blog-img">
-                                        </div>
-                                        <div class="content-right">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                    </li>
-                                    <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="800ms">
-                                        <div class="blog-img">
-                                            <img src="images/productos/blog-img-6.jpg" alt="blog-img">
-                                        </div>
-                                        <div class="content-right">
-                                            <h3>Lorem ipsum dolor sit.</h3>
-                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                        </div>
-                                    </li>
+                                    <% products.forEach(product => { %>
+
+                                        <% if (product.id<=2) { %>
+                                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                                <div class="blog-img">
+                                                    <img src="images/productos/<%= product.image %>" alt="blog-img">
+                                                </div>
+                                                <div class="content-right">
+                                                    <h3>
+                                                        <%= product.name %>
+                                                    </h3>
+                                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                                </div>
+                                            </li>
+                                            <% } %>
+                                                <% if (product.id>2 && product.id<5) { %>
+                                                    <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                                        <div class="content-left">
+                                                            <h3>
+                                                                <%= product.name %>
+                                                            </h3>
+                                                            <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                                        </div>
+                                                        <div class="blog-img">
+                                                            <img src="images/productos/<%= product.image %>" alt="blog-img">
+                                                        </div>
+
+                                                    </li>
+                                                    <% } %>
+                                                        <% if (product.id>=5) { %>
+                                                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                                                <div class="blog-img">
+                                                                    <img src="images/productos/<%= product.image %>" alt="blog-img">
+                                                                </div>
+                                                                <div class="content-right">
+                                                                    <h3>
+                                                                        <%= product.name %>
+                                                                    </h3>
+                                                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                                                                </div>
+                                                            </li>
+                                                            <% } %>
+
+                                                                <% }) %>
+
                                 </ul>
                                 <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">Ver toda la carta</a>
                             </div>

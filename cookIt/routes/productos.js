@@ -25,6 +25,9 @@ router.get('/create', sessionCheck, productoController.agregar);
 router.get('/details/:id', sessionCheck, productoController.detalle);
 router.get('/:id/edit', sessionCheck, productoController.editar);
 
+router.get('/productDetail/:id', sessionCheck, productoController.detalle);
+router.get('/list', productoController.list);
+
 router.post('/', upload.any(), productoController.guardar);
 router.put('/:id', upload.any(), productoController.actualizar);
 router.delete('/:id', upload.any(), productoController.borrar);

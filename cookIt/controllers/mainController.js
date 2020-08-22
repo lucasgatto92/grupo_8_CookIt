@@ -1,5 +1,6 @@
 let productos = require('../data/dbProductos');
-let usuarios = require('../data/dbUsers')
+let usuarios = require('../data/dbUsers');
+let dbProducts = require('../data/dbProducts')
 let render = require('../functions/render')
 
 const mainController = {

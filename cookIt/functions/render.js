@@ -1,5 +1,6 @@
 const dbProductos = require('../data/dbProductos');
 const dbUsuarios = require('../data/dbUsers');
+const dbProducts = require('../data/dbProducts');
 
 module.exports = function(req, res, vista) {
     let rol = undefined;
@@ -16,6 +17,7 @@ module.exports = function(req, res, vista) {
     return res.render(vista, {
         dbUsuarios: dbUsuarios,
         productos: productos,
+        products: dbProducts,
         user: req.session.user,
         rol: rol,
         id: id

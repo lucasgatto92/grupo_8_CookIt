@@ -3,6 +3,9 @@ const fs = require('fs');
 const render = require('../functions/render')
 
 module.exports = {
+    list: (req, res) => {
+        render(req, res, 'productsList')
+    },
     listar: (req, res) => {
         dbProductos = require('../data/dbProductos');
         let productos = dbProductos.map(producto => {
