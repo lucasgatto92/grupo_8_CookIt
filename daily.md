@@ -1,5 +1,19 @@
 # :sound: Daily standups
-## :pushpin: Sprint 3: 
+## :pushpin: Sprint 5: 
+
+
+##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
+_En este nuevo sprint, nos juntamos a chequear las funcionalidades del e-commerce, el día 21 de Agosto._
+
+:books: **Qué hizo ayer:** Se entrego el sprint número 3 completo. Chequeamos entre todos las funcionalidades las sitio, revisamos vistas y middlewares.
+
+:books: **Si se encontró con algún impedimento:** Ninguno. Ya que, se realizó la reunión para priorizar tareas, reiniciar el tablero y coordinar el trabajo futuro.
+
+:books: **Qué va a hacer hoy:** Investigar para el sprint vigente, a cada uno le toco un tema distinto. A Eric le toca investigar sobre las tablas y las relaciones que podemos hacer en Sequelize, Lucas eligió armar la base de datos y Guadalupe decidió buscar fotos para el inicio.
+
+
+
+## :pushpin: Sprint 4: 
 
 
 ##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
@@ -30,8 +44,10 @@ _Se pactó una nueva meeting con el fin de revisar lo hecho en el sprint vigente
 :books: **Qué va a hacer hoy:** En conjunto, se repaso los items del sprint a entregar y actualizar el tablero de trabajo para el futuro sprint.
 
 
+
 # :sound: Daily standups
-## :pushpin: Sprint 2: 
+## :pushpin: Sprint 3: 
+
 
 ## Cada equipo habla como máximo 3 minutos de 3 temas puntuales, el día 23 de Julio: :watch:
 _En nuestro caso, nos juntamos dos veces por semana por la plataforma de Zoom. En la cual, compartimos lo que hizo cada uno y exponemos dudas._
