@@ -21,7 +21,9 @@ router.get('/logout', usersController.logout); //creo un metodo que cierre sessi
 
 router.get('/registro', usersController.registro);
 
-router.post('/registro', avatarMulter.any(), registerValidator, usersController.guardar);
+//router.post('/registro', avatarMulter.any(), registerValidator, usersController.guardar); //metodo JSON
+router.post('/registro', avatarMulter.any(), registerValidator, usersController.save); //metodo SQL
+
 
 router.post('/login', loginValidator, usersController.processLogin); //creo un metodo que reciba y valide los datos para loguearse
 

@@ -67,15 +67,11 @@ module.exports = function(sequelize, dataTypes) {
         },
         imagenes: {
             type: dataTypes.STRING(255),
-            validate: {
-                notNull: true
-            }
+
         },
         receta: {
             type: dataTypes.STRING(45),
-            validate: {
-                notNull: true
-            }
+
         },
         idCategory: {
             type: dataTypes.INTEGER.UNSIGNED,

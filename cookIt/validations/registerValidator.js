@@ -1,6 +1,9 @@
 var path = require('path');
 
-const users = require('../data/dbUsers');
+const users = require('../data/dbUsers'); //base de datos en JSON
+
+const db = require('../database/models'); //requiero la base de datos
+
 const { check, validationResult, body } = require('express-validator');
 
 
@@ -17,7 +20,7 @@ module.exports = [
     .isEmail()
     .withMessage('Debes escribir un email válido'),
 
-    body('email') //chequeo que el email no esté registrado
+    /*body('email') //chequeo que el email no esté registrado en JSON
     .custom(function(value) {
 
         for (let index = 0; index < users.length; index++) {
@@ -28,6 +31,23 @@ module.exports = [
         return true
     })
     .withMessage('Este mail ya está registrado'),
+    body('email')
+    .custom(value => {
+        console.log(value)
+        db.Usuario.findAll({
+                where: {
+                    email: value
+                }
+            })
+            .then(result => {
+                return false
+            })
+            .catch((err) => {
+                return true
+            })
+
+    })
+    .withMessage('Problemas??'),*/
 
     check('pass')
     .isLength({ min: 6, max: 16 })

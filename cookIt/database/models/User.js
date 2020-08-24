@@ -1,5 +1,3 @@
-const { ROWLOCK } = require("sequelize/types/lib/table-hints");
-
 module.exports = function(sequelize, dataTypes) {
     let alias = "Usuario";
     let cols = {
@@ -13,31 +11,49 @@ module.exports = function(sequelize, dataTypes) {
         nombre: {
             type: dataTypes.STRING(45),
             allowNull: false,
-            validator: {
-                notNull: true
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: "El nombre solo puede tener letras"
+                },
+                notEmpty: {
+                    msg: "El campo nombre es obligatorio"
+                }
             }
-
         },
         apellido: {
             type: dataTypes.STRING(45),
             allowNull: false,
-            validator: {
-                notNull: true
+            validate: {
+                isAlpha: {
+                    args: true,
+                    msg: "El apellido solo puede tener letras"
+                },
+                notEmpty: {
+                    msg: "El campo apellido es obligatorio"
+                }
             }
         },
         email: {
             type: dataTypes.STRING(45),
             allowNull: false,
             validate: {
-                isEmail: true,
-                notNull: true
+                isEmail: {
+                    args: true,
+                    msg: "Debe escribir un email válido"
+                },
+                notEmpty: {
+                    msg: "El campo email es obligatorio"
+                }
             }
         },
         pass: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(255),
             allowNull: false,
             validate: {
-                notNull: true
+                notEmpty: {
+                    msg: "Debes escribir una contraseña"
+                }
             }
         },
         avatar: {
@@ -51,21 +67,19 @@ module.exports = function(sequelize, dataTypes) {
         },
         cp: {
             type: dataTypes.INTEGER(4),
-            validator: {
-                isNumeric: true
-            }
         },
         localidad: {
             type: dataTypes.STRING(45),
         },
         provincia: {
             type: dataTypes.STRING(45),
-
         },
     };
 
     let config = {
-        tableName: "users"
+        tableName: "users",
+        timestamps: true,
+        underscored: true
     }
     let User = sequelize.define(alias, cols, config)
 
