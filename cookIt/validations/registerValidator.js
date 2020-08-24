@@ -30,24 +30,22 @@ module.exports = [
         }
         return true
     })
-    .withMessage('Este mail ya está registrado'),
-    body('email')
-    .custom(value => {
-        console.log(value)
-        db.Usuario.findAll({
-                where: {
-                    email: value
-                }
-            })
-            .then(result => {
-                return false
-            })
-            .catch((err) => {
-                return true
-            })
+    .withMessage('Este mail ya está registrado'),*/
 
+
+
+
+    body('email')
+    .custom(async value => {
+        let usuario = await db.Usuario.findOne({
+            where: {
+                email: value
+            }
+        })
+        console.log(usuario)
+        return (usuario == null) ? false : true
     })
-    .withMessage('Problemas??'),*/
+    .withMessage('El usuario está registrado'),
 
     check('pass')
     .isLength({ min: 6, max: 16 })
