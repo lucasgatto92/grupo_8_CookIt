@@ -33,7 +33,7 @@ La audiencia objetivo serán personas adultas ya sean familias o individuos que 
 ## :page_facing_up: Listado de 5 páginas referentes 
 
 - [Juliana Lopez May](https://www.julianalopezmaytienda.com.ar)
-- [La Fueza](https://www.lafuerza.com.ar)
+- [La Fuerza](https://www.lafuerza.com.ar)
 - [Blue Apron](https://www.blueapron.com/)
 - [Hello Fresh](https://www.hellofresh.com)
 - [Simpleat](https://www.simpleat.com.ar/)
