@@ -2,4 +2,4 @@
 cookit/node_modules
 cookit/data/users.json
 cookit/data/products.json
-cookit/database/config.js
+cookit/database/config/config.js
