@@ -30,22 +30,28 @@ module.exports = [
         }
         return true
     })
-    .withMessage('Este mail ya está registrado'),*/
-
-
-
+    .withMessage('Este mail ya está registrado'),
 
     body('email')
-    .custom(async value => {
-        let usuario = await db.Usuario.findOne({
-            where: {
-                email: value
-            }
-        })
-        console.log(usuario)
-        return (usuario == null) ? false : true
+    .custom(function(value) {
+        db.Usuario.findOne({
+                where: {
+                    email: value
+                },
+            })
+            .then(function(results) {
+
+                if (results == null) {
+                    console.log("*******************")
+                    console.log(results)
+                    console.log("******ES NULO*******")
+                    return false
+                }
+            })
+        console.log("******HAY*******")
+
     })
-    .withMessage('El usuario está registrado'),
+    .withMessage('El email ya está registrado'),*/
 
     check('pass')
     .isLength({ min: 6, max: 16 })

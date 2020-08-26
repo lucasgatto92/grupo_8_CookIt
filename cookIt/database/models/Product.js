@@ -9,7 +9,7 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         nombre: {
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(100),
             allowNull: false,
             validator: {
                 notNull: true
@@ -17,11 +17,11 @@ module.exports = function(sequelize, dataTypes) {
 
         },
         precio: {
-            type: dataTypes.DECIMAL(4, 2),
+            type: dataTypes.INTEGER(4),
             allowNull: false,
             validator: {
                 notNull: true,
-                isDecimal: true
+                isNumeric: true
             }
         },
         descuento: {
@@ -34,7 +34,7 @@ module.exports = function(sequelize, dataTypes) {
             }
         },
         descripcion: {
-            type: dataTypes.STRING(255),
+            type: dataTypes.STRING(512),
             allowNull: false,
             validate: {
                 notNull: true
@@ -59,7 +59,7 @@ module.exports = function(sequelize, dataTypes) {
             }
         },
         calorias: {
-            type: dataTypes.INTEGER(3),
+            type: dataTypes.INTEGER(4),
             validator: {
                 isNumeric: true,
                 notNull: true
@@ -80,7 +80,9 @@ module.exports = function(sequelize, dataTypes) {
     };
 
     let config = {
-        tableName: "products"
+        tableName: "products",
+        timestamps: false
+
     }
     let User = sequelize.define(alias, cols, config)
 

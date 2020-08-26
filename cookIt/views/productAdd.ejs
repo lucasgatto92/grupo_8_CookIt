@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/head') %>
+
+
+    <body class="form-cargabody">
+        <%- include('partials/header') %>
+            <div class="fondoProducto">
+                <div class="formProducto">
+                    <div class="form-carga container p-5">
+                        <h3 class="titulocarga">Carga de producto en SQL</h3>
+                        <hr>
+                        <form action="/productos/save" method="POST" enctype="multipart/form-data">
+
+                            <div class="form-row">
+
+                                <!--nombre del producto-->
+                                <div class="titulo col-12 mb-3">
+                                    <label for="titulo">Título *</label>
+                                    <input type="text" class="form-control" id="titulo-producto" placeholder="Ej. Tagliatelle" name="nombre">
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <!--categoria del producto-->
+                                <div class="seccion col-md-4 mb-3">
+                                    <label for="seccion">Categoría *</label>
+                                    <div class="input-group">
+                                        <select id="seccion" name="categoria">
+                                            <option value="">Seleccionar..</option>
+                                            <% categorias.forEach(categoria => { %>
+                                                <option value="<%= categoria.id %> "><%= categoria.nombre %> </option>
+
+                                            <% }) %>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!--precio del producto-->
+                                <div class="precio col-md-4 mb-3">
+                                    <label for="precio">Precio *</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="number" class="form-control" id="precio" placeholder="Ej. 399" name="precio">
+                                    </div>
+                                </div>
+
+                                <!--descuento sobre el precio del producto-->
+                                <div class="descuento col-md-4 mb-3">
+                                    <label for="descuento">Descuento *</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="precio" placeholder="Ej. 10" name="descuento">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+
+                                <!--descripcion del producto-->
+                                <div class="ingredientes col-md-12 mb-12">
+                                    <label for="ingredientes">Descripción *</label>
+                                    <p><textarea class="form-control" id="descripcion" name="descripcion" maxlength="500" rows="8"></textarea></p>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+
+                                <!--tiempo preparacion del producto-->
+                                <div class="tiempo col-md-4 mb-3">
+                                    <label for="tiempo-prep">Tiempo de preparación</label>
+                                    <div class="input-group">
+                                        <select id="tiempo-prep" name="tiempo">
+                                            <option value="">Seleccionar..</option>
+                                            <option value="15">15 minutos</option>
+                                            <option value="20">20 minutos</option>
+                                            <option value="30">30 minutos</option>
+                                            <option value="45">45 minutos</option>
+                                            <option value="60">1 hora</option>
+                                            <option value="90">1 hora 30 minutos</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="apto col-md-4 mb-3">
+
+                                    <!--aptos del producto-->
+                                    <label for="apto">Apto</label>
+                                    <div class="input-group">
+                                        <label for="bajosodio" class="checks">
+                                            <input type="checkbox" name="sodio" id="bajosodio" value="sodio"> Bajo en sodio
+                                        </label>
+
+                                        <label for="vegano" class="checks">
+                                            <input type="checkbox" name="vegano" id="vegano" value="vegano"> Vegano
+                                        </label>
+
+                                        <label for="celiaco" class="checks">
+                                            <input type="checkbox" name="celiaco" id="celiaco" value="celiaco"> Sin TACC
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="porciones col-md-4 mb-3">
+                                    <label for="porciones">Porciones por unidad *</label>
+
+                                    <!--porciones del producto-->
+                                    <div class="input group">
+                                        <select id="porciones" name="porciones"> 
+                                            <option value="">Seleccionar...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="form-row">
+
+                                <div class="calorias col-md-4 mb-3">
+
+                                    <!--calorias del producto-->
+                                    <label for="calorias">Calorías</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="calorias" placeholder="Ej. 650" name="calorias">
+                                        <div class="input-group-prepend">
+                                            <span class="derecha input-group-text">calorías / porción</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!--imagenes del producto-->
+                                <div class="foto1 col-md-4 mb-3">
+                                    <label for="image">Imagenes *</label>
+                                    <input type="file" class="form-control upload" id="imagenes" accept="image/*" multiple="multiple" name="images">
+                                </div>
+
+
+
+                                <!--descuento del receta-->
+                                <div class="receta col-md-4 mb-3">
+                                    <label for="receta">Receta *</label>
+                                    <input type="file" class="form-control upload" id="receta" accept="application/pdf" name="receta">
+                                </div>
+                            </div>
+
+
+                            <div class="botones container">
+                                <div class="cargar">
+                                    <button class="btn btn-primary" type="submit">Cargar producto</button>
+                                </div>
+                                <div class="limpiar">
+                                    <button class="btn btn-danger" type="reset"> Limpiar formulario</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

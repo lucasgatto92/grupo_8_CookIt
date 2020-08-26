@@ -2,21 +2,12 @@
 const express = require('express');
 const productoController = require('../controllers/productosController');
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
 
 const sessionCheck = require('../middlewares/sessionUserCheck');
+const productMulter = require('../middlewares/productMulter');
 
 
-let storage = multer.diskStorage({
-    destination: function(req, file, callback) {
-        callback(null, 'public/images/products')
-    },
-    filename: function(req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-let upload = multer({ storage: storage });
+
 
 
 //RUTAS
@@ -25,8 +16,12 @@ router.get('/create', sessionCheck, productoController.agregar);
 router.get('/details/:id', sessionCheck, productoController.detalle);
 router.get('/:id/edit', sessionCheck, productoController.editar);
 
+//nuevas rutas para trabajar con base de datos
+router.get('/add', productoController.add);
+router.post('/save', productMulter.any(), productoController.save);
+router.get('/view', productoController.view);
 router.get('/productDetail/:id', sessionCheck, productoController.detalle);
-router.get('/list', productoController.list);
+
 
 router.post('/', upload.any(), productoController.guardar);
 router.put('/:id', upload.any(), productoController.actualizar);

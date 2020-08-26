@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <div id="fondoTablas" class="container-fluid">
+
+                <section id="blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <h1 class="heading">Nuestro amplio menú, solo para paladares exigentes</h1>
+                                    <ul>
+                                        <% productos.forEach(producto => { %>
+                                            <a href="/productos/productDetail/<%= producto.id %> ">
+                                                <li class="wow fadeInLeft mt-3" data-wow-duration="300ms" data-wow-delay="300ms">
+                                                    <div class="blog-img">
+                                                        <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img" class="img-fluid" style="height: 250px; width: 100%;">
+                                                    </div>
+                                                    <div class="content-right">
+                                                        <h4>
+                                                            <%= producto.nombre %>
+                                                        </h4>
+                                                        <h3>
+                                                            $
+                                                            <%= producto.precio %>
+                                                        </h3>
+                                                    </div>
+                                                </li>
+                                            </a>
+                                            <% }) %>
+
+                                    </ul>
+                                    <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" role="button" href="/productos/view">Ver más</a>
+                                </div>
+                            </div>
+                            <!-- .col-md-12 close -->
+                        </div>
+                        <!-- .row close -->
+                    </div>
+                    <!-- .containe close -->
+                </section>
+
+            </div>
+
+
+
+
+
+
+            <%- include('partials/footer') %>
+
+    </body>
+
+</html>

@@ -2,9 +2,106 @@ let dbProductos = require('../data/dbProductos');
 const fs = require('fs');
 const render = require('../functions/render')
 
+const db = require('../database/models'); //requiero la base de datos
+
+
 module.exports = {
-    list: (req, res) => {
-        render(req, res, 'productsList')
+    view: (req, res) => {
+        let rol = undefined;
+        let id = undefined;
+
+
+        if (req.session.user != undefined) {
+            let session = req.session.user;
+            rol = session.rol;
+            id = session.id;
+        }
+        db.Producto.findAll()
+            .then(productos => {
+                res.render('productsView', {
+                    productos: productos,
+                    user: req.session.user,
+                    rol: rol,
+                    id: id
+                })
+            })
+
+    },
+    detail: function(req, res) {
+        let idProducto = id.params.id;
+
+    },
+    add: function(req, res) {
+        let rol = undefined;
+        let id = undefined;
+
+
+        if (req.session.user != undefined) {
+            let session = req.session.user;
+            rol = session.rol;
+            id = session.id;
+        }
+        db.Categoria.findAll()
+            .then(categorias => {
+                res.render('productAdd', {
+                    categorias: categorias,
+                    productos: dbProductos,
+                    user: req.session.user,
+                    rol: rol,
+                    id: id
+                })
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    },
+    save: function(req, res) {
+        let aptoArray = [];
+        if (req.body.sodio) {
+            aptoArray.push("sodio")
+        };
+        if (req.body.vegano) {
+            aptoArray.push("vegano")
+        };
+        if (req.body.celiaco) {
+            aptoArray.push("celiaco")
+        };
+        let apto = aptoArray.join(',');
+
+        let imagesFiles = req.files.filter(file => {
+            return file.fieldname == "images"
+        })
+        let imagesArray = [];
+        imagesFiles.forEach(imagen => {
+            imagesArray.push(imagen.filename);
+        })
+        let images = imagesArray.join(',');
+
+        let pdfFile = req.files.filter(file => {
+            return file.fieldname == "receta"
+        })
+        db.Producto.create({
+                nombre: req.body.nombre.trim(),
+                precio: Number(req.body.precio),
+                descuento: Number(req.body.descuento),
+                descripcion: req.body.descripcion.trim(),
+                tiempo: Number(req.body.tiempo),
+                apto: apto,
+                porciones: Number(req.body.porciones),
+                calorias: Number(req.body.calorias),
+                imagenes: images,
+                receta: pdfFile[0].filename,
+                idCategory: (req.body.categoria) ? req.body.categoria : 1
+            })
+            .then(result => {
+                console.log('****************************************')
+                console.log('el producto se guardo satisfactoriamente')
+                console.log('****************************************')
+                res.redirect('/productos/view');
+            })
+            .catch(err => {
+                console.log(err)
+            })
     },
     listar: (req, res) => {
         dbProductos = require('../data/dbProductos');
