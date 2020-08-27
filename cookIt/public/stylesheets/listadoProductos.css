@@ -51,6 +51,7 @@
 }
 
 .list-Prod a .fa-edit {
+    font-size: 30px;
     color: green;
 }
 
@@ -60,6 +61,7 @@
 }
 
 .list-Prod .fa-trash-alt {
+    font-size: 30px;
     color: red;
 }
 

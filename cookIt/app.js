@@ -24,6 +24,7 @@ var usersRouter = require('./routes/users');
 //RUTEADORES PROPIOS
 let mainRouter = require('./routes/main');
 let productosRouter = require('./routes/productos');
+let adminRouter = require('./routes/admin');
 //let usuariosRouter = require('./routes/usuarios');
 
 
@@ -53,6 +54,7 @@ app.use('/users', usersRouter);
 //RUTAS PROPIAS
 app.use('/', mainRouter);
 app.use('/productos', productosRouter);
+app.use('/admin', adminRouter);
 //app.use('/usuarios', usuariosRouter);
 //app.use('/carga', cargaRouter);
 

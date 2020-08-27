@@ -10,17 +10,17 @@
 
                         <div class="row">
                             <div class="col-lg-3 col-md-6 image">
-                                <img src="/images/products/<%- producto.image[0] %> " alt="">
+                                <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img">
                             </div>
                             <div class="col-lg-7 col-md-6 data">
                                 <div class="titlePrice">
                                     <h3>
                                         <a href="/productos/details/<%- producto.id %>">
-                                            <%- producto.name %>
+                                            <%- producto.nombre %>
                                         </a>
                                     </h3>
                                     <h4>$
-                                        <%- producto.price %>
+                                        <%- producto.precio %>
                                     </h4>
                                 </div>
 
@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <p>
-                                            <%- producto.description %>
+                                            <%- producto.descripcion %>
                                         </p>
                                     </div>
                                     <div class="col-xl-6 col-lg-12">
@@ -41,17 +41,17 @@
                                     <div class="col-xl-6 col-lg-12">
                                         <li>
                                             categoria:
-                                            <%- producto.category %>
+                                            <%- producto.idCategory %>
                                         </li>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="col-lg-2 control ">
+                                <a href="/admin/products/<%- producto.id %>/edit"> <button><i class="far fa-edit"></i></button></a>
                                 <form action="/productos/<%- producto.id %>?_method=DELETE" method="POST">
                                     <a href=""> <button type="submit"><i class="fas fa-trash-alt"></i></button></a>
                                 </form>
-                                <a href="/productos/<%- producto.id %>/edit "> <button><i class="far fa-edit"></i></button></a>
                             </div>
                         </div>
                         <hr>
