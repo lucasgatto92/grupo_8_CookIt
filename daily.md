@@ -11,7 +11,7 @@ _En este nuevo sprint, nos juntamos a chequear las funcionalidades del e-commerc
 
 :books: **Qué va a hacer hoy:** Investigar para el sprint vigente, a cada uno le toco un tema distinto. A Eric le toca investigar sobre las tablas y las relaciones que podemos hacer en Sequelize, Lucas eligió armar la base de datos y Guadalupe decidió buscar fotos para el inicio.
 
-_En el día 25 de Agosto, se realizó una nueva reunión:
+_En el día 25 de Agosto, se realizó una nueva reunión:_
 
 :books: **Qué hizo ayer:** Se finalizó la investigación sobre el tema Sequelize, con el fin de ponerlo en práctica para este Sprint. Eric exhibió la base de datos, agrego vistas nuevas y Lucas terminó el pdf con las relaciones vinculantes.
 
@@ -19,7 +19,7 @@ _En el día 25 de Agosto, se realizó una nueva reunión:
 
 :books: **Qué va a hacer hoy:** Eric eligio mejorar la base de datos; por su parte, Lucas se encarga del controlador y enrutador del lado del administrador. A Guadalupe le toca agregar y enrobustecer la base de datos.
 
-_La próxima daily se realizará previo a entregar el sprint, el día 27 de Agosto, para revisar las tareas y entregar el sprint.
+_La próxima daily se realizará previo a entregar el sprint, el día 27 de Agosto, para revisar las tareas y entregar el sprint._
 
 
 
