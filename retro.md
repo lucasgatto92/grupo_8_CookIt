@@ -1,3 +1,26 @@
+# :pushpin: Sprint 4: Retro
+
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
+
+:heavy_check_mark: **Comenzar a hacer:**
+- Empezar a pulir detalles finos, ya sea, faltas de ortografía si las hay, mayúsculas en el inicio de cada oración.
+
+:heavy_check_mark: **Hacer más:** 
+- Actualizar el trello periódicamente.
+
+:heavy_check_mark: **Continuar haciendo:**
+- Compartir código, en nuestro Slack.
+- Mantener los medios de comunicación abiertos. Comunicar fallas o errores en el proyecto, mantener un flujo constante de diálogo.
+- Realizar daily meetings periódicamente, con el fin de saber donde esta situado en el proyecto el otro.
+- Las herramientas, ya sea, las daily meeting, el Trello, han sido útiles para llevar adelante el proyecto, haciendo un uso correcto de las buenas prácticas.
+
+:heavy_check_mark:**Hacer menos:**
+- Dejar de preocuparnos por el diseño, ya que, consolidamos una estética unificada y sólida, sin perder de vista nuestra experiencia como usuarios del sitio.
+
+:heavy_check_mark: **Dejar de hacer:**
+- Consideramos que los usos que le estamos dando a las herramientas, funcionan para que el proyecto se lleve adelante.
+
+
 # :pushpin: Sprint 3: Retro
 
 ## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
