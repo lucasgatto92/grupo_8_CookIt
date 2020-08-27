@@ -37,10 +37,12 @@
 - Conservar el Trello ordenado.
 - Sostener los daily meeting, por lo menos una vez por semana.
 
-:heavy_check_mark:**Hacer menos:**
+:heavy_check_mark:**Hacer menos:** 
+_Null
 
 
 :heavy_check_mark: **Dejar de hacer:**
+_Null
 
 
 # :pushpin: Sprint 2: Retro
