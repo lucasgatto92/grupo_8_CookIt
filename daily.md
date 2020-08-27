@@ -3,7 +3,7 @@
 
 
 ##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
-_En este nuevo sprint, nos juntamos a chequear las funcionalidades del e-commerce, el día 21 de Agosto._
+:information_source: _En este nuevo sprint, nos juntamos a chequear las funcionalidades del e-commerce, el día 21 de Agosto._
 
 :books: **Qué hizo ayer:** Se entrego el sprint número 3 completo. Chequeamos entre todos las funcionalidades las sitio, revisamos vistas y middlewares.
 
@@ -11,7 +11,9 @@ _En este nuevo sprint, nos juntamos a chequear las funcionalidades del e-commerc
 
 :books: **Qué va a hacer hoy:** Investigar para el sprint vigente, a cada uno le toco un tema distinto. A Eric le toca investigar sobre las tablas y las relaciones que podemos hacer en Sequelize, Lucas eligió armar la base de datos y Guadalupe decidió buscar fotos para el inicio.
 
-_En el día 25 de Agosto, se realizó una nueva reunión:_
+
+## Nuevo daily meeting: :watch:
+:information_source: _En el día 25 de Agosto, se realizó una nueva reunión:_
 
 :books: **Qué hizo ayer:** Se finalizó la investigación sobre el tema Sequelize, con el fin de ponerlo en práctica para este Sprint. Eric exhibió la base de datos, agrego vistas nuevas y Lucas terminó el pdf con las relaciones vinculantes.
 
@@ -27,7 +29,7 @@ _La próxima daily se realizará previo a entregar el sprint, el día 27 de Agos
 
 
 ##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
-_En este sprint, nos juntamos a ver las nuevas tareas y empezar una revisión de las tareas que aún faltan terminar, el día 28 de Julio._
+:information_source: _En este sprint, nos juntamos a ver las nuevas tareas y empezar una revisión de las tareas que aún faltan terminar, el día 28 de Julio._
 
 :books: **Qué hizo ayer:** En común acuerdo, coordinamos que las tareas deben estar terminadas para la próxima reunión a realizar dentro de tres días con el fin de poder distribuir nuevas tareas del nuevo sprint y comunicarnos cuando subimos algo al repositorio. 
 
@@ -36,7 +38,7 @@ _En este sprint, nos juntamos a ver las nuevas tareas y empezar una revisión de
 :books: **Qué va a hacer hoy:** Reacomodar el Trello y actualizar rutas, views y fotos.
 
 ## Se realizo otra daily meeting, el día 2 de Agosto: :watch:
-_En esta meeting, nos juntamos para pulir lo ya hecho y acordar los próximos pasos a seguir para completar el sprint 3._
+:information_source: _En esta meeting, nos juntamos para pulir lo ya hecho y acordar los próximos pasos a seguir para completar el sprint 3._
 
 :books: **Qué hizo ayer:** En esta reunión, Eric actualizo el trello, añadió listas y agrego las devoluciones para que las pudieramos corregir a futuro. A su vez, mostró en lo que estaba avanzando con respecto a la actualización de imágenes en la edición de productos (delete, add, create). Por su parte, Lucas terminó con la modificación en el formulario de carga/edición de productos. Por otra parte, Guadalupe tambien terminó de corregir el responsive de la versión mobile del carrito. Cada uno eligió una nueva tarea para poder continuar.
 
@@ -45,7 +47,7 @@ _En esta meeting, nos juntamos para pulir lo ya hecho y acordar los próximos pa
 :books: **Qué va a hacer hoy:** Avanzar con las tareas y en la semana, volvernos a reunir. 
 
 ## Se realizo una daily meeting previa a entregar el sprint, el día 11 de Agosto: :watch:
-_Se pactó una nueva meeting con el fin de revisar lo hecho en el sprint vigente_
+:information_source: _Se pactó una nueva meeting con el fin de revisar lo hecho en el sprint vigente_
 
 :books: **Qué hizo ayer:** Tanto Lucas como Eric, habían terminado sus respectivas tareas. Las cuales, se propusieron realizar algunos arreglos. En el caso de Eric, mejorar el código del header para que sea más funcional visualmente y entendible; por el otro lado, Lucas se ocupó de mejorar la implementacion de las identidades de los usuarios y perfeccionar el formulario de carga de productos. Y, por último, a Guadalupe tenía que realizar la segunda parte del carrito.
 
@@ -60,7 +62,7 @@ _Se pactó una nueva meeting con el fin de revisar lo hecho en el sprint vigente
 
 
 ## Cada equipo habla como máximo 3 minutos de 3 temas puntuales, el día 23 de Julio: :watch:
-_En nuestro caso, nos juntamos dos veces por semana por la plataforma de Zoom. En la cual, compartimos lo que hizo cada uno y exponemos dudas._
+:information_source: _En nuestro caso, nos juntamos dos veces por semana por la plataforma de Zoom. En la cual, compartimos lo que hizo cada uno y exponemos dudas._
 
 :books: **Qué hizo ayer:** hicimos una breve exposición cada uno en la cual, pudimos observar el avance del otro miembro del grupo. Esto gana una visión general de lo que se han hecho los demás. En esta reunión en particular (24/7), Eric nos mostró su avance del CRUD de productos, Lucas modifico y perfecciono el LOGIN y Guadalupe actualizo el retro.
 
