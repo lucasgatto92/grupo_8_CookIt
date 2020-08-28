@@ -16,7 +16,9 @@ module.exports = {
             rol = session.rol;
             id = session.id;
         }
-        db.Producto.findAll()
+        db.Producto.findAll({
+                include: [{ association: "categorias" }]
+            })
             .then(productos => {
                 res.render('listarProductos', {
                     productos: productos,

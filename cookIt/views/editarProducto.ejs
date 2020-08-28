@@ -20,17 +20,11 @@
                                     <label for="seccion">Categoría *</label>
                                     <div class="form-group">
                                         <select id="seccion" name="categoria" class="form-control">
-                                            <option value="<%- producto.idCategory %>"><%- producto.idCategory %> </option>
-                                            <option value="med">Mediterranea</option>
-                                            <option value="mex">Mexicana</option>
-                                            <option value="ita">Italiana</option>
-                                            <option value="sui">Suiza</option>
-                                            <option value="esp">Española</option>
-                                            <option value="vin-tjov">VINOS - Tinto Joven</option>
-                                            <option value="vin-tres">VINOS - Tinto Reserva</option>
-                                            <option value="vin-bjov">VINOS - Blanco Joven</option>
-                                            <option value="vin-bres">VINOS - Blanco Reserva</option>
+                                            <option value="<%- producto.idCategory %>"><%- producto.categorias.nombre %> </option>
+                                            
+
                                         </select>
+
                                     </div>
                                 </div>
                                 <!--<div class="foto1 col-md-4 mb-3">
