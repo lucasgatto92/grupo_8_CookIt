@@ -20,11 +20,29 @@ module.exports = {
     login: function(req, res) {
         render(req, res, 'login')
     },
+    loginInit: function(req, res) {
+        let url = "/";
+        if (req.session.url) {
+            url = req.session.url;
+        }
+        let errors = validationResult(req);
+        if (errors.isEmpty()) { //si no hay errores
+            res.send('se loguea')
+        } else {
+            res.render('login', {
+                errors: errors.mapped(), //paso los errores en un objeto literal
+                old: req.body, //paso la resistencia de los datos correctos
+                productos: dbProductos, //paso todos los productos
+                rol: undefined,
+                user: undefined
+            });
+        }
+    },
     processLogin: function(req, res, next) {
         let url = "/"
         if (req.session.url) {
             url = req.session.url;
-        } else {}
+        }
         let errors = validationResult(req);
         if (errors.isEmpty()) { //si no hay errores
             usuarios.forEach(function(usuario) {
@@ -99,7 +117,9 @@ module.exports = {
                             errors["pass"]["msg"] = element.message
                         }
                     })
+                    res.send(errors)
                     res.render('registro', {
+
                         errors: errors, //paso los errores en un objeto literal
                         old: req.body, //paso la persistencia de los datos correctos
                         productos: dbProductos, //paso los productos necesarios para mostrar en el menú

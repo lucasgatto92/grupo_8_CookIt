@@ -37,10 +37,14 @@ module.exports = function(sequelize, dataTypes) {
         email: {
             type: dataTypes.STRING(45),
             allowNull: false,
+            unique: {
+                args: true,
+                msg: "El email ya está registrado en el sistema"
+            },
             validate: {
                 isEmail: {
                     args: true,
-                    msg: "Debe escribir un email válido"
+                    msg: "Debe escribir un email válido ameo"
                 },
                 notEmpty: {
                     msg: "El campo email es obligatorio"

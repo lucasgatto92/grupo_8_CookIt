@@ -24,8 +24,9 @@ router.get('/registro', usersController.registro);
 //router.post('/registro', avatarMulter.any(), registerValidator, usersController.guardar); //metodo JSON
 router.post('/registro', avatarMulter.any(), registerValidator, usersController.save); //metodo SQL
 
+router.post('/login', loginValidator, usersController.loginInit); //creo un metodo que reciba y valide los datos para loguearse por SQL
 
-router.post('/login', loginValidator, usersController.processLogin); //creo un metodo que reciba y valide los datos para loguearse
+//router.post('/login', loginValidator, usersController.processLogin); //creo un metodo que reciba y valide los datos para loguearse POR JSON
 
 
 module.exports = router;
