@@ -73,26 +73,26 @@ module.exports = {
                 console.log(err)
             })
     },
-    edit: (req, res) => { //PRIMER INTENTO FUNCIONAL
-        db.Producto.findOne({
-                where: {
-                    id: req.params.id
-                },
-                include: [{ association: "categoria" }]
+    /* edit: (req, res) => { //PRIMER INTENTO FUNCIONAL
+         db.Producto.findOne({
+                 where: {
+                     id: req.params.id
+                 },
+                 include: [{ association: "categoria" }]
 
-            })
-            .then(producto => {
-                db.Categoria.findAll()
-                    .then(categorias => {
+             })
+             .then(producto => {
+                 db.Categoria.findAll()
+                     .then(categorias => {
 
-                        res.render('productEdit', {
-                            producto: producto,
-                            categorias: categorias
-                        })
-                    })
-            })
+                         res.render('productEdit', {
+                             producto: producto,
+                             categorias: categorias
+                         })
+                     })
+             })
 
-    },
+     },*/
     edit: function(req, res) {
         let producto = db.Producto.findByPk(req.params.id, { include: [{ association: "categoria" }] });
         let categorias = db.Categoria.findAll();
@@ -107,6 +107,7 @@ module.exports = {
 
     },
     update: function(req, res) {
+        res.send(req.body)
         let aptoArray = [];
         if (req.body.sodio) {
             aptoArray.push("sodio")
@@ -118,7 +119,6 @@ module.exports = {
             aptoArray.push("celiaco")
         };
         let apto = aptoArray.join(',');
-        res.send(apto)
 
         let imagesFiles = req.files.filter(file => {
             return file.fieldname == "images"

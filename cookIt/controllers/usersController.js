@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const render = require('../functions/render')
 
 
-
 let dbProductos = require('../data/dbProductos');
 let dbUsuarios = require('../data/dbUsers');
 const { validationResult } = require('express-validator'); //traigo de express-validator el array 'validationResult' para mostrar los errores en la validación
