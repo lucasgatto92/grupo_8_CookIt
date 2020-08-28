@@ -27,15 +27,12 @@ module.exports = {
         }
         let errors = validationResult(req);
         if (errors.isEmpty()) { //si no hay errores
-            res.send('se loguea')
+            if (req.body.recordarme) {
+                res.cookie('user', req.body.email, { maxAge: 1000 * 60 * 2 }) //creo una cookie usando el metódo cookie pasandole tres parametros: el nombre de la cookie, el dato que almacena y la duracion expresada en milisegundos dentro de un objeto literal con una propiedad llamada 'maxAge:'
+            }
+            return res.redirect(url);
         } else {
-            res.render('login', {
-                errors: errors.mapped(), //paso los errores en un objeto literal
-                old: req.body, //paso la resistencia de los datos correctos
-                productos: dbProductos, //paso todos los productos
-                rol: undefined,
-                user: undefined
-            });
+            res.send(errors)
         }
     },
     processLogin: function(req, res, next) {
