@@ -11,20 +11,13 @@ const productMulter = require('../middlewares/productMulter');
 
 
 //RUTAS
-router.get('/', productoController.listar);
-router.get('/create', productoController.agregar);
-router.get('/details/:id', productoController.detalle);
-router.get('/:id/edit', productoController.editar);
+router.get('/details/:id', productoController.detail);
 
 //nuevas rutas para trabajar con base de datos
-router.get('/add', productoController.add);
-router.post('/save', productMulter.any(), productoController.save);
 router.get('/view', productoController.view);
-router.get('/productDetail/:id', productoController.detalle);
+router.get('/productDetail/:id', productoController.detail);
 
 
-router.post('/', upload.any(), productoController.guardar);
-router.put('/:id', upload.any(), productoController.actualizar);
 router.delete('/:id', upload.any(), productoController.borrar);
 
 

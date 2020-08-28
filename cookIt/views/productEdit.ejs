@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<%- include('partials/head') %>
+
+
+    <body class="form-cargabody editarProduct">
+        <%- include('partials/header') %>
+
+            <div class="fondoProducto">
+                <div class="formProducto p-5">
+                    <h2 class="titulocarga container">Editar de Producto</h2>
+                    <div class="form-carga container">
+
+                        <form action="/admin/products/<%- producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                            <div class="form-row">
+                                <div class="titulo col-md-8 mb-3">
+
+                                    <label for="titulo">Título *</label>
+                                    <input type="text" class="form-control" id="titulo-producto" name="nombre" value="<%- producto.nombre %> ">
+
+                                </div>
+                                <div class="seccion col-md-4 mb-3">
+
+                                    <label for="seccion">Categoría *</label>
+
+                                    <div class="form-group">
+
+                                        <select id="seccion" name="categoria" class="form-control">
+                                         
+                                            <option value="<%= producto.categoria.id %>" selected><%= producto.categoria.nombre %> </option>
+                                            <% categorias.forEach(categoria => { %>
+                                                
+                                                <% if (categoria.nombre != producto.categoria.nombre) { %>
+                                                    <option value="<%= categoria.id %>"><%= categoria.nombre %> </option>
+                                                <% } %>
+
+                                            <% }) %>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-row">
+                                <% producto.imagenes.split(',').forEach(imagen => { %>
+
+                                    <div class="col-md-3 imagen">
+
+                                        <img src="/images/products/<%= imagen %>" class="img-thumbnail ">
+
+                                        <div>
+                                            <input type="checkbox" name="elimina" value="<%= imagen %>"> Eliminar
+                                        </div>
+
+                                    </div>
+                                    <% }) %>
+
+                                        <input type="file" class="input-control" id="imagenes" accept="image/*" multiple="multiple" name="images">
+
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="apto col-md-5 mb-3">
+                                    <!--aptos del producto-->
+                                    <label for="apto">Apto</label>
+                                    <div class="input-group">
+                                        <% producto.apto.split(',').forEach(apto => { %>
+                                            <% if (apto == "sodio") { %>
+                                                <label for="bajosodio" class="checks">
+                                                <input type="checkbox" name="sodio" id="bajosodio" value="sodio"checked> Bajo en sodio
+                                            </label>
+                                                <% } else { %>
+                                                    <label for="bajosodio" class="checks">
+                                                        <input type="checkbox" name="sodio" id="bajosodio" value="sodio"> Bajo en sodio
+                                                    </label>
+                                                    <% } %>
+
+                                                        <% if (apto == "vegano") { %>
+                                                            <label for="vegano" class="checks">
+                                                <input type="checkbox" name="vegano" id="vegano" value="vegano" checked> Vegano
+                                            </label>
+                                                            <% } else { %>
+                                                                <label for="vegano" class="checks">
+                                                                    <input type="checkbox" name="vegano" id="vegano" value="vegano" > Vegano
+                                                                </label>
+                                                                <% } %>
+                                                                    <% if (apto == "celiaco") { %>
+                                                                        <label for="celiaco" class="checks">
+                                                <input type="checkbox" name="celiaco" id="celiaco" value="celiaco" checked> Sin TACC
+                                            </label>
+                                                                        <% } else { %>
+                                                                            <label for="celiaco" class="checks">
+                                                    <input type="checkbox" name="celiaco" id="celiaco" value="celiaco" > Sin TACC
+                                                </label>
+                                                                            <% } %>
+
+                                                                                <% }) %>
+                                    </div>
+                                </div>
+
+                                <div class="tiempo col-md-3 mb-3">
+                                    <label for="tiempo-prep">Tiempo de preparación</label>
+                                    <div class="form-group">
+                                        <select id="tiempo-prep" name="tiempo" class="form-control">
+                                            <option value="<%- producto.tiempo %>"> <%- producto.tiempo %> minutos</option>
+                                            
+                                            <option value="15">15 minutos</option>
+                                            <option value="20">20 minutos</option>
+                                            <option value="30">30 minutos</option>
+                                            <option value="45">45 minutos</option>
+                                            <option value="60">1 hora</option>
+                                            <option value="90">1 hora 30 minutos</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="calorias col-md-4 mb-3">
+                                    <label for="calorias">Calorías</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="calorias" placeholder="Ej. 650" name="calorias" value="<%= producto.calorias %> ">
+                                        <div class="input-group-prepend">
+                                            <span class="derecha input-group-text">calorías / porción</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="porciones col-md-2 mb-3">
+                                    <label for="porciones">Porciones por unidad *</label>
+                                    <div class="input group">
+                                        <select id="porciones" name="porciones"> 
+                                            <option value="<%= producto.porciones %> "> <%= producto.porciones %> </option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="receta col-md-5 mb-3">
+                                    <label for="receta">Receta *</label>
+                                    <input type="file" class="form-control upload" id="receta" accept="application/pdf" name="receta">
+                                </div>
+
+                                <div class="precio col-md-3 mb-3">
+
+                                    <label for="precio">Precio *</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="precio" name="precio" value="<%- producto.precio %>">
+                                    </div>
+
+                                </div>
+
+                                <div class="descuento col-md-2 mb-3">
+
+                                    <label for="descuento">Descuento</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="descuento" name="descuento" value="<%- producto.descuento %>">
+                                        <div class="input-group-prepend">
+                                            <span class="derecha input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="botones container">
+                                <div class="cargar">
+                                    <button class="btn btn-primary" type="submit">Actualizar</button>
+                                </div>
+                                <div class="limpiar">
+                                    <button class="btn btn-danger" type="button">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

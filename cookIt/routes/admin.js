@@ -9,9 +9,11 @@ const productMulter = require('../middlewares/productMulter');
 
 
 //rutas administración de productos
-router.get('/products', adminController.products);
-router.get('/products/:id/edit', adminController.editProduct);
-
+router.get('/products', adminController.list);
+router.get('/products/add', adminController.add);
+router.post('/products/save', productMulter.any(), adminController.save);
+router.get('/products/:id/edit', adminController.edit);
+router.put('/products/:id', productMulter.any(), adminController.update)
 
 
 //rutas administración de usuarios
