@@ -6,6 +6,7 @@ const db = require('../database/models'); //requiero la base de datos
 
 
 module.exports = {
+
     view: (req, res) => {
         let rol = undefined;
         let id = undefined;
@@ -16,6 +17,7 @@ module.exports = {
             rol = session.rol;
             id = session.id;
         }
+
         db.Producto.findAll()
             .then(productos => {
                 res.render('productsView', {

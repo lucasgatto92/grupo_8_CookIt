@@ -17,7 +17,7 @@ module.exports = {
             id = session.id;
         }
         db.Producto.findAll({
-                include: [{ association: "categorias" }]
+                include: [{ association: "categoria" }]
             })
             .then(productos => {
                 res.render('listarProductos', {
@@ -39,15 +39,27 @@ module.exports = {
             id = session.id;
         }
 
-        db.Producto.findByPk(req.params.id)
-            .then(producto => {
+        db.Producto.findOne({
+                where: {
+                    id: req.params.id
+                },
+                include: [{ association: "categoria" }]
 
-                res.render('editarProducto', {
-                    producto: producto,
-                    user: req.session.user,
-                    rol: rol,
-                    id: id
-                })
             })
+            .then(producto => {
+                db.Categoria.findAll()
+                    .then(categorias => {
+
+                        res.render('editarProducto', {
+                            producto: producto,
+                            categorias: categorias,
+                            user: req.session.user,
+                            rol: rol,
+                            id: id
+                        })
+                    })
+
+            })
+
     }
 }

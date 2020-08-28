@@ -20,9 +20,15 @@
                                     <label for="seccion">Categoría *</label>
                                     <div class="form-group">
                                         <select id="seccion" name="categoria" class="form-control">
-                                            <option value="<%- producto.idCategory %>"><%- producto.categorias.nombre %> </option>
-                                            
+                                         
+                                            <option value="<%= producto.categoria.id %>" selected><%= producto.categoria.nombre %> </option>
+                                            <% categorias.forEach(categoria => { %>
+                                                <% if (categoria.nombre != producto.categoria.nombre) { %>
+                                                    <option value="<%= categoria.id %>"><%= categoria.nombre %> </option>
 
+                                                <% } %>
+
+                                            <% }) %>
                                         </select>
 
                                     </div>
