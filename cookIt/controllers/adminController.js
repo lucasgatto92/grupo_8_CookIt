@@ -36,8 +36,10 @@ module.exports = {
             rol = session.rol;
             id = session.id;
         }
+
         db.Producto.findByPk(req.params.id)
             .then(producto => {
+
                 res.render('editarProducto', {
                     producto: producto,
                     user: req.session.user,

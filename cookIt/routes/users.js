@@ -13,7 +13,7 @@ const sessionCheck = require('../middlewares/sessionUserCheck');
 //RUTAS
 router.get('/', usersController.listar);
 
-router.get('/perfil/:id', sessionCheck, usersController.perfil);
+router.get('/perfil/:id', usersController.perfil);
 
 router.get('/login', usersController.login);
 

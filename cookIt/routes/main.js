@@ -8,8 +8,8 @@ const sessionCheck = require('../middlewares/sessionUserCheck');
 
 //RUTAS
 router.get('/', mainController.home);
-router.get('/carrito', sessionCheck, mainController.carrito)
-router.get('/checkOut', sessionCheck, mainController.checkOut)
+router.get('/carrito', mainController.carrito)
+router.get('/checkOut', mainController.checkOut)
 
 
 module.exports = router;
