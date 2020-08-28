@@ -39,7 +39,7 @@ module.exports = [
                     return Promise.reject('La contraseña es incorrecta')
                 } else {
                     let usuario = result;
-                    console.log(usuario)
+                    console.log(usuario.dataValues)
                     return usuario
                 }
             })

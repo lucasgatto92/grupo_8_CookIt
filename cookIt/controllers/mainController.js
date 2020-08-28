@@ -1,11 +1,19 @@
-let productos = require('../data/dbProductos');
-let usuarios = require('../data/dbUsers');
-let dbProducts = require('../data/dbProducts')
+let dbUsuarios = require('../data/dbUsers');
+let dbProducts = require('../data/dbProducts');
+let dbProductos = require('../data/dbProductos');
 let render = require('../functions/render')
 
 const mainController = {
     home: (req, res) => {
-        render(req, res, 'home')
+        res.render('home', {
+            dbUsuarios: dbUsuarios,
+            productos: dbProducts,
+            products: dbProductos,
+            user: req.session.user,
+            rol: "admin",
+            id: undefined
+        })
+
     },
     carrito: (req, res) => {
         render(req, res, 'carrito')

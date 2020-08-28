@@ -17,7 +17,7 @@ module.exports = function(req, res, vista) {
         productos: dbProductos,
         products: dbProducts,
         user: req.session.user,
-        rol: rol,
-        id: id
+        rol: "admin",
+        id: undefined
     })
 }

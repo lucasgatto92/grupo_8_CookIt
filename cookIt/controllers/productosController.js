@@ -19,6 +19,7 @@ module.exports = {
         db.Producto.findAll()
             .then(productos => {
                 res.render('productsView', {
+                    products: dbProductos,
                     productos: productos,
                     user: req.session.user,
                     rol: rol,

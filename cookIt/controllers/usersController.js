@@ -32,7 +32,13 @@ module.exports = {
             }
             return res.redirect(url);
         } else {
-            res.send(errors)
+            res.render('login', {
+                errors: errors.mapped(), //paso los errores en un objeto literal
+                old: req.body, //paso la resistencia de los datos correctos
+                productos: dbProductos, //paso todos los productos
+                rol: undefined,
+                user: undefined
+            });
         }
     },
     processLogin: function(req, res, next) {
