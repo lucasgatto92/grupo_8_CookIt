@@ -107,7 +107,6 @@ module.exports = {
 
     },
     update: function(req, res) {
-
         let aptoArray = [];
         if (req.body.sodio) {
             aptoArray.push("sodio")
@@ -119,10 +118,7 @@ module.exports = {
             aptoArray.push("celiaco")
         };
         let apto = aptoArray.join(',');
-
-        if (req.body.elimina) {
-
-        }
+        res.send(apto)
 
         let imagesFiles = req.files.filter(file => {
             return file.fieldname == "images"

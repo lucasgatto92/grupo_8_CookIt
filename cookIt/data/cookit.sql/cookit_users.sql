@@ -38,8 +38,9 @@ CREATE TABLE `users` (
   `provincia` varchar(45) DEFAULT NULL,
   `created_At` datetime DEFAULT NULL,
   `updated_At` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +49,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Eric','Mena','menaericdaniel@gmail.com','$2b$10$/tFBoVUAgJSfwJL4wDmuruJHHMkH7gKRIhH0ivUbPO40Q2E7OAfNS','default.png','user',NULL,NULL,NULL,NULL,'2020-08-26 00:27:05','2020-08-26 00:27:05');
+INSERT INTO `users` VALUES (1,'Eric','Mena','menaericdaniel@gmail.com','$2b$10$/tFBoVUAgJSfwJL4wDmuruJHHMkH7gKRIhH0ivUbPO40Q2E7OAfNS','default.png','user',NULL,NULL,NULL,NULL,'2020-08-26 00:27:05','2020-08-26 00:27:05'),(2,'Jorge','Lanata','jorge@jorge.com','$2b$10$Kw/hbAYEsa/eKw7OW/B7aOUyEh.49ciKCSPB.BzqsIofRRmRfJaSm','default.png','user',NULL,NULL,NULL,NULL,'2020-08-27 22:12:07','2020-08-27 22:12:07'),(3,'Jorge','Lanata','jorge@lanata.com','$2b$10$51qqZt4WUvRUaxspW.eU0uq3j0AuFGZYu.znREUOcGe3Iy69iiFg.','default.png','user',NULL,NULL,NULL,NULL,'2020-08-27 22:13:24','2020-08-27 22:13:24'),(5,'Lucas','Mena','lucasmena2004@gmail.com','$2b$10$eviXzYXc0ljDl5r5YQ4iQenuTOgT1IQDjDguXceEU.ARvIVFpVI7K','default.png','user',NULL,NULL,NULL,NULL,'2020-08-28 00:05:07','2020-08-28 00:05:07');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-25 21:52:07
+-- Dump completed on 2020-08-28 18:13:11
