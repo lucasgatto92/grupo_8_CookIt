@@ -17,7 +17,7 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = {
     login: function(req, res) {
-        render(req, res, 'login')
+        res.render('login')
     },
     loginInit: function(req, res) {
         let url = "/";
@@ -40,39 +40,6 @@ module.exports = {
             });
         }
     },
-    processLogin: function(req, res, next) {
-        let url = "/"
-        if (req.session.url) {
-            url = req.session.url;
-        }
-        let errors = validationResult(req);
-        if (errors.isEmpty()) { //si no hay errores
-            usuarios.forEach(function(usuario) {
-                if (usuario.email == req.body.email && bcrypt.compareSync(req.body.pass, usuario.pass)) { //evalúo si el usuario está resgistrado y si es correcta la conraseña ingresada
-                    if (req.body.recordarme) {
-                        res.cookie('user', req.body.email, { maxAge: 1000 * 60 * 5 }) //creo una cookie usando el metódo cookie pasandole tres parametros: el nombre de la cookie, el dato que almacena y la duracion expresada en milisegundos dentro de un objeto literal con una propiedad llamada 'maxAge:'
-                    }
-                    req.session.user = usuario;
-                    console.log(req.session.user);
-                    return res.redirect(url);
-                }
-            });
-            res.render('login', {
-                productos: dbProductos, //paso todos los productos
-                errorReg: "usuario y/o contraseña incorrecta", //envío un mensaje de error
-                rol: undefined,
-                user: undefined
-            });
-        } else { //si hay errores los paso al login
-            res.render('login', {
-                errors: errors.mapped(), //paso los errores en un objeto literal
-                old: req.body, //paso la resistencia de los datos correctos
-                productos: dbProductos, //paso todos los productos
-                rol: undefined,
-                user: undefined
-            });
-        }
-    },
     logout: function(req, res) {
         req.session.destroy() //destruyo la sesion
         if (req.cookies.user) { //verifico que la cookie exista OJO: cuando se requiere la cookie se escribe res.cookieS "con SSSSS"
@@ -82,7 +49,7 @@ module.exports = {
     },
     registro: function(req, res) {
         //res.render('registro', { productos: dbProductos });
-        render(req, res, 'registro')
+        res.render('registro')
     },
     save: function(req, res, next) {
         let errors = validationResult(req); //tengo el array de errores a la mano
@@ -171,19 +138,20 @@ module.exports = {
         }
     },
     listar: function(req, res) {
-        //res.render('users', { dbUsuarios, productos: dbProductos });
-        render(req, res, 'users')
+        db.Usuario.findAll()
+            .then(usuarios => {
+                res.render('users', {
+                    usuarios: usuarios
+                })
+            })
     },
     perfil: function(req, res) {
-        let idUsuario = req.params.id;
-        let usuario = dbUsuarios.filter(usuario => {
-            return usuario.id == Number(idUsuario)
-        })
-        res.render('perfil', {
-            usuario: usuario[0],
-            productos: dbProductos,
-            rol: req.session.user.rol,
-            user: req.session.user
-        });
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario => {
+                res.render('perfil', {
+                    usuario: usuario,
+                });
+            })
+
     }
 }
