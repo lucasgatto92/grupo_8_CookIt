@@ -1,4 +1,4 @@
-function sessionUserCheck(req, res, next) {
+module.exports = function sessionUserCheck(req, res, next) {
     if (req.session.user) {
         next()
     } else {
@@ -6,4 +6,3 @@ function sessionUserCheck(req, res, next) {
         res.redirect('/users/login')
     }
 }
-module.exports = sessionUserCheck;

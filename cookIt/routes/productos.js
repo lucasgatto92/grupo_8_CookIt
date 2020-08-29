@@ -1,7 +1,9 @@
 //MODULOS REQUERIDOS
 const express = require('express');
-const productoController = require('../controllers/productosController');
 const router = express.Router();
+
+const productoController = require('../controllers/productosController');
+
 
 // const = require('../middlewares/sessionUserCheck');
 const productMulter = require('../middlewares/productMulter');

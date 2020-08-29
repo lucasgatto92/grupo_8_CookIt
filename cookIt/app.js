@@ -13,8 +13,6 @@ let session = require('express-session'); //REQUIERO EXPRESS-SESSION LUEGO DE HA
 
 const methodOverride = require('method-override') //instalé y requerí este módulo para trabajar en los formularios los métodos PUT y DELETE
 
-const verifyUser = require('./validations/verifyUser');
-
 
 //ruteadores por defecto
 var indexRouter = require('./routes/index');

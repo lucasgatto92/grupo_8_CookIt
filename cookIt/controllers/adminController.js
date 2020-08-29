@@ -149,7 +149,22 @@ module.exports = {
                 id: req.params.id
             }
         })
-
+    },
+    listarUsuarios: function(req, res) {
+        db.Usuario.findAll()
+            .then(usuarios => {
+                res.render('users', {
+                    usuarios: usuarios
+                })
+            })
+    },
+    perfilUsuario: function(req, res) {
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario => {
+                res.render('perfil', {
+                    usuario: usuario,
+                });
+            })
 
     }
 }

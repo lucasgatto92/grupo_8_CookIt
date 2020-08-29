@@ -1,7 +1,6 @@
 let dbUsuarios = require('../data/dbUsers');
 let dbProducts = require('../data/dbProducts');
 let dbProductos = require('../data/dbProductos');
-let render = require('../functions/render')
 
 const mainController = {
     home: (req, res) => {

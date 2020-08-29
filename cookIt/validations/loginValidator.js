@@ -35,14 +35,11 @@ module.exports = [
             })
             .then(function(result) {
                 console.log(bcrypt.compareSync(value, result.dataValues.pass))
-                if (!bcrypt.compareSync(value, result.dataValues.pass)) {
+                if (!bcrypt.compareSync(value, result.dataValues.pass)) { //si no machea la contraseña
                     return Promise.reject('La contraseña es incorrecta')
-                } else {
-                    let usuario = result;
-                    console.log(usuario.dataValues)
-                    return usuario
                 }
             })
+
 
     })
 ]

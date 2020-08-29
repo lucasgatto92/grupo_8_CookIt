@@ -1,6 +1,5 @@
 let dbProductos = require('../data/dbProductos');
 const fs = require('fs');
-const render = require('../functions/render')
 
 const db = require('../database/models'); //requiero la base de datos
 
