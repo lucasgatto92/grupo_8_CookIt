@@ -10,6 +10,7 @@ module.exports = {
             .then(productos => {
                 res.render('listarProductos', {
                     productos: productos,
+                    user: req.session.user
                 })
             })
     },
@@ -19,6 +20,7 @@ module.exports = {
             .then(categorias => {
                 res.render('productAdd', {
                     categorias: categorias,
+                    user: req.session.user
                 })
             })
             .catch(err => {
@@ -73,26 +75,7 @@ module.exports = {
                 console.log(err)
             })
     },
-    /* edit: (req, res) => { //PRIMER INTENTO FUNCIONAL
-         db.Producto.findOne({
-                 where: {
-                     id: req.params.id
-                 },
-                 include: [{ association: "categoria" }]
 
-             })
-             .then(producto => {
-                 db.Categoria.findAll()
-                     .then(categorias => {
-
-                         res.render('productEdit', {
-                             producto: producto,
-                             categorias: categorias
-                         })
-                     })
-             })
-
-     },*/
     edit: function(req, res) {
         let producto = db.Producto.findByPk(req.params.id, { include: [{ association: "categoria" }] });
         let categorias = db.Categoria.findAll();
@@ -101,7 +84,8 @@ module.exports = {
             .then(function([producto, categorias]) {
                 res.render('productEdit', {
                     producto: producto,
-                    categorias: categorias
+                    categorias: categorias,
+                    user: req.session.user
                 })
             })
 
@@ -154,7 +138,8 @@ module.exports = {
         db.Usuario.findAll()
             .then(usuarios => {
                 res.render('users', {
-                    usuarios: usuarios
+                    usuarios: usuarios,
+                    user: req.session.user
                 })
             })
     },
@@ -163,6 +148,7 @@ module.exports = {
             .then(usuario => {
                 res.render('perfil', {
                     usuario: usuario,
+                    user: req.session.user
                 });
             })
 

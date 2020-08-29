@@ -82,18 +82,24 @@
                 <!--NAVEGACION USUARIO-->
 
                 <ul class="navbar-nav ml-auto user">
-                    <li>
-                        <a class="menu" href="/carrito">MI CARRITO</a>
+                    <% if (user) { %>
 
-                        <a class="icon" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <li class="ml-2">
-                        <a class="menu" href="/users/login">LOGIN</a>
-                        <a class="menu" href="/users/logout" hidden>LOGOUT</a>
+                        <li>
+                            <a class="menu" href="/carrito">MI CARRITO</a>
+
+                        </li>
+                        <li class="ml-2">
+                            <a class="menu" href="/users/login" hidden>LOGIN</a>
+                            <a class="menu" href="/users/logout">LOGOUT</a>
+                            <% } else {%>
+                                <a class="menu" href="/users/login">LOGIN</a>
+                                <a class="menu" href="/users/logout" hidden>LOGOUT</a>
+                                <% } %>
 
 
-                        <a class="icon" href="/users/login"><i class="fas fa-user "></i></a>
-                    </li>
+
+                                    <a class="icon" href="/users/login"><i class="fas fa-user "></i></a>
+                        </li>
                 </ul>
             </div>
 

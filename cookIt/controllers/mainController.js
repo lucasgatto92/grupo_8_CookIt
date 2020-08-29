@@ -8,16 +8,15 @@ const mainController = {
             dbUsuarios: dbUsuarios,
             productos: dbProducts,
             products: dbProductos,
-            user: req.session.user,
-            rol: "admin",
-            id: undefined
+            user: req.session.user
         })
 
     },
     carrito: (req, res) => {
-        res.render('carrito')
+        res.render('carrito', {
+            user: req.session.user
+        })
 
-        //res.render('carrito', { productos: productos })
     },
     checkOut: (req, res) => {
         res.render('checkOut')

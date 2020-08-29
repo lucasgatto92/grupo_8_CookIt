@@ -4,10 +4,10 @@ const mainController = require('../controllers/mainController');
 const router = express.Router();
 
 //MIDDLEWARES
+const sessionUserCheck = require('../middlewares/sessionUserCheck');
 
 
 //VALIDATIONS
-const sessionUserCheck = require('../validations/sessionUserCheck');
 
 
 //RUTAS

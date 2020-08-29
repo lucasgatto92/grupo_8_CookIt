@@ -16,7 +16,10 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = {
     login: function(req, res) {
-        res.render('login')
+        res.render('login', {
+            user: req.session.user
+
+        })
     },
     loginInit: function(req, res) {
         let url = "/";
