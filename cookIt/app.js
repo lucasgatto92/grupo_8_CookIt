@@ -25,6 +25,9 @@ let productosRouter = require('./routes/productos');
 let adminRouter = require('./routes/admin');
 //let usuariosRouter = require('./routes/usuarios');
 
+//MIDDLEWARES
+const cookieCheck = require('./middlewares/cookieCheck')
+
 
 var app = express();
 
@@ -49,7 +52,7 @@ app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 
 //RUTAS PROPIAS
-app.use('/', mainRouter);
+app.use('/', cookieCheck, mainRouter);
 app.use('/productos', productosRouter);
 app.use('/admin', adminRouter);
 //app.use('/usuarios', usuariosRouter);

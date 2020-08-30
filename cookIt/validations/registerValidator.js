@@ -39,7 +39,7 @@ module.exports = [
             })
             .then(function(result) {
                 if (result) {
-                    return Promise.reject('El usuario está registrado')
+                    return Promise.reject('Este email ya está registrado')
                 }
             })
     }),

@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 
 
 let dbProductos = require('../data/dbProductos');
-let dbUsuarios = require('../data/dbUsers');
 const { validationResult } = require('express-validator'); //traigo de express-validator el array 'validationResult' para mostrar los errores en la validación
 
 const db = require('../database/models'); //requiero la base de datos
@@ -60,7 +59,10 @@ module.exports = {
     },
     registro: function(req, res) {
         //res.render('registro', { productos: dbProductos });
-        res.render('registro')
+        res.render('registro', {
+            user: req.session.user
+
+        })
     },
     save: function(req, res, next) {
         let errors = validationResult(req); //tengo el array de errores a la mano
@@ -102,20 +104,15 @@ module.exports = {
 
                         errors: errors, //paso los errores en un objeto literal
                         old: req.body, //paso la persistencia de los datos correctos
-                        productos: dbProductos, //paso los productos necesarios para mostrar en el menú
-                        rol: undefined,
-                        id: undefined,
-                        user: undefined
+                        user: req.session.user
                     })
                 })
         } else {
             res.render('registro', {
                 errors: errors.mapped(), //paso los errores en un objeto literal
                 old: req.body, //paso la persistencia de los datos correctos
-                productos: dbProductos, //paso los productos necesarios para mostrar en el menú
-                rol: undefined,
-                id: undefined,
-                user: undefined
+                user: req.session.user
+
             })
         }
 
