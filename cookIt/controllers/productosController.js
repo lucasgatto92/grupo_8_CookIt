@@ -39,6 +39,7 @@ module.exports = {
             })
             .then(producto => {
                 res.render('productDetail', {
+                    user: req.session.user,
                     producto: producto
                 })
             })
