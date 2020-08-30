@@ -45,6 +45,7 @@ module.exports = {
                 errors.mapped().pass.msg = " "; //cambio este mensaje de error que no pude filtrarlo en las validaciones de forma correcta
             }
             res.render('login', {
+                user: req.session.user,
                 errors: errors.mapped(), //paso los errores en un objeto literal
                 old: req.body, //paso la resistencia de los datos correctos
             });
