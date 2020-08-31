@@ -16,13 +16,13 @@
                             <div class="form-row">
                                 <div class="titulo col-md-8 mb-3">
 
-                                    <label for="titulo">Título *</label>
+                                    <label for="titulo">Título</label>
                                     <input type="text" class="form-control" id="titulo-producto" name="nombre" value="<%- producto.nombre %> ">
 
                                 </div>
                                 <div class="seccion col-md-4 mb-3">
 
-                                    <label for="seccion">Categoría *</label>
+                                    <label for="seccion">Categoría</label>
 
                                     <div class="form-group">
 
@@ -41,7 +41,10 @@
                                     </div>
                                 </div>
 
-
+                                <div class="form-group col-12 mb-3">
+                                    <label for="exampleFormControlTextarea1">Descripción</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" style="resize: none;" name="descripcion"><%= producto.descripcion %>  </textarea>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <% producto.imagenes.split(',').forEach(imagen => { %>
@@ -130,9 +133,9 @@
                             </div>
                             <div class="form-row">
                                 <div class="porciones col-md-2 mb-3">
-                                    <label for="porciones">Porciones por unidad *</label>
-                                    <div class="input group">
-                                        <select id="porciones" name="porciones"> 
+                                    <label for="porciones">Porciones*</label>
+                                    <div class="input-group">
+                                        <select id="porciones" name="porciones" class="custom-select"> 
                                             <option value="<%= producto.porciones %> "> <%= producto.porciones %> </option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -146,7 +149,11 @@
 
                                 <div class="receta col-md-5 mb-3">
                                     <label for="receta">Receta *</label>
-                                    <input type="file" class="form-control upload" id="receta" accept="application/pdf" name="receta">
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-danger mr-1" data-toggle="modal" data-target="#exampleModal"><i class="far fa-file-pdf"></i></button>
+                                        <input type="file" class="form-control upload" id="receta" accept="application/pdf" name="receta">
+                                    </div>
+
                                 </div>
 
                                 <div class="precio col-md-3 mb-3">
@@ -176,11 +183,34 @@
 
 
                             <div class="botones container">
+
                                 <div class="cargar">
                                     <button class="btn btn-primary" type="submit">Actualizar</button>
                                 </div>
                                 <div class="limpiar">
                                     <button class="btn btn-danger" type="button">Cancelar</button>
+                                </div>
+                                <!-- Button trigger modal -->
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <embed src="/products/recetas/<%= producto.receta %>#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="300px" /> </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>

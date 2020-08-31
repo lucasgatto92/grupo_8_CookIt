@@ -1,3 +1,4 @@
+const fs = require('fs');
 const db = require('../database/models');
 
 module.exports = {
@@ -82,6 +83,8 @@ module.exports = {
 
         Promise.all([producto, categorias])
             .then(function([producto, categorias]) {
+                req.session.imagenes = producto.imagenes;
+                req.session.receta = producto.receta;
                 res.render('productEdit', {
                     producto: producto,
                     categorias: categorias,
@@ -91,8 +94,9 @@ module.exports = {
 
     },
     update: function(req, res) {
-        res.send(req.body)
-        let aptoArray = [];
+
+        // --> procesamiento de los datos para el campo APTO
+        let aptoArray = []; //creo un array vacio para luego ser llenado por los datos que vienen del formulario
         if (req.body.sodio) {
             aptoArray.push("sodio")
         };
@@ -102,20 +106,48 @@ module.exports = {
         if (req.body.celiaco) {
             aptoArray.push("celiaco")
         };
-        let apto = aptoArray.join(',');
+        let apto = aptoArray.join(','); //guardo en la variable apto el array convertido a string
 
-        let imagesFiles = req.files.filter(file => {
+        // --> procesamiento de los datos para el campo IMAGENES
+        let imagenesGuardadas = req.session.imagenes; //leo las imagenes guardadas en la bd
+        imagenesGuardadas = imagenesGuardadas.split(',') //las convierto en un array
+        let imagenesABorrar = []; //creo un array vacio para almacenar las imagenes a borrar
+
+        if (typeof req.body.elimina == "string") { //chequeo si una imagen la que se borra
+            imagenesABorrar.push(req.body.elimina) //si es así la agrego al array antes creado
+        } else if (req.body.elimina) { //si son dos o más imagenes y si hay imagenes a borrar
+            imagenesABorrar = req.body.elimina //como ya vienen en un array las guardo tal como vienen
+        }
+
+        imagenesABorrar.forEach(imagenABorrar => { //recorro el array de imagenes a borrar
+            if (imagenesGuardadas.includes(imagenABorrar)) { //chequeo si la imagen está guardada
+                let indice = imagenesGuardadas.indexOf(imagenABorrar); //capto la posicion en el array
+                imagenesGuardadas.splice(indice, 1); //borro dicha posición
+                fs.unlinkSync('./public/images/products/' + imagenABorrar);
+                console.log(imagenABorrar + " borrada de la carpeta")
+            }
+        })
+
+        let imagenesFiles = req.files.filter(file => { //filtro solo las imagenes que me viene por Files
             return file.fieldname == "images"
         })
-        let imagesArray = [];
-        imagesFiles.forEach(imagen => {
-            imagesArray.push(imagen.filename);
-        })
-        let images = imagesArray.join(',');
 
-        let pdfFile = req.files.filter(file => {
-            return file.fieldname == "receta"
+        let imagenesAGuardar = imagenesGuardadas;
+        imagenesFiles.forEach(imagen => { //recorro las imagenes que me vienen por formulario
+            imagenesAGuardar.push(imagen.filename); //las voy agregando a mi array de imagenes nuevas
         })
+        imagenesAGuardar = imagenesAGuardar.join(','); //convierto en array en un string separado por comas
+
+        let recetaAGuardar = req.session.receta; //recupero la receta que está guardada
+
+        req.files.forEach(file => { //recorro la variable files para saber si se subio una nueva receta
+            if (file.fieldname == "receta") {
+                recetaAGuardar = file.fieldname //si hay una nueva receta la dejo lista para guardarla
+                fs.unlinkSync('./public/products/recetas' + file.fieldname);
+                console.log(file.fieldname + " borrada de la carpeta")
+            }
+        })
+
         db.Producto.update({
             nombre: req.body.nombre.trim(),
             precio: Number(req.body.precio),
@@ -125,14 +157,15 @@ module.exports = {
             apto: apto,
             porciones: Number(req.body.porciones),
             calorias: Number(req.body.calorias),
-            imagenes: images,
-            receta: pdfFile[0].filename,
+            imagenes: imagenesAGuardar,
+            receta: recetaAGuardar,
             idCategory: (req.body.categoria) ? req.body.categoria : 1
         }, {
             where: {
                 id: req.params.id
             }
         })
+        res.redirect('/admin/products')
     },
     listarUsuarios: function(req, res) {
         db.Usuario.findAll()
