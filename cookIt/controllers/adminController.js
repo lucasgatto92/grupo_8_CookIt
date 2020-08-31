@@ -3,6 +3,8 @@ const db = require('../database/models');
 
 module.exports = {
 
+    // --> LISTAR LOS PRODUCTOS
+
     list: (req, res) => {
 
         db.Producto.findAll({
@@ -15,6 +17,8 @@ module.exports = {
                 })
             })
     },
+    // --> AÑADIR UN PRODUCTO (FORMULARIO)
+
     add: function(req, res) { //metodo para cargar el formulario de carga de producto
 
         db.Categoria.findAll()
@@ -28,6 +32,8 @@ module.exports = {
                 res.send(err)
             })
     },
+    // --> GUARDAR UN PRODUCTO
+
     save: function(req, res) { //metodo para guardar un producto en la base de datos
         let aptoArray = [];
         if (req.body.sodio) {
@@ -76,6 +82,8 @@ module.exports = {
                 console.log(err)
             })
     },
+    // --> EDITAR UN PRODUCTO (FORMULARIO)
+
 
     edit: function(req, res) {
         let producto = db.Producto.findByPk(req.params.id, { include: [{ association: "categoria" }] });
@@ -93,6 +101,8 @@ module.exports = {
             })
 
     },
+    // --> ACTUALIZAR UN PRODUCTO
+
     update: function(req, res) {
 
         // --> procesamiento de los datos para el campo APTO
@@ -167,6 +177,35 @@ module.exports = {
         })
         res.redirect('/admin/products')
     },
+    // --> BORRAR UN PRODUCTO
+    delete: (req, res) => {
+        db.Producto.findByPk(req.params.id)
+            .then(function(producto) {
+
+                let imagenes = producto.imagenes.split(',');
+
+                imagenes.forEach(imagen => {
+                    if (fs.existsSync('./public/images/products/' + imagen)) {
+                        fs.unlinkSync('./public/images/products/' + imagen);
+                        console.log(imagen + "************* borrado de la carpeta")
+                    }
+                });
+                if (fs.existsSync('./public/products/recetas/' + producto.receta)) {
+                    fs.unlinkSync('./public/products/recetas/' + producto.receta);
+                    console.log(producto.receta + "********** borrado de la carpeta")
+                }
+                db.Producto.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                res.redirect('/admin/products');
+
+            })
+
+
+    },
+
     listarUsuarios: function(req, res) {
         db.Usuario.findAll()
             .then(usuarios => {
@@ -186,4 +225,5 @@ module.exports = {
             })
 
     }
+
 }

@@ -43,23 +43,5 @@ module.exports = {
                     producto: producto
                 })
             })
-    },
-
-
-    borrar: (req, res) => {
-        let id = Number(req.params.id);
-        dbProductos.forEach(producto => {
-            if (producto.id == id) {
-                dbProductos = dbProductos.filter(producto => {
-                    return producto.id != id
-                })
-            }
-        })
-        dbProductos.sort(function(a, b) {
-            return ((a.id < b.id) ? -1 : (a.id > b.id) ? 1 : 0)
-        })
-        fs.writeFileSync('./data/products.json', JSON.stringify(dbProductos), 'utf-8');
-        res.redirect('/productos');
     }
-
 }

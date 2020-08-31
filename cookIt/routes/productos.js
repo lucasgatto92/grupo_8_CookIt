@@ -20,7 +20,6 @@ router.get('/view', productoController.view);
 router.get('/productDetail/:id', productoController.detail);
 
 
-router.delete('/:id', upload.any(), productoController.borrar);
 
 
 module.exports = router;
