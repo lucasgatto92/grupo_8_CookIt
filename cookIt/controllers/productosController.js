@@ -38,9 +38,31 @@ module.exports = {
 
             })
             .then(producto => {
+                let aptos = [];
+                let sodio;
+                let celiaco;
+                let vegano;
+                if (producto.apto.length != 0) {
+                    aptos = producto.apto.split(',')
+                }
+                aptos.forEach(apto => {
+                    if (apto == "sodio") {
+                        sodio = "bajo en sodio"
+                    }
+                    if (apto == "celiaco") {
+                        celiaco = "sin TAAC"
+                    }
+                    if (apto == "vegano") {
+                        vegano = "dieta vegana"
+                    }
+                });
+
                 res.render('productDetail', {
                     user: req.session.user,
-                    producto: producto
+                    producto: producto,
+                    sodio: sodio,
+                    celiaco: celiaco,
+                    vegano: vegano
                 })
             })
     }

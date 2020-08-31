@@ -25,6 +25,7 @@
                         <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img" class="img-fluid">
 
                     </article>
+
                     <article class="container descripcion col-12 col-sm-12 col-md-12 col-lg-6">
                         <h2>
                             <%- producto.name %>
@@ -36,13 +37,53 @@
                         <h4><i class="far fa-clock"></i>
                             <%- producto.tiempo %> minutos</h4>
                         <br>
-                        <h4><i class="fas fa-seedling"></i> Vegetariano</h4>
+                        <div class="d-flex justify-content-md-center justify-content-lg-start">
+                            <% if (vegano) { %>
+                                <h4 class="mr-3"><i class="fas fa-apple-alt"></i>
+                                    <%= vegano %>
+                                </h4>
+                                <br>
+                                <% } %>
+                                    <% if (celiaco) { %>
+                                        <h4 class="mr-3"><i class="fas fa-seedling"></i>
+                                            <%= celiaco %>
+                                        </h4>
+                                        <br>
+                                        <% } %>
+                                            <% if (sodio) { %>
+                                                <h4><i class="fas fa-heartbeat"></i></i>
+                                                    <%= sodio %>
+                                                </h4>
+                                                <br>
+                                                <% } %>
+                        </div>
+
+                        <h4><i class="fas fa-utensils"></i>
+                            <%= producto.porciones %> porciones</h4>
                         <br>
-                        <h4><i class="fas fa-utensils"></i> 2 porciones</h4>
+                        <h4><i class="fas fa-apple-alt"></i> Aprox.
+                            <%= producto.calorias %> calorias / porción</h4>
                         <br>
-                        <h4><i class="fas fa-apple-alt"></i> Aprox. 600 calorias / porción</h4>
-                        <br>
-                        <a href="#"><i class="fas fa-book-open"></i>Ver receta</a>
+                        <a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-book-open"></i>Ver receta</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <embed src="/products/recetas/<%= producto.receta %>#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" /> </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--finaliza el modal-->
                         <br><br>
                         <label class="txt-barrita" for="customRange">Seleccionar cantidad</label>
                         <div class="barrita container">
@@ -65,20 +106,24 @@
                 <div class="container inferior">
                     <article class="precio col-12 col-sm-12 col-md-6 col-lg-6">
                         <h3>$
-                            <%= producto.price/2 %>
+                            <%= producto.precio %>
                         </h3>
-                        <h5>$
-                            <%- producto.price %>
-                        </h5>
-                        <h4>50% OFF</h4>
+                        <% if (producto.descuento > 0) { %>
+                            <h4>
+                                <%= producto.descuento %> % OFF</h4>
+                            <% } %>
+
                     </article>
+
                     <article class="botones col-12 col-sm-12 col-md-6 col-lg-6">
                         <a class="btn btn-success" href="#" role="button">Agregar al Carrito</a>
                         <a class="btn btn-success" href="#" role="button">Comprar Ahora</a>
                     </article>
                 </div>
-
-
+                <div class="container-fluid d-flex justify-content-between fixed-top">
+                    <button class=" " hidden><a href="">back</a> </button>
+                    <button class=" " hidden><a href="">next</a> </button>
+                </div>
                 <div class="agregado container mt-5">
                     <div class="container titulo col-lg-12">
                         <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
