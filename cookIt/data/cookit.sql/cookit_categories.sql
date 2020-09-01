@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
+  `imagen` varchar(45) DEFAULT NULL,
   `idWine` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idWine_idx` (`idWine`),
@@ -40,7 +41,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Española',NULL),(2,'Mexicana',NULL),(3,'Italiana',NULL),(4,'China',NULL),(5,'Mediterranea',NULL),(6,'Americana',NULL);
+INSERT INTO `categories` VALUES (1,'Española','categoria1.jpg',NULL),(2,'Mexicana','categoria2.jpg',NULL),(3,'Italiana','categoria3.jpg',NULL),(4,'China','categoria4.jpg',NULL),(5,'Mediterranea','categoria5.jpg',NULL),(6,'Americana','categoria6.jpg',NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-28 18:13:12
+-- Dump completed on 2020-09-01  3:57:33
