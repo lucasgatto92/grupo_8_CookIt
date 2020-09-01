@@ -4,180 +4,192 @@
 
     <body>
         <%- include('partials/header') %>
+            <div id="fondoTablas">
 
-            <div class="detalleProducto py-5">
+                <div class="detalleProducto p-5">
 
-                <div class="menu">
-                    <nav class="container navegador">
-                        <a class="nav-link active" href="#">Home ></a>
-                        <a class="nav-link" href="#">Gourmet ></a>
-                        <a class="nav-link" href="#">
-                            <%- producto.categoria.nombre %> > </a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                            <%= producto.name %>
-                        </a>
-                    </nav>
-                </div>
+                    <div class="menu">
+                        <nav class="container navegador">
+                            <a class="nav-link active" href="#">Home ></a>
+                            <a class="nav-link" href="#">Gourmet ></a>
+                            <a class="nav-link" href="#">
+                                <%- producto.categoria.nombre %> > </a>
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                                <%= producto.name %>
+                            </a>
+                        </nav>
+                    </div>
 
-                <div class="container fotoDescripcion">
-                    <article class="foto col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="container fotoDescripcion">
+                        <article class="foto col-12 col-sm-12 col-md-12 col-lg-6">
 
-                        <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img" class="img-fluid">
+                            <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img" class="img-fluid">
 
-                    </article>
+                        </article>
 
-                    <article class="container descripcion col-12 col-sm-12 col-md-12 col-lg-6">
-                        <h2>
-                            <%- producto.name %>
-                        </h2>
-                        <h4>
-                            <%- producto.description %>
-                        </h4>
-                        <br>
-                        <h4><i class="far fa-clock"></i>
-                            <%- producto.tiempo %> minutos</h4>
-                        <br>
-                        <div class="d-flex justify-content-md-center justify-content-lg-start">
-                            <% if (vegano) { %>
-                                <h4 class="mr-3"><i class="fas fa-apple-alt"></i>
-                                    <%= vegano %>
+                        <article class="container descripcion col-12 col-sm-12 col-md-12 col-lg-6">
+
+                            <h2 class="text-right">$
+                                <%= (Number(producto.precio)-(producto.precio * producto.descuento)/100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+
+                            </h2>
+                            <hr>
+                            <h3 class="text-right">
+                                <%=producto.nombre%>
+                            </h3>
+                            <hr>
+
+                            <% if (producto.descuento > 0) { %>
+                                <h5>
+                                    <strike>$<%= (producto.precio) %> </strike>
+                                </h5>
+                                <h4>
+                                    <%= producto.descuento %> % OFF
                                 </h4>
-                                <br>
                                 <% } %>
-                                    <% if (celiaco) { %>
-                                        <h4 class="mr-3"><i class="fas fa-seedling"></i>
-                                            <%= celiaco %>
-                                        </h4>
-                                        <br>
-                                        <% } %>
-                                            <% if (sodio) { %>
-                                                <h4><i class="fas fa-heartbeat"></i></i>
-                                                    <%= sodio %>
-                                                </h4>
-                                                <br>
-                                                <% } %>
-                        </div>
 
-                        <h4><i class="fas fa-utensils"></i>
-                            <%= producto.porciones %> porciones</h4>
-                        <br>
-                        <h4><i class="fas fa-apple-alt"></i> Aprox.
-                            <%= producto.calorias %> calorias / porción</h4>
-                        <br>
-                        <a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-book-open"></i>Ver receta</a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <br>
+                                    <h4><i class="far fa-clock"></i>
+                                        <%= producto.tiempo %> minutos</h4>
+                                    <br>
+                                    <div class="d-flex justify-content-md-center justify-content-lg-start">
+                                        <% if (vegano) { %>
+                                            <h4 class="mr-3"><i class="fas fa-apple-alt"></i>
+                                                <%= vegano %>
+                                            </h4>
+                                            <br>
+                                            <% } %>
+                                                <% if (celiaco) { %>
+                                                    <h4 class="mr-3"><i class="fas fa-seedling"></i>
+                                                        <%= celiaco %>
+                                                    </h4>
+                                                    <br>
+                                                    <% } %>
+                                                        <% if (sodio) { %>
+                                                            <h4><i class="fas fa-heartbeat"></i></i>
+                                                                <%= sodio %>
+                                                            </h4>
+                                                            <br>
+                                                            <% } %>
+                                    </div>
+
+                                    <h4><i class="fas fa-utensils"></i>
+                                        <%= producto.porciones %> porciones</h4>
+                                    <br>
+                                    <h4><i class="fas fa-apple-alt"></i> Aprox.
+                                        <%= producto.calorias %> calorias / porción</h4>
+                                    <br>
+                                    <a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-book-open"></i>Ver receta</a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <embed src="/products/recetas/<%= producto.receta %>#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" /> </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <embed src="/products/recetas/<%= producto.receta %>#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" /> </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--finaliza el modal-->
-                        <br><br>
-                        <label class="txt-barrita" for="customRange">Seleccionar cantidad</label>
-                        <div class="barrita container">
-                            <h5>1</h5>
-                            <h5>2</h5>
-                            <h5>3</h5>
-                            <h5>4</h5>
-                        </div>
-                        <input type="range" class="custom-range" min="1" max="4" step="1" id="cantidad-elegida" value="1">
-                        <br><br>
-                        <p><i class="fas fa-shipping-fast"></i> Envío <input type="text" name="codPost" size="10" placeholder="CP"> <input type="submit" value="Calcular">
-                        </p>
+                                    <!--finaliza el modal-->
+                                    <hr>
+                                    <h4><i class="fas fa-info-circle"></i> Descripcion</h4>
+                                    <p>
+                                        <%= producto.descripcion %>
+                                    </p>
+
+                        </article>
 
 
-                    </article>
-
-
-                </div>
-
-                <div class="container inferior">
-                    <article class="precio col-12 col-sm-12 col-md-6 col-lg-6">
-                        <h3>$
-                            <%= producto.precio %>
-                        </h3>
-                        <% if (producto.descuento > 0) { %>
-                            <h4>
-                                <%= producto.descuento %> % OFF</h4>
-                            <% } %>
-
-                    </article>
-
-                    <article class="botones col-12 col-sm-12 col-md-6 col-lg-6">
-                        <a class="btn btn-success" href="#" role="button">Agregar al Carrito</a>
-                        <a class="btn btn-success" href="#" role="button">Comprar Ahora</a>
-                    </article>
-                </div>
-                <div class="container-fluid d-flex justify-content-between fixed-top">
-                    <button class=" " hidden><a href="">back</a> </button>
-                    <button class=" " hidden><a href="">next</a> </button>
-                </div>
-                <div class="agregado container mt-5">
-                    <div class="container titulo col-lg-12">
-                        <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
                     </div>
-                    <div class="articulos">
-                        <div class="vino">
-                            <img class="img-fluid" src="/images/detalleProducto/vino1.png" alt="vino1">
-                            <div class="media-body">
-                                <h5>Saint Felicien Sauvignon Blanc</h5>
-                                <h4 class="mt-4">$499</h4>
-                                <div class="form-check mt-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                    <label class="form-check-label" for="defaultCheck1">
+
+                    <div class="container inferior">
+
+                        <article class=" col-12 col-sm-12 col-md-4">
+                            <label class="txt-barrita" for="customRange">Seleccionar cantidad</label>
+                            <div class="barrita container">
+                                <h5>1</h5>
+                                <h5>2</h5>
+                                <h5>3</h5>
+                                <h5>4</h5>
+                            </div>
+                            <input type="range" class="custom-range" min="1" max="4" step="1" id="cantidad-elegida" value="1">
+                            <br><br>
+                            <p><i class="fas fa-shipping-fast"></i> Envío <input type="text" name="codPost" size="10" placeholder="CP"> <input type="submit" value="Calcular">
+                            </p>
+                        </article>
+
+                        <article class="botones col-12 col-sm-12 col-md-4">
+                            <a class="btn btn-success" href="#" role="button">Agregar al Carrito</a>
+                            <a class="btn btn-success" href="#" role="button">Comprar Ahora</a>
+                        </article>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-between fixed-top">
+                        <button class=" " hidden><a href="">back</a> </button>
+                        <button class=" " hidden><a href="">next</a> </button>
+                    </div>
+                    <div class="agregado container mt-5">
+                        <div class="container titulo col-lg-12">
+                            <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
+                        </div>
+                        <div class="articulos">
+                            <div class="vino">
+                                <img class="img-fluid" src="/images/detalleProducto/vino1.png" alt="vino1">
+                                <div class="media-body">
+                                    <h5>Saint Felicien Sauvignon Blanc</h5>
+                                    <h4 class="mt-4">$499</h4>
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
+                                        <label class="form-check-label" for="defaultCheck1">
                         Agregar
                     </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="vino">
-                            <img class="img-fluid" src="/images/detalleProducto/vino2.png" alt="vino1">
-                            <div class="media-body">
-                                <h5>El viejo vino "Carlón"</h5>
-                                <h4 class="mt-4">$699</h4>
-                                <div class="form-check mt-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                    <label class="form-check-label" for="defaultCheck1">
+                            <div class="vino">
+                                <img class="img-fluid" src="/images/detalleProducto/vino2.png" alt="vino1">
+                                <div class="media-body">
+                                    <h5>El viejo vino "Carlón"</h5>
+                                    <h4 class="mt-4">$699</h4>
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
+                                        <label class="form-check-label" for="defaultCheck1">
                           Agregar
                     </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="vino">
-                            <img class="img-fluid" src="/images/detalleProducto/vino3.png" alt="vino1">
-                            <div class="media-body">
-                                <h5>Sexto Sentido - Rosado</h5>
-                                <h4 class="mt-4">$699</h4>
-                                <div class="form-check mt-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                    <label class="form-check-label" for="defaultCheck1">
+                            <div class="vino">
+                                <img class="img-fluid" src="/images/detalleProducto/vino3.png" alt="vino1">
+                                <div class="media-body">
+                                    <h5>Sexto Sentido - Rosado</h5>
+                                    <h4 class="mt-4">$699</h4>
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
+                                        <label class="form-check-label" for="defaultCheck1">
                           Agregar
                     </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="vino">
-                            <img class="img-fluid" src="/images/detalleProducto/vino4.png" alt="vino1">
-                            <div class="media-body">
-                                <h5>Aida de Bodegas Borboré</h5>
-                                <h4 class="mt-4">$999</h4>
-                                <div class="form-check mt-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                    <label class="form-check-label" for="defaultCheck1">
+                            <div class="vino">
+                                <img class="img-fluid" src="/images/detalleProducto/vino4.png" alt="vino1">
+                                <div class="media-body">
+                                    <h5>Aida de Bodegas Borboré</h5>
+                                    <h4 class="mt-4">$999</h4>
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
+                                        <label class="form-check-label" for="defaultCheck1">
                           Agregar
                     </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>

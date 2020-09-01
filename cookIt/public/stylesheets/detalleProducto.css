@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,562;0,600;0,700;1,400;1,500;1,562;1,600;1,700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
+#fondoTablas {
+    padding-top: 55px;
+    padding-bottom: 100px;
+    background: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 .detalleProducto {
     background-color: #fcf9ea;
     font-family: "faustina";
     box-sizing: border-box;
+    width: 80%;
+}
+
+.detalleProducto h2 {
+    color: brown;
+}
+
+.detalleProducto h3 {
+    color: green;
 }
 
 .detalleProducto .menu {
@@ -176,6 +197,9 @@
 }
 
 @media(max-width:425px) {
+    .detalleProducto {
+        width: 90%;
+    }
     .detalleProducto input {
         max-width: 100%;
     }
