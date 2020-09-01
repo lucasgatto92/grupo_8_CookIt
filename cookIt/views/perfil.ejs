@@ -7,194 +7,159 @@
         <%- include('partials/header') %>
             <div class="bgimg">
                 <div class="container perfil">
-                    <div class="row flex-lg-nowrap">
-                        <!-- <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
-                        <div class="card p-3">
-                        <div class="e-navlist e-navlist--active-bg">
-                            <ul class="nav">
-                            <li class="nav-item"><a class="nav-link px-2 active" href="./overview.html"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
-                            <li class="nav-item"><a class="nav-link px-2" href="./users.html"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
-                            <li class="nav-item"><a class="nav-link px-2" href="./settings.html"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div> -->
+                    <div class="row">
+                        <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                            <div class="card py-5">
+                                <img src="/images/avatars/<%- usuario.avatar %> " class="card-img-top" alt="">
+                                <div class="card-body text-center p-4">
+                                    <a href="#" class="">Cambiar Avatar</a>
+                                </div>
+                            </div>
 
-                        <div class="col">
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="e-profile">
-                                                <div class="row ">
-                                                    <div class="col-12 col-sm-auto mb-3">
-                                                        <div class="mx-auto bg" style="width: 140px;">
-                                                            <div class="avatarperfil d-flex justify-content-center align-items-center rounded bgavatar">
-                                                                <img src="/images/avatars/<%- usuario.avatar %> " alt="">
+                        </div>
+
+                        <div class="col-12 col-md-7 col-lg-8 mb-3 col-xl-9">
+                            <div class="card ">
+                                <div class="card-body p-5">
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item primero"><a class="active nav-link">Mis Datos</a></li>
+                                        <li class="nav-item segundo"><a class="nav-link">Mis Direcciones</a></li>
+                                    </ul>
+                                    <div class="tab-content pt-3 solapa1">
+                                        <div class="tab-pane active">
+                                            <form class="form" novalidate="">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Nombre</label>
+                                                                    <input class="form-control" type="text" name="nombre" value="<%- usuario.nombre %>" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Apellido</label>
+                                                                    <input class="form-control" type="text" name="apellido" value="<%- usuario.apellido %>" disabled>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="mt-2 d-flex justify-content-center align-items-center rounded">
-                                                            <button class="btn btn-success" type="button">
-                      <i class="fa fa-fw fa-camera"></i>
-                      <span>Cambiar avatar</span>
-                    </button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                                                        <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">
-                                                                <%- usuario.nombre + " " + usuario.apellido %>
-                                                            </h4>
-
-                                                        </div>
-                                                        <div class="text-center text-sm-right">
-
-                                                            <% if (usuario.rol == "user") { %>
-                                                                <span class="badge badge-sucess">usuario</span>
-                                                                <% } %>
-                                                                    <% if (usuario.rol == "admin") { %>
-                                                                        <span class="badge badge-danger">administrador</span>
-                                                                        <% } %>
-
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Email</label>
+                                                                    <input class="form-control" type="email" value="<%- usuario.email %>">
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                                                    <label class="custom-control-label" for="notifications-blog">Quiero recibir ofertas por mail</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Celular</label>
+                                                                    <input class="form-control" type="text" value=" ">
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                                                    <label class="custom-control-label" for="notifications-news">Quiero recbir notificaciones</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <ul class="nav nav-tabs">
-                                                    <li class="nav-item primero"><a class="active nav-link">Mis Datos</a></li>
-                                                    <li class="nav-item segundo"><a class="nav-link">Mis Direcciones</a></li>
-                                                </ul>
-                                                <div class="tab-content pt-3 solapa1">
-                                                    <div class="tab-pane active">
-                                                        <form class="form" novalidate="">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Nombre</label>
-                                                                                <input class="form-control" type="text" name="nombre" value="<%- usuario.nombre %>" disabled>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Apellido</label>
-                                                                                <input class="form-control" type="text" name="apellido" value="<%- usuario.apellido %>" disabled>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Email</label>
-                                                                                <input class="form-control" type="email" value="<%- usuario.email %>">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+
+                                                <div class="row d-flex justify-content-around my-3">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-danger m-1" data-toggle="modal" data-target="#exampleModal">
+                                                                        Cambiar contraseña
+                                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Cambiar contraseña</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
                                                                 </div>
-                                                            </div>
-
-
-                                                            <div class="row">
-                                                                <div class="col-12 col-sm-6 mb-3">
-                                                                    <div class="mb-2"><b>Cambiar contraseña</b></div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
+                                                                <div class="modal-body">
+                                                                    <form action="">
+                                                                        <div class="row">
+                                                                            <div class="form-group col-12">
                                                                                 <label>Contraseña actual</label>
                                                                                 <input class="form-control" type="password">
                                                                             </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
+
+                                                                            <div class="form-group col-12">
                                                                                 <label>Contraseña nueva</label>
                                                                                 <input class="form-control" type="password">
                                                                             </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
+
+                                                                            <div class="form-group col-12">
                                                                                 <label>Confirmar <span class="d-none d-xl-inline">contraseña</span></label>
-                                                                                <input class="form-control" type="password"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                                                                    <div class="mb-2"><b>Quiero recibir ofertas y novedades</b></div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="custom-controls-stacked px-2">
-                                                                                <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
-                                                                                    <label class="custom-control-label" for="notifications-blog">Mail</label>
-                                                                                </div>
-                                                                                <div class="custom-control custom-checkbox">
-                                                                                    <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
-                                                                                    <label class="custom-control-label" for="notifications-news">Whatsapp</label>
-                                                                                </div>
+                                                                                <input class="form-control" type="password">
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-primary">Confirmar</button>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="row">
-                                                                <div class="col d-flex justify-content-end">
-                                                                    <button class="btn btn-success" type="submit">Guardar cambios</button>
-                                                                </div>
                                                             </div>
-                                                        </form>
-
+                                                        </div>
                                                     </div>
+
+                                                    <button class="btn btn-success m-1" type="submit">Guardar cambios</button>
                                                 </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
 
 
-                                                <div class="tab-content pt-3 solapa2">
-                                                    <div class="tab-pane active">
-                                                        <form class="form" novalidate="">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Dirección</label>
-                                                                                <input class="form-control" type="text" name="direccion" placeholder="" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>CP</label>
-                                                                                <input class="form-control" type="number" name="cp" placeholder="" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Piso</label>
-                                                                                <input class="form-control" type="text" name="piso" placeholder="" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Depto</label>
-                                                                                <input class="form-control" type="text" name="depto" placeholder="" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Localidad</label>
-                                                                                <input class="form-control" type="text" name="localidad" placeholder="" value="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <div class="form-group">
-                                                                                <label>Provincia</label>
-                                                                                <select class="form-control" name="" id="">
+                                    <div class="tab-content pt-3 solapa2">
+                                        <div class="tab-pane active">
+                                            <form class="form" novalidate="">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label>Dirección</label>
+                                                                    <input class="form-control" type="text" name="direccion" placeholder="" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>CP</label>
+                                                                    <input class="form-control" type="number" name="cp" placeholder="" value="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Piso / Dpto</label>
+                                                                    <input class="form-control" type="text" name="piso" placeholder="" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Localidad</label>
+                                                                    <input class="form-control" type="text" name="localidad" placeholder="" value="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Provincia</label>
+                                                                    <select class="form-control" name="" id="">
                                                                                 <option value=""></option>
                                                                                 <option value="caba">CABA</option>
                                                                                 <option value="bsas">Prov de Bs. As.</option>
@@ -221,26 +186,26 @@
                                                                                 <option value="tfuego">Tierra del Fuego</option>
                                                                                 <option value="tucuman">Tucumán</option>
                                                                             </select>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col d-flex justify-content-end">
-                                                                    <button class="btn btn-success" type="submit">Guardar cambios</button>
-                                                                </div>
-                                                            </div>
+                                                        </div>
                                                     </div>
-
-
-
                                                 </div>
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-end">
+                                                        <button class="btn btn-success" type="submit">Guardar cambios</button>
+                                                    </div>
+                                                </div>
                                         </div>
-                                    </div>
 
-                                    <!-- <div class="col-12 col-md-3 mb-3">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-3 mb-3">
         <div class="card mb-3">
           <div class="card-body">
             <div class="px-xl-3">
@@ -259,12 +224,12 @@
           </div>
         </div>
       </div> -->
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
+
                 </div>
+            </div>
+            </div>
+            </div>
             </div>
             <%- include('partials/footer') %>
 

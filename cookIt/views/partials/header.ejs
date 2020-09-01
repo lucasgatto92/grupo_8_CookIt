@@ -67,6 +67,7 @@
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
+                    <!--
                     <% if (user && user.rol == "admin") { %>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRACIÓN</a>
@@ -78,30 +79,43 @@
                             </div>
                         </li>
                         <% } %>
-
+                    -->
 
                 </ul>
                 <!--NAVEGACION USUARIO-->
 
                 <ul class="navbar-nav ml-auto user">
+
                     <% if (user) { %>
-
                         <li>
-                            <a class="menu" href="/carrito">MI CARRITO</a>
-
+                            <a class="nav-link" href="/carrito"><i class="fas fa-shopping-basket"></i> MI COMPRA</a>
                         </li>
                         <li class="ml-2">
-                            <a class="menu" href="/users/login" hidden>LOGIN</a>
-                            <a class="menu" href="/users/logout">LOGOUT</a>
-                            <% } else {%>
-                                <a class="menu" href="/users/login">LOGIN</a>
-                                <a class="menu" href="/users/logout" hidden>LOGOUT</a>
-                                <% } %>
 
-
-
-                                    <a class="icon" href="/users/login"><i class="fas fa-user "></i></a>
+                            <a class="nav-link " href="/users/login" hidden>LOGIN</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> MI CUENTA</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/users/perfil/<%= user.id %> "><i class="far fa-id-card"></i> Mi perfil</a>
+                                <a class="dropdown-item" href="/users/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sessión</a>
+                                <% if (user && user.rol == "admin") { %>
+                                    <div class="dropdown-divider"></div>
+                                    <h3 class="dropdown-header">Administrador</h3>
+                                    <a class="dropdown-item" href="/admin/users"><i class="fas fa-users"></i> Usuarios</a>
+                                    <a class="dropdown-item" href="/admin/products"><i class="fas fa-shopping-cart"></i> Productos</a>
+                                    <a class="dropdown-item" href="/admin/products/add"><i class="fas fa-cart-plus"></i> Agregar producto</a>
+                                    <% } %>
+                            </div>
                         </li>
+                        <% } else {%>
+                            <li class="ml-2">
+
+                                <a class="nav-link " href="/users/login">LOGIN</a>
+                                <a class="nav-link " href="/users/logout" hidden>LOGOUT</a>
+                                <li class="ml-2">
+
+                                    <% } %>
+
+
                 </ul>
             </div>
 

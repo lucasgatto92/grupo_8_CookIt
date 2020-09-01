@@ -21,7 +21,6 @@ router.delete('/products/:id', adminController.delete);
 
 //rutas administración de usuarios
 router.get('/users', adminCheck, adminController.listarUsuarios);
-router.get('/users/perfil/:id', adminCheck, adminController.perfilUsuario);
 
 
 module.exports = router;

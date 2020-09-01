@@ -69,6 +69,9 @@ module.exports = function(sequelize, dataTypes) {
         direccion: {
             type: dataTypes.STRING(255),
         },
+        depto: {
+            type: dataTypes.STRING(45)
+        },
         cp: {
             type: dataTypes.INTEGER(4),
         },
@@ -77,6 +80,15 @@ module.exports = function(sequelize, dataTypes) {
         },
         provincia: {
             type: dataTypes.STRING(45),
+        },
+        celular: {
+            type: dataTypes.STRING(45)
+        },
+        notificaEmail: {
+            type: dataTypes.INTEGER(1)
+        },
+        notificaMovil: {
+            type: dataTypes.INTEGER(1)
         },
     };
 

@@ -214,16 +214,7 @@ module.exports = {
                     user: req.session.user
                 })
             })
-    },
-    perfilUsuario: function(req, res) {
-        db.Usuario.findByPk(req.params.id)
-            .then(usuario => {
-                res.render('perfil', {
-                    usuario: usuario,
-                    user: req.session.user
-                });
-            })
-
     }
+
 
 }

@@ -116,5 +116,15 @@ module.exports = {
             })
         }
 
+    },
+    perfilUsuario: function(req, res) {
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario => {
+                res.render('perfil', {
+                    usuario: usuario,
+                    user: req.session.user
+                });
+            })
+
     }
 }
