@@ -14,6 +14,10 @@ module.exports = function(sequelize, dataTypes) {
             validator: {
                 notNull: true
             }
+        },
+        imagen: {
+            type: dataTypes.STRING(45),
+            allowNull: true
         }
     };
 

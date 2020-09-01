@@ -23,8 +23,7 @@ module.exports = {
                     products: dbProductos,
                     productos: productos,
                     user: req.session.user,
-                    rol: rol,
-                    id: id
+                    titulo: "Nuestro ampli menú, solo para paladares exigentes"
                 })
             })
 
@@ -65,5 +64,24 @@ module.exports = {
                     vegano: vegano
                 })
             })
+    },
+    category: function(req, res) {
+        db.Producto.findAll({
+                where: {
+                    idCategory: req.params.id
+                },
+                include: [{ association: "categoria" }]
+            })
+            .then(productos => {
+                let categoria = productos[0].categoria.nombre;
+                res.render('productsView', {
+                    user: req.session.user,
+                    productos: productos,
+                    titulo: "Nuestro amplio menú de comida " + categoria
+
+                })
+            })
+
+
     }
 }

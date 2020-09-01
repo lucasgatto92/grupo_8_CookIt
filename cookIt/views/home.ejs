@@ -84,76 +84,23 @@
                     <div class="content">
 
                         <div class="grid">
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria5.jpg" alt="img12" />
-                                <figcaption>
-                                    <div>
-                                        <h2>Española</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="/productos">View more</a>
-                                </figcaption>
-                            </figure>
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria2.jpg" alt="img1" />
-                                <figcaption>
-                                    <div>
-                                        <h2>Mexicana</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid">
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria3.jpg" alt="img12" />
-                                <figcaption>
-                                    <div>
-                                        <h2>Italiana</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria4.jpg" alt="img1" />
-                                <figcaption>
-                                    <div>
-                                        <h2>China</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid">
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria1.jpg" alt="img12" />
-                                <figcaption>
-                                    <div>
-                                        <h2>Mediterránea</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
-                            <figure class="effect-ravi">
-                                <img src="images/categorias/categoria6.jpg" alt="img1" />
-                                <figcaption>
-                                    <div>
-                                        <h2>Americana</h2>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
-                                        </p>
-                                    </div>
-                                    <a href="#">View more</a>
-                                </figcaption>
-                            </figure>
+                            <% categorias.forEach(categoria => { %>
+                                <figure class="effect-ravi">
+                                    <a href=""> <img src="images/categorias/<%=categoria.imagen %> " alt="img12" /></a>
+                                    <figcaption>
+                                        <div>
+                                            <h2>
+                                                <%= categoria.nombre %>
+                                            </h2>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ut.
+                                            </p>
+                                        </div>
+                                        <a href="/productos/category/<%=categoria.id %>">View more</a>
+                                    </figcaption>
+                                </figure>
+                                <% }) %>
+
+
                         </div>
 
                     </div>

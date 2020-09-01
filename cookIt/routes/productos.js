@@ -19,6 +19,8 @@ router.get('/details/:id', productoController.detail);
 router.get('/view', productoController.view);
 router.get('/productDetail/:id', productoController.detail);
 
+router.get('/category/:id', productoController.category);
+
 
 
 

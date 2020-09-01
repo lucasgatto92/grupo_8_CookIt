@@ -12,7 +12,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="block">
-                                    <h1 class="heading">Nuestro amplio menú, solo para paladares exigentes</h1>
+                                    <h1 class="heading">
+                                        <%= titulo %>
+                                    </h1>
                                     <ul>
                                         <% productos.forEach(producto => { %>
                                             <a href="/productos/productDetail/<%= producto.id %> ">
