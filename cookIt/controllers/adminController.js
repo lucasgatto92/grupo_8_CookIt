@@ -153,7 +153,7 @@ module.exports = {
         req.files.forEach(file => { //recorro la variable files para saber si se subio una nueva receta
             if (file.fieldname == "receta") {
                 recetaAGuardar = file.fieldname //si hay una nueva receta la dejo lista para guardarla
-                fs.unlinkSync('./public/products/recetas' + file.fieldname);
+                fs.unlinkSync('./public/products/recetas/' + file.fieldname);
                 console.log(file.fieldname + " borrada de la carpeta")
             }
         })

@@ -7,16 +7,6 @@ const db = require('../database/models'); //requiero la base de datos
 module.exports = {
 
     view: (req, res) => { //metodo para visualizar productos
-        let rol = undefined;
-        let id = undefined;
-
-
-        if (req.session.user != undefined) {
-            let session = req.session.user;
-            rol = session.rol;
-            id = session.id;
-        }
-
         db.Producto.findAll()
             .then(productos => {
                 res.render('productsView', {
