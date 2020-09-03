@@ -6,26 +6,26 @@
         <%- include('partials/header') %>
             <div id="fondoRegister">
                 <div id="logreg-forms">
-                    <form action="/users/registro" class="form-signup" method="POST" enctype="multipart/form-data">
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre) ? errors.nombre.msg : '' %></small>
-
+                    <form action="/users/registro" id="regForm" class="form-signup" method="POST" enctype="multipart/form-data">
                         <input type="text" id="user-name" class="form-control" autofocus name="nombre" value="<%=(typeof old != 'undefined' && old.nombre)?old.nombre:'' %>" placeholder="Nombre">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido) ? errors.apellido.msg : '' %></small>
+                        <small class="text-danger" id="errorName"><%= (typeof errors != 'undefined' && errors.nombre) ? errors.nombre.msg : '' %></small>
 
                         <input type="text" id="user-lastname" class="form-control" placeholder="Apellido" autofocus="" name="apellido" value="<%=(typeof old != 'undefined' && old.apellido)?old.apellido: '' %>">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+                        <small class="text-danger" id="errorLastName"><%= (typeof errors != 'undefined' && errors.apellido) ? errors.apellido.msg : '' %></small>
 
                         <input type="email" id="user-email" class="form-control" placeholder="Email" autofocus="" name="email" value="<%=(typeof old != 'undefined' && old.email)?old.email: '' %> ">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
+                        <small class="text-danger" id="errorEmail"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
 
                         <input type="password" id="user-pass" class="form-control" placeholder="Contraseña" autofocus="" name="pass">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.passrepeat) ? errors.passrepeat.msg : '' %></small>
+                        <small class="text-danger" id="errorPass"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
 
                         <input type="password" id="user-repeatpass" class="form-control" placeholder="Reingresá tu contraseña" autofocus="" name="passrepeat">
+
+                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.passrepeat) ? errors.passrepeat.msg : '' %></small>
 
 
                         <div class="form-control">
@@ -33,6 +33,7 @@
                             <p class="avatar">Imagen de perfil</p>
                             <input type="file" accept="image/*" name="avatar">
                         </div>
+                        <small class="text-danger" id="errorAvatar"></small>
                         <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Registrarse!</button>
 
                         <hr>
@@ -54,7 +55,7 @@
 
             <%- include('partials/footer') %>
 
-                <!-- <script src="/javascripts/register-scripts.js"></script> -->
+                <script src="/javascripts/registerValidator.js"></script>
     </body>
 
 </html>

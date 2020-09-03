@@ -6,16 +6,16 @@
         <%- include('partials/header') %>
             <div id="fondoRegister">
                 <div id="logreg-forms" class="mt-5">
-                    <form class="form-signin" method="POST" action="">
+                    <form class="form-signin" id="logForm" method="POST" action="">
                         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Iniciar sesión</h1>
 
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="email" value="<%=(typeof old != 'undefined' && old.email)?old.email: '' %> ">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" autofocus="" name="email" value="<%=(typeof old != 'undefined' && old.email)?old.email: '' %> ">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+                        <small class="text-danger" id="errorEmail"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
 
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pass">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pass" value="">
 
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
+                        <small class="text-danger" id="errorPass"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
 
                         <% if (typeof errorReg != 'undefined') { %>
                             <span class="text-danger text-center"><%- errorReg %> </span>
@@ -49,7 +49,7 @@
 
             <%- include('partials/footer') %>
 
-                <!-- <script src="/javascripts/register-scripts.js"></script> -->
+                <script src="/javascripts/loginValidator.js"></script>
     </body>
 
 </html>
