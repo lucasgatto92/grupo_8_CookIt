@@ -28,10 +28,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `imagen` varchar(45) DEFAULT NULL,
-  `idWine` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idWine_idx` (`idWine`),
-  CONSTRAINT `idWine` FOREIGN KEY (`idWine`) REFERENCES `wines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +38,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Española','categoria1.jpg',NULL),(2,'Mexicana','categoria2.jpg',NULL),(3,'Italiana','categoria3.jpg',NULL),(4,'China','categoria4.jpg',NULL),(5,'Mediterranea','categoria5.jpg',NULL),(6,'Americana','categoria6.jpg',NULL);
+INSERT INTO `categories` VALUES (1,'Española','categoria1.jpg'),(2,'Mexicana','categoria2.jpg'),(3,'Italiana','categoria3.jpg'),(4,'China','categoria4.jpg'),(5,'Mediterranea','categoria5.jpg'),(6,'Americana','categoria6.jpg');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-01  3:57:33
+-- Dump completed on 2020-09-03 17:39:58

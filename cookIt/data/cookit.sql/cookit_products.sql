@@ -39,7 +39,7 @@ CREATE TABLE `products` (
   `idCategory` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idCategorie_idx` (`idCategory`),
-  CONSTRAINT `idCategorie` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idCategory` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-01  3:57:32
+-- Dump completed on 2020-09-03 17:39:57

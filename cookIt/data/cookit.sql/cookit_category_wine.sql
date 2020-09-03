@@ -18,31 +18,32 @@ USE `cookit`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carts`
+-- Table structure for table `category_wine`
 --
 
-DROP TABLE IF EXISTS `carts`;
+DROP TABLE IF EXISTS `category_wine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `carts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idUser` int(11) DEFAULT NULL,
-  `idProduct` int(11) DEFAULT NULL,
+CREATE TABLE `category_wine` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idCategory` int(11) NOT NULL,
+  `idWine` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `idProduct_idx` (`idProduct`),
-  KEY `idUser_idx` (`idUser`),
-  CONSTRAINT `idProduct` FOREIGN KEY (`idProduct`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `idUser` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `idVino_idx` (`idWine`),
+  KEY `idCategoria_idx` (`idCategory`),
+  CONSTRAINT `idCategoria` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idVino` FOREIGN KEY (`idWine`) REFERENCES `wines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carts`
+-- Dumping data for table `category_wine`
 --
 
-LOCK TABLES `carts` WRITE;
-/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+LOCK TABLES `category_wine` WRITE;
+/*!40000 ALTER TABLE `category_wine` DISABLE KEYS */;
+INSERT INTO `category_wine` VALUES (1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,5),(6,6,6),(7,1,7),(8,2,8),(9,3,9),(10,4,10),(11,5,11),(12,6,12);
+/*!40000 ALTER TABLE `category_wine` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-03 17:39:58
+-- Dump completed on 2020-09-03 17:39:57
