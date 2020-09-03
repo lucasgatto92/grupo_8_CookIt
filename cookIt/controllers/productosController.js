@@ -19,6 +19,7 @@ module.exports = {
 
     },
     detail: function(req, res) {
+       
         db.Producto.findOne({
                 where: {
                     id: req.params.id
@@ -45,13 +46,19 @@ module.exports = {
                         vegano = "dieta vegana"
                     }
                 });
+                let fotos = producto.imagenes.split(',');
+                
+                res.send(producto.categoria.vinos)
+              
+               
 
                 res.render('productDetail', {
                     user: req.session.user,
                     producto: producto,
                     sodio: sodio,
                     celiaco: celiaco,
-                    vegano: vegano
+                    vegano: vegano,
+                    fotos:fotos
                 })
             })
     },

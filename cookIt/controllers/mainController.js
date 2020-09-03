@@ -39,10 +39,14 @@ const mainController = {
             include: [{ association: "categoria" }]
         })
         .then(result =>{
+            let titulo = "Lo que tenemos para vos...";
+            if(result == ""){
+                titulo = "Lo sentimos, hoy no tenemos lo que deseas..."
+            }
             res.render('productsView', {
                 productos: result,
                 user: req.session.user,
-                titulo: "Lo que tenemos para vos..."
+                titulo: titulo
             })
         })
     },

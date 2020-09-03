@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = "Vino";
+    let alias = "Vinos";
     let cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -27,8 +27,17 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
         tableName: "wines"
     }
-    let User = sequelize.define(alias, cols, config)
+    let Wine = sequelize.define(alias, cols, config)
 
+    Wine.associate = function(models) {
+        Wine.belongsToMany(models.Categoria, {
+            as: "categorias",
+            through:'category_wine',
+            foreignKey: "idWine",
+            otherKey:"idCategory",
+            timestamps:false
+        })
+    }
 
-    return User;
+    return Wine;
 }
