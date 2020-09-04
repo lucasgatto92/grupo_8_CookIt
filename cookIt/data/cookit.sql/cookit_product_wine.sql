@@ -1,0 +1,58 @@
+CREATE DATABASE  IF NOT EXISTS `cookit` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `cookit`;
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+--
+-- Host: localhost    Database: cookit
+-- ------------------------------------------------------
+-- Server version	5.7.26
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `product_wine`
+--
+
+DROP TABLE IF EXISTS `product_wine`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_wine` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idProducto` int(11) NOT NULL,
+  `idWine` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idVino_idx` (`idWine`),
+  KEY `idProducto_idx` (`idProducto`),
+  CONSTRAINT `idProducto` FOREIGN KEY (`idProducto`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `idVino` FOREIGN KEY (`idWine`) REFERENCES `wines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_wine`
+--
+
+LOCK TABLES `product_wine` WRITE;
+/*!40000 ALTER TABLE `product_wine` DISABLE KEYS */;
+INSERT INTO `product_wine` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,2,5),(6,2,6),(7,2,7),(8,2,8),(9,3,9),(10,3,10),(11,3,11),(12,3,12),(13,4,1),(14,4,2),(15,4,3),(16,4,4),(17,5,5),(18,5,6),(19,5,7),(20,5,8),(21,6,9),(22,6,10),(23,6,11),(24,6,12),(25,7,1),(26,7,2),(27,7,3),(28,7,4),(29,8,5),(30,8,6),(31,8,7),(32,8,8),(33,9,9),(34,9,10),(35,9,11),(36,9,12),(37,10,1),(38,10,2),(39,10,3),(40,10,4),(41,11,5),(42,11,6),(43,11,7),(44,11,8),(45,12,9),(46,12,10),(47,12,11),(48,12,12),(49,13,1),(50,13,2),(51,13,3),(52,13,4),(53,14,5),(54,14,6),(55,14,7),(56,14,8),(57,15,9),(58,15,10),(59,15,11),(60,15,12),(61,16,1),(62,16,2),(63,16,3),(64,16,4),(65,17,5),(66,17,6),(67,17,7),(68,17,8),(69,18,9),(70,18,10),(71,18,11),(72,18,12),(73,19,1),(74,19,2),(75,19,3),(76,19,4),(77,20,5),(78,20,6),(79,20,7),(80,20,8),(81,21,9),(82,21,10),(83,21,11),(84,21,12),(85,22,1),(86,22,2),(87,22,3),(88,22,4),(89,23,5),(90,23,6),(91,23,7),(92,23,8),(93,24,9),(94,24,10),(95,24,11),(96,24,12),(97,25,1),(98,25,2),(99,25,3),(100,25,4),(101,26,5),(102,26,6),(103,26,7),(104,26,8),(105,27,9),(106,27,10),(107,27,11),(108,27,12),(109,28,1),(110,28,2),(111,28,3),(112,28,4),(113,29,5),(114,29,6),(115,29,7),(116,29,8),(117,30,9),(118,30,10),(119,30,11),(120,30,12),(121,31,1),(122,31,2),(123,31,3),(124,31,4),(125,32,5),(126,32,6),(127,32,7),(128,32,8),(129,33,9),(130,33,10),(131,33,12),(132,34,1),(133,34,2),(134,34,3),(135,34,4),(136,35,5),(137,35,6),(138,35,7),(139,35,8),(140,36,9),(141,36,10),(142,36,11),(143,36,12),(144,35,1),(145,35,2),(146,35,3),(147,35,4),(148,36,5),(149,36,6),(150,36,7),(151,36,8),(152,37,9),(153,37,10),(154,37,11),(155,37,12),(156,38,1),(157,38,2),(158,38,3),(159,38,4);
+/*!40000 ALTER TABLE `product_wine` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-09-04  0:58:18
