@@ -19,12 +19,13 @@ module.exports = {
 
     },
     detail: function(req, res) {
-       
+
         db.Producto.findOne({
                 where: {
                     id: req.params.id
                 },
-                include: [{ association: "categoria" }]
+                include: [{ association: "categoria" },"vinos"],
+                //include: ["vinos"]
 
             })
             .then(producto => {
@@ -48,17 +49,14 @@ module.exports = {
                 });
                 let fotos = producto.imagenes.split(',');
                 
-                res.send(producto.categoria.vinos)
-              
-               
-
                 res.render('productDetail', {
                     user: req.session.user,
                     producto: producto,
                     sodio: sodio,
                     celiaco: celiaco,
                     vegano: vegano,
-                    fotos:fotos
+                    fotos:fotos,
+                    vinos:producto.vinos
                 })
             })
     },

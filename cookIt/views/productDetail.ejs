@@ -167,59 +167,33 @@
                         <div class="container titulo col-lg-12">
                             <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
                         </div>
-                        <div class="articulos">
-                            <div class="vino">
-                                <img class="img-fluid" src="/images/detalleProducto/vino1.png" alt="vino1">
-                                <div class="media-body">
-                                    <h5>Saint Felicien Sauvignon Blanc</h5>
-                                    <h4 class="mt-4">$499</h4>
-                                    <div class="form-check mt-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                        Agregar
-                    </label>
+                        <div class="articulos row">
+                            <% vinos.forEach(vino => { %>
+                                <div class="col-12 col-md-4 col-lg-3 bg-white border radius shadow p-3">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <img class="img-fluid" src="/images/wines/<%= vino.imagen %> " alt="vino1">
+                                        </div>
+                                        <div class="col-5">
+                                            <h4 class="mt-4">$
+                                                <%= vino.precio %>
+                                            </h4>
+                                            <div class="form-check mt-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="extra1">
+                                                <label class="form-check-label" for="defaultCheck1">Agregar</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-body text-center">
+                                        <hr>
+                                        <h5>
+                                            <%= vino.nombre %>
+                                        </h5>
+
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="vino">
-                                <img class="img-fluid" src="/images/detalleProducto/vino2.png" alt="vino1">
-                                <div class="media-body">
-                                    <h5>El viejo vino "Carlón"</h5>
-                                    <h4 class="mt-4">$699</h4>
-                                    <div class="form-check mt-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                          Agregar
-                    </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vino">
-                                <img class="img-fluid" src="/images/detalleProducto/vino3.png" alt="vino1">
-                                <div class="media-body">
-                                    <h5>Sexto Sentido - Rosado</h5>
-                                    <h4 class="mt-4">$699</h4>
-                                    <div class="form-check mt-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                          Agregar
-                    </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vino">
-                                <img class="img-fluid" src="/images/detalleProducto/vino4.png" alt="vino1">
-                                <div class="media-body">
-                                    <h5>Aida de Bodegas Borboré</h5>
-                                    <h4 class="mt-4">$999</h4>
-                                    <div class="form-check mt-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                          Agregar
-                    </label>
-                                    </div>
-                                </div>
-                            </div>
+                                <% }) %>
                         </div>
                     </div>
                 </div>

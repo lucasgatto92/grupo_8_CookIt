@@ -16,28 +16,33 @@ module.exports = function(sequelize, dataTypes) {
             }
         },
         descripcion: {
-            type: dataTypes.STRING(255),
+            type: dataTypes.STRING(512),
             allowNull: false,
             validator: {
                 notNull: true
+            }
+        },
+        precio:{
+            type:dataTypes.INTEGER(4),
+            allowNull:false,
+            validator:{
+                notNull:true
+            }
+        },
+        imagen:{
+            type:dataTypes.STRING(45),
+            allowNull:false,
+            validator:{
+                notNull:true
             }
         }
     };
 
     let config = {
-        tableName: "wines"
+        tableName: "wines",
+        timestamps:false
     }
     let Wine = sequelize.define(alias, cols, config)
-
-    Wine.associate = function(models) {
-        Wine.belongsToMany(models.Categoria, {
-            as: "categorias",
-            through:'category_wine',
-            foreignKey: "idWine",
-            otherKey:"idCategory",
-            timestamps:false
-        })
-    }
 
     return Wine;
 }
