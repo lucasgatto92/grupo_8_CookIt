@@ -1,4 +1,19 @@
 # :sound: Daily standups
+## :pushpin: Sprint 6: 
+
+
+##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
+_En este nuevo sprint, nos juntamos para realizar el sprint 6, el día 1 de Septiembre._
+
+:books: **Qué hizo ayer:** Todos los integrantes del equipo terminaron sus tareas. Nos reunimos para ver el nuevo sprint.
+
+:books: **Si se encontró con algún impedimento:** En este punto, Guadalupe obtuvo problemas con los controladores. Por lo cual, no pudo llevar adelante su tarea. Posterior a eso, Eric se hizo cargo y llevo adelante la tarea.
+
+:books: **Qué va a hacer hoy:** En este caso, Lucas y Guadalupe deben investigar acerca de JavaScript front para realizar las tareas del sprint 6. Y Eric decidio continuar con los detalles del e-commerce.
+
+
+
+# :sound: Daily standups
 ## :pushpin: Sprint 5: 
 
 
