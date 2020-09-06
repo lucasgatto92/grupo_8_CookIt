@@ -1,3 +1,31 @@
+# :pushpin: Sprint 5: Retro
+
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
+
+:heavy_check_mark: **Comenzar a hacer:**
+- Pensar como usuarios de nuestra propia página.
+- Investigar acerca de cómo mejorar la experiencia del usuario al que apuntamos y al que queremos llegar, para que su experiencia sea rápida y eficaz. A su vez, para que nos elija como marca a nosotros y no a la competencia.
+
+:heavy_check_mark: **Hacer más:** 
+- Pulir detalles finos (faltas de ortografia, mayúsculas)
+
+:heavy_check_mark: **Continuar haciendo:**
+- Seguir realizando daily meetings.
+- Mantener el trello actualizado y ordenado.
+- Valorizar la experiencia del usuario.
+- Esbozar un código ordenado.
+- Pulir los detalles pendientes.
+- Realizar las pautas opcionales que nos brinda el sprint.
+- Mantener las buenas practicas, ya sea, una fluida comunicacion con el resto del equipo, avanzar en el codigo un poco todos los dias, realizar las tareas con tiempo.
+
+:heavy_check_mark: **Hacer menos:**
+- Por ahora, no encontramos nada que tengamos dejar de hacer menos, ya que, hay un revisión constante de las decisiones tomadas por todos los miembros del grupo.
+
+:heavy_check_mark: **Dejar de hacer:**
+- Preocuparnos por el diseño web.
+
+
+
 # :pushpin: Sprint 4: Retro
 
 ## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
