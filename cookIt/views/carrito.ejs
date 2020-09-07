@@ -8,65 +8,53 @@
                 <div class="container">
                     <div class="row">
                         <div class="productos col-xl-8 col-md-12">
-                            <div class="row my-3">
-                                <div class="imagen col-xl-5 col-lg-4 col-md-4 col-sm-12">
-                                    <img class="img-fluid w-100 h-100" src="/images/productos/blog-img-1.jpg" alt="">
-                                </div>
-                                <div class="datos col-xl-7 col-lg-8 col-md-8 col-sm-12">
-                                    <h3>Lorem ipsum dolor sit amet.</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, vero. Recusandae aliquam omnis numquam, eum accusamus, culpa ex mollitia exercitationem repellat quidem voluptatibus alias vitae.</p>
-                                    <div>
-
+                            <% carrito.forEach(item => { %>
+                                <div class="row my-3">
+                                    <div class="imagen col-xl-5 col-lg-4 col-md-4 col-sm-12">
+                                        <img class="img-fluid w-100 h-100" src="/images/products/<%= item.producto.imagenes.split(',')[0] %> " alt="">
                                     </div>
-                                    <div class="botones d-flex justify-content-around caja">
-                                        <div class="form-inline comen">
-                                            <label for="my-select">Comenzales:</label>
-                                            <select id="my-select" class="form-control-sm ml-3" name="">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                            </select>
+                                    <div class="datos col-xl-7 col-lg-8 col-md-8 col-sm-12">
+                                        <h3>
+                                            <%= item.producto.nombre %>
+                                        </h3>
+                                        <hr>
+                                        <div>
+                                            <h5 class="alert alert-warning"><i class="fas fa-piggy-bank"></i> Rinde
+                                                <%= item.producto.porciones %>
+                                                    porciones
+                                            </h5>
                                         </div>
+                                        <div class="botones d-flex justify-content-around caja">
+                                            <div class="form-inline comen">
+                                                <label for="my-select">Cantidad:</label>
+                                                <select id="cantidad" class="form-control ml-3" name="cantidad">
+                                                    <% for( let i = 1; i <= 6 ; i++ ) { %>
+                                                      <% if (item.cantidad == i) { %>
+                                                       <option selected><%= i %> </option>
+                                                      <% } else{ %>
+                                                        <option ><%= i %> </option>
 
-                                        <h3>$ 1.000</h3>
-                                        <button type="button" class="btn btn-outline-success butonGreen"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-outline-danger butonRed botonn"><i class="fas fa-trash-alt"></i></button>
-                                    </div>
-                                </div>
+                                                        <% } %>
+                                                        <% } %>
+                                        </select>
+                                            </div>
 
-                            </div>
-                            <div class="row my-3">
-                                <div class="imagen col-xl-5 col-lg-4 col-md-4">
-                                    <img class="img-fluid w-100 h-100" src="/images/productos/blog-img-1.jpg" alt="">
-                                </div>
-                                <div class="datos col-xl-7 col-lg-8 col-md-8">
-                                    <h3>Lorem ipsum dolor sit amet.</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, vero. Recusandae aliquam omnis numquam, eum accusamus, culpa ex mollitia exercitationem repellat quidem voluptatibus alias vitae.</p>
-                                    <div>
-
-                                    </div>
-                                    <div class="botones d-flex justify-content-around caja">
-                                        <div class="form-inline comenzalCarrito">
-                                            <label for="my-select">Comenzales:</label>
-                                            <select id="my-select" class="form-control-sm ml-3" name="">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                            </select>
+                                            <h3>$
+                                                <%= item.producto.precio  * item.cantidad %>
+                                            </h3>
+                                            <a href="/carrito/eliminarProducto/<%= item.producto.id %> ">
+                                                <button type="button" class="btn btn-outline-danger butonRed botonn"><i class="fas fa-trash-alt"></i></button>
+                                            </a>
                                         </div>
-                                        <h3 class="priceOrigin">$ 1.500</h3>
-                                        <button type="button" class="btn btn-outline-success butonGreen"><i class="fas fa-edit"></i></button>
-                                        <button type="button" class="btn btn-outline-danger butonRed"><i class="fas fa-trash-alt"></i></button>
+                                        <div>
+                                            <h5 class="alert alert-success"><i class="fas fa-info-circle"></i> Comen bien
+                                                <%= item.cantidad * item.producto.porciones %> comenzales</h5>
+                                        </div>
                                     </div>
-                                </div>
 
-                            </div>
+                                </div>
+                                <% }) %>
+
                         </div>
 
                         <div class="ticket col-xl-4 col-md-12 py-3 bg-light">
@@ -75,8 +63,12 @@
                                 <hr>
                                 <h5>Productos</h5>
                                 <ul>
-                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
-                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                    <% carrito.forEach(item => { %>
+
+                                        <li>
+                                            <%=  item.producto.nombre %>
+                                        </li>
+                                        <%})%>
                                 </ul>
                                 <hr>
                                 <h5>Adicionales</h5>
@@ -90,7 +82,14 @@
                                 <h4 class="">Total compra:</h4>
                                 <h4>$ 2.500</h4>
                             </div>
-                            <div class="text-center"><a href="/checkOut"><button class="btn-sm btn-outline-secondary continueButtom ">Continuar</button></a></div>
+                            <div class="d-flex justify-content-around mt-3">
+                                <a href="/productos/view">
+
+                                    <button class="btn btn-outline-info ">Seguir comprando</button></a>
+                                <a href="/checkOut">
+
+                                    <button class="btn btn-outline-success ">Finalizar comprar</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>

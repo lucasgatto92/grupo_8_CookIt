@@ -155,8 +155,8 @@
                         </article>
 
                         <article class="botones col-12 col-sm-12 col-md-4">
-                            <a class="btn btn-success" href="#" role="button">Agregar al Carrito</a>
-                            <a class="btn btn-success" href="#" role="button">Comprar Ahora</a>
+                            <a class="btn btn-success" href="/carrito/agregarProducto/<%= user.id %>/<%= producto.id %> " role="button">Agregar al Carrito</a>
+                            <a class="btn btn-success" href="/carrito/finalizaCompra/<%= user.id %>/<%= producto.id %>  " role="button">Comprar Ahora</a>
                         </article>
                     </div>
                     <div class="container-fluid d-flex justify-content-between fixed-top">
@@ -185,7 +185,7 @@
                                         </div>
                                     </div>
                                     <div class="media-body text-center">
-                                        <hr>
+
                                         <h5>
                                             <%= vino.nombre %>
                                         </h5>

@@ -23,9 +23,37 @@ const mainController = {
             })
     },
     carrito: (req, res) => {
-        res.render('carrito', {
-            user: req.session.user
+        console.log(`usuario: ${req.params.idUser} - producto ${req.params.idProduct}` )
+        if(req.params.idUser && req.params.idProduct){
+        db.Producto.findOne({
+            where:{
+                id:req.params.idProduct
+            }
         })
+        .then(result=>{
+            let compra = {
+                idUser : req.session.user.id,
+                idProduct : Number(req.params.idProduct),
+                producto: result.dataValues
+            }
+            req.session.carrito.push(compra)
+           
+            console.log(req.session.carrito);
+      
+            res.render('carrito', {
+                user: req.session.user,
+                carrito : req.session.carrito
+            })
+        })
+    }else{
+        res.render('carrito', {
+            user: req.session.user,
+            carrito : req.session.carrito
+        })
+    }
+
+    },
+    editarCarrito:(req,res)=>{
 
     },
     buscador:(req,res) =>{
@@ -51,7 +79,9 @@ const mainController = {
         })
     },
     checkOut: (req, res) => {
-        res.render('checkOut')
+        res.render('checkOut',{
+            user:req.session.user
+        })
     }
 
 }

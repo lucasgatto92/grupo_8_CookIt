@@ -23,7 +23,7 @@ var usersRouter = require('./routes/users');
 let mainRouter = require('./routes/main');
 let productosRouter = require('./routes/productos');
 let adminRouter = require('./routes/admin');
-//let usuariosRouter = require('./routes/usuarios');
+let carritoRouter = require('./routes/carrito');
 
 //MIDDLEWARES
 const cookieCheck = require('./middlewares/cookieCheck')
@@ -56,7 +56,7 @@ app.use('/', cookieCheck, mainRouter);
 app.use('/productos', productosRouter);
 app.use('/admin', adminRouter);
 //app.use('/usuarios', usuariosRouter);
-//app.use('/carga', cargaRouter);
+app.use('/carrito', carritoRouter);
 
 
 // catch 404 and forward to error handler

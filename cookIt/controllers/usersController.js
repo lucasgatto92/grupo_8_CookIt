@@ -37,6 +37,7 @@ module.exports = {
                 })
                 .then(usuario => {
                     req.session.user = usuario;
+                    req.session.carrito = [];
                     return res.redirect(url);
                 })
         } else {
