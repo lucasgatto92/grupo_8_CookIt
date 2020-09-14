@@ -24,5 +24,10 @@
     "sequelize-cli": "^6.2.0",
     "session": "^0.1.0",
     "sweetalert2": "^9.17.2"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
