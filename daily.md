@@ -2,7 +2,7 @@
 ## :pushpin: Sprint 6: 
 
 
-##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales: :watch:
+##  Cada equipo habla como máximo 3 minutos de 3 temas puntuales:  :watch:
 _En este nuevo sprint, nos juntamos para realizar el sprint 6, el día 1 de Septiembre._
 
 :books: **Qué hizo ayer:** Todos los integrantes del equipo terminaron sus tareas. Nos reunimos para ver el nuevo sprint.
