@@ -18,7 +18,7 @@ const productMulter = require('../middlewares/productMulter');
 
 //nuevas rutas para trabajar con base de datos
 router.get('/view', productoController.view);
-router.get('/productDetail/:id',sessionUserCheck, productoController.detail);
+router.get('/productsDetail/:id',sessionUserCheck, productoController.detail);
 
 router.get('/category/:id', productoController.category);
 
