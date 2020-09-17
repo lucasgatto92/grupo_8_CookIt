@@ -76,7 +76,7 @@ module.exports = {
                 console.log('****************************************')
                 console.log('el producto se guardo satisfactoriamente')
                 console.log('****************************************')
-                res.redirect('/products/view');
+                res.redirect('/productos/view');
             })
             .catch(err => {
                 console.log(err)
