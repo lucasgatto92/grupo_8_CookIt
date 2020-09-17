@@ -24,7 +24,7 @@ module.exports = {
                 where: {
                     id: req.params.id
                 },
-                include: [{ association: "categoria" },"vinos"],
+                include: [{ association: "categoria" }, "vinos"],
                 //include: ["vinos"]
 
             })
@@ -48,15 +48,15 @@ module.exports = {
                     }
                 });
                 let fotos = producto.imagenes.split(',');
-                
+
                 res.render('productDetail', {
                     user: req.session.user,
                     producto: producto,
                     sodio: sodio,
                     celiaco: celiaco,
                     vegano: vegano,
-                    fotos:fotos,
-                    vinos:producto.vinos
+                    fotos: fotos,
+                    vinos: producto.vinos
                 })
             })
     },
