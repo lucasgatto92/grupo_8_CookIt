@@ -10,7 +10,7 @@ const adminCheck = require('../middlewares/adminCheck');
 const productosController = require('../controllers/productosController');
 
 //rutas administración de productos
-router.get('/productos', adminCheck, adminController.list);
+router.get('/products', adminCheck, adminController.list);
 router.get('/products/add', adminCheck, adminController.add);
 router.post('/products/save', adminCheck, productMulter.any(), adminController.save);
 router.get('/products/:id/edit', adminCheck, adminController.edit);
