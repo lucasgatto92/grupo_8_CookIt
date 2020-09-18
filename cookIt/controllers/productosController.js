@@ -49,7 +49,7 @@ module.exports = {
                 });
                 let fotos = producto.imagenes.split(',');
 
-                res.render('productsDetail', {
+                res.render('productDetail', {
                     user: req.session.user,
                     producto: producto,
                     sodio: sodio,
