@@ -40,7 +40,7 @@
                                             </div>
 
                                             <h3>$
-                                                <%= item.producto.precio  * item.cantidad %>
+                                                <%= typeof item.producto.cantidad %>
                                             </h3>
                                             <a href="/carrito/eliminarProducto/<%= item.producto.id %> ">
                                                 <button type="button" class="btn btn-outline-danger butonRed botonn"><i class="fas fa-trash-alt"></i></button>
