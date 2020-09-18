@@ -13,7 +13,7 @@ module.exports = {
                     products: dbProductos,
                     productos: productos,
                     user: req.session.user,
-                    titulo: "Nuestro ampli menú, solo para paladares exigentes"
+                    titulo: "Nuestro amplio menú, solo para paladares exigentes"
                 })
             })
 

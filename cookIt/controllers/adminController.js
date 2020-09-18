@@ -74,7 +74,7 @@ module.exports = {
             })
             .then(result => {
                 console.log('****************************************')
-                console.log('el producto se guardo satisfactoriamente')
+                console.log('El producto se guardo satisfactoriamente')
                 console.log('****************************************')
                 res.redirect('/productos/view');
             })
