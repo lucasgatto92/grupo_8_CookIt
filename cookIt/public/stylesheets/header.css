@@ -39,6 +39,10 @@ nav button i {
     font-style: italic;
 }
 
+.imgModal {
+    width: 100%;
+}
+
 @media(min-width:768px) {
     .cabecera form {
         margin-top: 60px;

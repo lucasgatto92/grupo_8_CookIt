@@ -53,19 +53,49 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PLATOS DEL MES</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RECOMENDADOS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <% productosHeader.forEach(producto => { %>
+                                <a class="dropdown-item" href="/productos/productsDetail/<%=producto.id %>">
+                                    <%= producto.nombre %>
+                                </a>
+                                <% }) %>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/productos/view">Ver todos</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#marcoServicio" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SOBRE NOSOTROS</a>
+                        <a class="nav-link dropdown" href="" id="navbarDropdown" role="button" data-toggle="modal" data-target="#sobreNos" aria-haspopup="true" aria-expanded="false">SERVICIO</a>
                     </li>
                 </ul>
+
+                <div class="modal fade" id="sobreNos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">¿Cómo funciona nuestro servicio?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="item">
+                                    <img class="imgModal" src="/images/servicio/1.png" alt="1">
+                                </div>
+                                <div class="item">
+                                    <img class="imgModal" src="/images/servicio/2.png" alt="2">
+                                </div>
+                                <div class="item">
+                                    <img class="imgModal" src="/images/servicio/3.png" alt="3">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--NAVEGACION USUARIO-->
 
                 <ul class="navbar-nav ml-auto user">
