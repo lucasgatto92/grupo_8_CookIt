@@ -27,6 +27,7 @@ let carritoRouter = require('./routes/carrito');
 
 //MIDDLEWARES
 const cookieCheck = require('./middlewares/cookieCheck')
+const bdCategorias = require('./middlewares/bdCategorias')
 
 
 var app = express();
@@ -46,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 //app.use(bodyParser.json())
-
+app.use(bdCategorias);
 //rutas por defecto
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
