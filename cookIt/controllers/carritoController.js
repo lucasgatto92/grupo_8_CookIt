@@ -3,6 +3,7 @@ const db = require('../database/models'); //requiero la base de datos
 
 const mainController = {
     carrito:(req,res)=>{
+        console.log(req.session.carrito)
         res.render('carrito', {
             user: req.session.user,
             carrito : req.session.carrito
@@ -18,7 +19,7 @@ const mainController = {
     req.session.carrito.forEach(item => {
             if(item.producto.id == req.params.idProduct){
                 item.cantidad += 1;
-                res.redirect('/productos/productDetail/'+req.params.idProduct)
+                res.redirect('/productos/productsDetail/'+req.params.idProduct)
 
             }
         });
@@ -30,34 +31,18 @@ const mainController = {
             producto: result.dataValues
         }
         req.session.carrito.push(compra)
-        console.log(req.session.carrito)
 
-        res.redirect('/productos/productDetail/'+req.params.idProduct)
+        res.redirect('/productos/productsDetail/'+req.params.idProduct)
 
     })
 
    },
     finalizar: (req, res) => {
-        if(req.params.idUser && req.params.idProduct){
-        db.Producto.findOne({
-            where:{
-                id:req.params.idProduct
-            }
-        })
-        .then(result=>{
-            let compra = {
-                idUser : req.session.user.id,
-                idProduct : Number(req.params.idProduct),
-                producto: result.dataValues
-            }
-            req.session.carrito.push(compra)
-                 
+    
             res.render('carrito', {
                 user: req.session.user,
                 carrito : req.session.carrito
             })
-        })
-    }
 
     },
     eliminar:(req,res)=>{
