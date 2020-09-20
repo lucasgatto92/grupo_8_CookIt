@@ -22,7 +22,7 @@ router.post('/registro', avatarMulter.any(), registerValidator, usersController.
 router.post('/login', loginValidator, usersController.loginInit); //creo un metodo que reciba y valide los datos para loguearse por SQL
 
 router.get('/perfil/:id', usersController.perfilUsuario);
-
+router.post('/perfil/:id', usersController.update);
 
 
 module.exports = router;

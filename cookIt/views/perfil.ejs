@@ -28,7 +28,7 @@
                                     </ul>
                                     <div class="tab-content pt-3 solapa1">
                                         <div class="tab-pane active">
-                                            <form class="form" novalidate="">
+                                            <form action="/users/perfil/<%=usuario.id%>" method="POST" id="perfilForm" class="form" novalidate="" enctype="text/plain">
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="row">
@@ -49,20 +49,20 @@
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="email" value="<%- usuario.email %>">
+                                                                    <input class="form-control" type="email" name="email" value="<%- usuario.email %>">
                                                                 </div>
                                                                 <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                                                    <input type="checkbox" name="mailOfer" class="custom-control-input" id="notifications-blog" checked="">
                                                                     <label class="custom-control-label" for="notifications-blog">Quiero recibir ofertas por mail</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Celular</label>
-                                                                    <input class="form-control" type="text" value=" ">
+                                                                    <input class="form-control" name="celular" type="number" value="<%- usuario.celular %>">
                                                                 </div>
                                                                 <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                                                    <input type="checkbox" name="celOfer" class="custom-control-input" id="notifications-news" checked="">
                                                                     <label class="custom-control-label" for="notifications-news">Quiero recbir notificaciones</label>
                                                                 </div>
                                                             </div>
@@ -87,7 +87,7 @@
                                                                                 </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="">
+                                                                    <form action="" id="passForm">
                                                                         <div class="row">
                                                                             <div class="form-group col-12">
                                                                                 <label>Contraseña actual</label>
@@ -105,7 +105,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-primary">Confirmar</button>
+                                                                            <button type="button" form="passForm" class="btn btn-primary">Confirmar</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -114,9 +114,10 @@
                                                         </div>
                                                     </div>
 
-                                                    <button class="btn btn-success m-1" type="submit">Guardar cambios</button>
+                                                    <button class="btn btn-success m-1" form="perfilForm" type="submit">Guardar cambios</button>
                                                 </div>
                                             </form>
+
 
                                         </div>
                                     </div>
@@ -131,7 +132,7 @@
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label>Dirección</label>
-                                                                    <input class="form-control" type="text" name="direccion" placeholder="" value="">
+                                                                    <input class="form-control" type="text" name="direccion" placeholder="" value="<%- usuario.direccion %>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -139,13 +140,13 @@
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label>CP </label>
-                                                                    <input class="form-control" type="number" name="cp" placeholder="" value="">
+                                                                    <input class="form-control" type="number" name="cp" placeholder="" value="<%- usuario.cp %>">
                                                                 </div>
                                                             </div>
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label>Piso / Dpto </label>
-                                                                    <input class="form-control" type="text" name="piso" placeholder="" value="">
+                                                                    <input class="form-control" type="text" name="piso" placeholder="" value="<%- usuario.depto %>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -153,21 +154,21 @@
                                                             <div class="col-12 col-xl-6">
                                                                 <div class="form-group">
                                                                     <label>Localidad</label>
-                                                                    <input class="form-control" type="text" name="localidad" placeholder="" value="">
+                                                                    <input class="form-control" type="text" name="localidad" placeholder="" value="<%- usuario.localidad %>">
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 col-xl-6">
                                                                 <div class="form-group">
                                                                     <label>Provincia</label>
-                                                                    
+
                                                                     <select class="form-control" name="" id="elem">
-                                                                        <ul>      <option selected>Provincia</option>
+                                                                        <ul>      <option selected><%- usuario.provincia %></option>
 
                                                                             </select></ul>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>     
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
@@ -206,7 +207,7 @@
                         $(".solapa2").show();
                     });
                 </script>
-        <script src="/javascripts/script.js"></script>
+                <script src="/javascripts/script.js"></script>
     </body>
 
 </html>

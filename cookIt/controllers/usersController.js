@@ -127,5 +127,18 @@ module.exports = {
                 });
             })
 
+    },
+    update: function(req, res) {
+        db.Usuario.update({
+                email: req.body.email,
+                celular: req.body.celular
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(function(result) {
+                res.send('actualizado')
+            })
     }
 }

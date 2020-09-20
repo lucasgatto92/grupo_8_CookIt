@@ -9,7 +9,6 @@ module.exports = (req, res, next) => {
         .then(productos => {
             res.locals.productosHeader = productos
             let productosHeader = productos
-            console.log(productosHeader)
             next()
         })
 }
