@@ -25,7 +25,10 @@
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item primero"><a class="active nav-link">Mis Datos</a></li>
                                         <li class="nav-item segundo"><a class="nav-link">Mis Direcciones</a></li>
+                                        <li class="nav-item tercero"><a class="nav-link">ExperienciaCookIt</a></li>
                                     </ul>
+
+                                    <!--Comienzo de solapa numero 1-->
                                     <div class="tab-content pt-3 solapa1">
                                         <div class="tab-pane active">
                                             <form action="/users/perfil/<%=usuario.id%>" method="POST" id="perfilForm" class="form" novalidate="" enctype="text/plain">
@@ -121,7 +124,9 @@
 
                                         </div>
                                     </div>
+                                    <!--Finalización de solapa 1-->
 
+                                    <!--Comienzo de solapa 2-->
 
                                     <div class="tab-content pt-3 solapa2">
                                         <div class="tab-pane active">
@@ -178,9 +183,42 @@
                                                 </div>
                                         </div>
 
-
+                                        <!--Finalización de solapa2-->
+                                        <!--Comienzo de solapa 3-->
 
                                     </div>
+                                    <div class="tab-content pt-3 solapa3">
+                                        <div class="tab-pane active">
+                                            
+                                                                    
+                                                                    <div class="container contain">
+                                                                        <div class="row">
+                                                                          <div class="col-sm-9 filaCommets">
+                                                                            <h2>¡ Muchas gracias por tu interés !</h2>
+                                                                    
+                                                                            <h4>Contanos tu experiencia</h4>
+                                                                            
+                                                                            <div class="input-text">
+                                                                                  <textarea name="order_comments" class="input-text " id="order_comments" rows="5" cols="60"placeholder="Aqui podrás volcar tu opinión, sugerencias y/o comentarios."></textarea>
+                                                                    
+                                                                            </div>
+                                                                                <button type="button" class="btn btn-primary">Añadir fotos</button>
+                                                                                <button type="button" class="btn btn-success">Publicar</button>
+                                                                                <button type="button" class="btn btn-danger">Borrar</button>
+                                                                            </div>
+                                                                            
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                
+                                                                
+                                        </div>
+                                    </div>
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -199,13 +237,21 @@
                     });
 
                     $('.primero').click(function() {
-                        $(".solapa2").hide();
                         $(".solapa1").show();
+                        $(".solapa2").hide();
+                        $(".solapa3").hide();
                     });
 
                     $('.segundo').click(function() {
                         $(".solapa1").hide();
                         $(".solapa2").show();
+                        $(".solapa3").hide();
+                    });
+                    
+                    $('.tercero').click(function() {
+                        $(".solapa1").hide();
+                        $(".solapa2").hide();
+                        $(".solapa3").show();
                     });
                 </script>
                 <script src="/javascripts/script.js"></script>
