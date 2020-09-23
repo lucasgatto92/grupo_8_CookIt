@@ -74,7 +74,8 @@ const mainController = {
             res.render('productsView', {
                 productos: result,
                 user: req.session.user,
-                titulo: titulo
+                titulo: titulo,
+                categoria:" "
             })
         })
     },
