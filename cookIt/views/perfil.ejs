@@ -32,6 +32,8 @@
                                                             <div class="form-group col-12">
                                                                 <label>Seleccionar imagen</label>
                                                                 <input type="file" name="avatarUpdt" accept="image/x-png,image/gif,image/jpeg">
+                                                                <br>
+                                                                <small class="text-danger" id="errorAvatar"></small>
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
@@ -263,6 +265,7 @@
             </div>
             <%- include('partials/footer') %>
 
+                <script src="/javascripts/perfilValidator.js"></script>
                 <script>
                     $(".nav .nav-link").on("click", function() {
                         $(".nav").find(".active").removeClass("active");
@@ -288,6 +291,7 @@
                     });
                 </script>
                 <script src="/javascripts/script.js"></script>
+
     </body>
 
 </html>
