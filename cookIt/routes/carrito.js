@@ -13,7 +13,8 @@ const guardaUrl = require('../middlewares/guardaUrl');
 
 router.get('/',sessionUserCheck,carritoController.carrito);
 router.get('/eliminarProducto/:id',sessionUserCheck,carritoController.eliminar);
-router.get('/agregarProducto/:idUser?/:idProduct?', guardaUrl, carritoController.agregar);
+router.post('/agregarProducto/:idUser?/:idProduct?', guardaUrl, carritoController.agregar);
+router.post('/actualizarProductos',carritoController.actualizar)
 router.get('/finalizaCompra/:idUser?/:idProduct?', sessionUserCheck, carritoController.finalizar);
 
 

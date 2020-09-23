@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
+    <script src="/javascripts/carrito.js"></script>
 
     <body>
         <%- include('partials/header') %>
-            <div class="fondoCarrito">
+            <div class="fondoCarrito" id="view">
                 <div class="container">
                     <div class="row">
                         <div class="productos col-xl-8 col-md-12">
@@ -25,23 +26,26 @@
                                             </h5>
                                         </div>
                                         <div class="botones d-flex justify-content-around caja">
-                                            <div class="form-inline comen">
+
+                                            <form action="/carrito/actualizarProductos" method="POST" class="form-inline">
                                                 <label for="my-select">Cantidad:</label>
-                                                <select id="cantidad" class="form-control ml-3" name="cantidad">
-                                                    <% for( let i = 1; i <= 6 ; i++ ) { %>
-                                                      <% if (item.cantidad == i) { %>
-                                                       <option selected><%= i %> </option>
-                                                      <% } else{ %>
-                                                        <option ><%= i %> </option>
+                                                <select id="cantidad" class="form-control ml-3" name="cantidad" onchange="submit()">
+                                                        <% for( let i = 1; i <= 6 ; i++ ) { %>
+                                                        <% if (item.cantidad == i) { %>
+                                                        <option selected><%= i %> </option>
+                                                        <% } else{ %>
+                                                            <option ><%= i %> </option>
 
-                                                        <% } %>
-                                                        <% } %>
-                                        </select>
-                                            </div>
-
-                                            <h3>$
-                                                <%= typeof item.producto.cantidad %>
+                                                            <% } %>
+                                                            <% } %>
+                                                    </select>
+                                                <input type="text" hidden value="<%= carrito.indexOf(item)%>" name="item">
+                                            </form>
+                                            <h3>
+                                                $
+                                                <%- item.producto.precio * item.cantidad %>
                                             </h3>
+
                                             <a href="/carrito/eliminarProducto/<%= item.producto.id %> ">
                                                 <button type="button" class="btn btn-outline-danger butonRed botonn"><i class="fas fa-trash-alt"></i></button>
                                             </a>
@@ -64,7 +68,6 @@
                                 <h5>Productos</h5>
                                 <ul>
                                     <% carrito.forEach(item => { %>
-
                                         <li>
                                             <%=  item.producto.nombre %>
                                         </li>
@@ -73,17 +76,25 @@
                                 <hr>
                                 <h5>Adicionales</h5>
                                 <ul>
-                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
-                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, voluptatum!</li>
+                                    <% carrito.forEach(item => { %>
+                                        <% item.vinos.forEach(vino => { %>
+                                            <li>
+                                                <%= vino.nombre %>
+                                            </li>
+                                            <% }) %>
+                                                <% }) %>
                                 </ul>
                                 <hr>
                             </div>
                             <div class="total d-flex flex-row justify-content-around">
                                 <h4 class="">Total compra:</h4>
-                                <h4>$ 2.500</h4>
+
+                                <h4>$
+                                    <%= total %>
+                                </h4>
                             </div>
                             <div class="d-flex justify-content-around mt-3">
-                                <a href="/productos/view">
+                                <a href="/productos/view#view">
 
                                     <button class="btn btn-outline-info ">Seguir comprando</button></a>
                                 <a href="/checkOut">

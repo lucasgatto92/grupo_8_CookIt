@@ -175,7 +175,9 @@ module.exports = {
                 id: req.params.id
             }
         })
-        res.redirect('/admin/products')
+        .then(result => {
+            res.redirect('/admin/products')
+        })
     },
     // --> BORRAR UN PRODUCTO
     delete: (req, res) => {

@@ -6,7 +6,7 @@
         <%- include('partials/header') %>
             <div id="fondoTablas">
 
-                <div class="detalleProducto p-5">
+                <div class="detalleProducto p-5" id="view">
 
                     <div class="menu">
                         <nav class="container navegador">
@@ -137,65 +137,64 @@
 
 
                     </div>
+                    <form action="/carrito/agregarProducto/<%= user.id %>/<%= producto.id %>" method="POST">
+                        <div class="container inferior">
 
-                    <div class="container inferior">
+                            <article class=" col-12 col-sm-12 col-md-4">
+                                <label class="txt-barrita" for="customRange">Seleccionar cantidad</label>
+                                <div class="barrita container">
+                                    <h5>1</h5>
+                                    <h5>2</h5>
+                                    <h5>3</h5>
+                                    <h5>4</h5>
+                                </div>
+                                <input type="range" class="custom-range" min="1" max="4" step="1" name="cantidad" value="1">
 
-                        <article class=" col-12 col-sm-12 col-md-4">
-                            <label class="txt-barrita" for="customRange">Seleccionar cantidad</label>
-                            <div class="barrita container">
-                                <h5>1</h5>
-                                <h5>2</h5>
-                                <h5>3</h5>
-                                <h5>4</h5>
-                            </div>
-                            <input type="range" class="custom-range" min="1" max="4" step="1" id="cantidad-elegida" value="1">
-                            <br><br>
-                            <p><i class="fas fa-shipping-fast"></i> Envío <input type="text" name="codPost" size="10" placeholder="CP"> <input type="submit" value="Calcular">
-                            </p>
-                        </article>
+                            </article>
 
-                        <article class="botones col-12 col-sm-12 col-md-4">
-                            <a class="btn btn-success" href="/carrito/agregarProducto/<%= user.id %>/<%= producto.id %> " role="button">Agregar al Carrito</a>
-                            <a class="btn btn-success" href="/carrito/finalizaCompra/<%= user.id %>/<%= producto.id %>  " role="button">Ir al Carrito</a>
-                        </article>
-                    </div>
-                    <div class="container-fluid d-flex justify-content-between fixed-top">
-                        <button class=" " hidden><a href="">back</a> </button>
-                        <button class=" " hidden><a href="">next</a> </button>
-                    </div>
-                    <div class="agregado container mt-5">
-                        <div class="container titulo col-lg-12">
-                            <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
+                            <article class="botones col-12 col-sm-12 col-md-4">
+                                <button class="btn btn-success" type="submit">Agregar al Carrito</button>
+                                <a class="btn btn-success" href="/carrito#view " role="button">Ir al Carrito</a>
+                            </article>
                         </div>
-                        <div class="articulos row">
-                            <% vinos.forEach(vino => { %>
-                                <div class="col-12 col-md-4 col-lg-3 bg-white border radius shadow p-3">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <img class="img-fluid" src="/images/wines/<%= vino.imagen %> " alt="vino1">
-                                        </div>
-                                        <div class="col-5">
-                                            <h4 class="mt-4">$
-                                                <%= vino.precio %>
-                                            </h4>
-                                            <div class="form-check mt-4">
-                                                <input class="form-check-input" type="checkbox" value="" id="extra1">
-                                                <label class="form-check-label" for="defaultCheck1">Agregar</label>
+                        <div class="container-fluid d-flex justify-content-between fixed-top">
+                            <button class=" " hidden><a href="">back</a> </button>
+                            <button class=" " hidden><a href="">next</a> </button>
+                        </div>
+                        <div class="agregado container mt-5">
+                            <div class="container titulo col-lg-12">
+                                <h4><i class="fas fa-wine-glass-alt"></i> Maridajes Recomendados</h4>
+                            </div>
+                            <div class="articulos row">
+                                <% vinos.forEach(vino => { %>
+                                    <div class="col-12 col-md-4 col-lg-3 bg-white border radius shadow p-3">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <img class="img-fluid" src="/images/wines/<%= vino.imagen %> " alt="vino1">
+                                            </div>
+                                            <div class="col-5">
+                                                <h4 class="mt-4">$
+                                                    <%= vino.precio %>
+                                                </h4>
+                                                <div class="form-check mt-4">
+                                                    <input class="form-check-input" type="checkbox" value="<%= vino.id %>" id="extra1" name="vinos">
+                                                    <label class="form-check-label" for="defaultCheck1">Agregar</label>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="media-body text-center">
+
+                                            <h5>
+                                                <%= vino.nombre %>
+                                            </h5>
+
+
+                                        </div>
                                     </div>
-                                    <div class="media-body text-center">
-
-                                        <h5>
-                                            <%= vino.nombre %>
-                                        </h5>
-
-
-                                    </div>
-                                </div>
-                                <% }) %>
+                                    <% }) %>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <%- include('partials/footer') %>

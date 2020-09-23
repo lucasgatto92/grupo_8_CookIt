@@ -8,16 +8,17 @@
             <div id="fondoTablas" class="container-fluid">
 
                 <section id="blog">
-                    <div class="container">
+                    <div class="container" id="view">
                         <div class="row">
                             <div class="col-md-12">
+
                                 <div class="block">
                                     <h1 class="heading">
                                         <%= titulo %>
                                     </h1>
                                     <ul>
                                         <% productos.forEach(producto => { %>
-                                            <a href="/productos/productsDetail/<%= producto.id %> ">
+                                            <a href="/productos/productsDetail/<%= producto.id %>#view ">
                                                 <li class="wow fadeInLeft mt-3" data-wow-duration="300ms" data-wow-delay="300ms">
                                                     <div class="blog-img">
                                                         <img src="/images/products/<%= (producto.imagenes.split(','))[0] %>" alt="blog-img" class="img-fluid" style="height: 250px; width: 100%;">
@@ -36,6 +37,8 @@
                                             <% }) %>
 
                                     </ul>
+                                    <audio src="/audios/italiana.mp3" autoplay controls volumen=-50 class="mt-3"></audio>
+
                                     <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" role="button" href="/productos/view">Ver más</a>
                                 </div>
                             </div>
@@ -47,7 +50,6 @@
                 </section>
 
             </div>
-
 
 
 
