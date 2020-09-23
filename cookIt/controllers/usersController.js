@@ -128,27 +128,70 @@ module.exports = {
             })
 
     },
-    update: function(req, res) {
-        db.Usuario.findByPk(req.params.id)
-            .then(usuario => {
-                db.Usuario.update({
-                    email: req.body.email,
-                    celular: req.body.celular
-                }, {
-                    where: {
-                        id: req.params.id
-                    }
-                })
+    update1: function(req, res) {
+
+        db.Usuario.update({
+                email: req.body.email,
+                celular: req.body.celular,
+                notifica_email: req.body.mailOfer,
+                notifica_movil: req.body.celOfer
+            }, {
+                where: {
+                    id: req.params.id
+                }
             })
-            .then(function(result) {
-                console.log('actualizado')
-                res.send('ok')
+            .then(result => {
+                res.redirect('/users/perfil/' + req.params.id)
+            })
+    },
+    update2: function(req, res) {
+
+        db.Usuario.update({
+                direccion: req.body.direccion,
+                depto: req.body.piso,
+                cp: req.body.cp,
+                localidad: req.body.localidad,
+                provincia: req.body.provincia
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(result => {
+                res.redirect('/users/perfil/' + req.params.id)
             })
 
-        
 
-    }, 
-    processComments: function(req, res){
+    },
+    pass: function(req, res) {
+        db.Usuario.update({
+                pass: bcrypt.hashSync(req.body.nueva, 10),
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(result => {
+                req.session.destroy()
+                if (req.cookies.user) {
+                    res.cookie('user', '', { maxAge: -1 })
+                }
+                res.redirect('/users/login')
+            })
+    },
+    avatar: function(req, res) {
+        db.Usuario.update({
+                avatar: req.files[0].filename
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(result => {
+                res.redirect('/users/perfil/' + req.params.id)
+            })
+    },
+    processComments: function(req, res) {
         res.send(req.body)
     }
 }
