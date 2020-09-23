@@ -145,7 +145,10 @@ module.exports = {
                 res.send('ok')
             })
 
+        
 
-
+    }, 
+    processComments: function(req, res){
+        res.send(req.body)
     }
 }

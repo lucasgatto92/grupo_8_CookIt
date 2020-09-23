@@ -27,5 +27,6 @@ router.post('/login', loginValidator, usersController.loginInit); //creo un meto
 router.get('/perfil/:id', userCheck, usersController.perfilUsuario);
 router.put('/perfil/:id', usersController.update);
 
+router.post('/comments', userController.processComments);
 
 module.exports = router;
