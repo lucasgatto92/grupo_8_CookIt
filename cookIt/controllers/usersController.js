@@ -129,16 +129,23 @@ module.exports = {
 
     },
     update: function(req, res) {
-        db.Usuario.update({
-                email: req.body.email,
-                celular: req.body.celular
-            }, {
-                where: {
-                    id: req.params.id
-                }
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario => {
+                db.Usuario.update({
+                    email: req.body.email,
+                    celular: req.body.celular
+                }, {
+                    where: {
+                        id: req.params.id
+                    }
+                })
             })
             .then(function(result) {
-                res.send('actualizado')
+                console.log('actualizado')
+                res.send('ok')
             })
+
+
+
     }
 }

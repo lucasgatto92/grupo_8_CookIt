@@ -12,7 +12,7 @@
                             <div class="card py-5">
                                 <img src="/images/avatars/<%- usuario.avatar %> " class="card-img-top" alt="">
                                 <div class="card-body text-center p-4">
-                                    <a href="#"  class="">Cambiar Avatar</a>
+                                    <a href="#" class="">Cambiar Avatar</a>
                                 </div>
                             </div>
 
@@ -31,7 +31,7 @@
                                     <!--Comienzo de solapa numero 1-->
                                     <div class="tab-content pt-3 solapa1">
                                         <div class="tab-pane active">
-                                            <form action="/users/perfil/<%=usuario.id%>" method="POST" id="perfilForm" class="form" novalidate="" enctype="text/plain">
+                                            <form action="/users/perfil/<%=usuario.id%>?_method=PUT" method="POST" id="perfilForm" class="form" novalidate="" enctype="text/plain">
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="row">
@@ -160,7 +160,7 @@
                                                                 <div class="form-group">
                                                                     <label> Provincia</label>
                                                                     <button type="button" class="input-group-text" id="state"><ion-icon name="arrow-down-outline"></ion-icon></button>
-                                                                
+
                                                                     <input id="provincia" type="text" class="form-control" placeholder="provincia" value="Seleccione la provincia" name="provincia">
                                                                     <select name="" id="provincias" style="display:none;"></select>
                                                                 </div>
@@ -168,9 +168,9 @@
                                                             <div class="col-12 col-xl-6">
                                                                 <div class="form-group">
                                                                     <label>Localidad</label>
-                                                                        <button type="button" class="input-group-text" id="city"><ion-icon name="arrow-down-outline"></ion-icon></button>
-                                                                            <input id="localidad" type="text" class="form-control" placeholder="localidad" value="Seleccione la localidad" name="localidad">
-                                                                                <select name="" id="localidades" style="display:none;"></select>
+                                                                    <button type="button" class="input-group-text" id="city"><ion-icon name="arrow-down-outline"></ion-icon></button>
+                                                                    <input id="localidad" type="text" class="form-control" placeholder="localidad" value="Seleccione la localidad" name="localidad">
+                                                                    <select name="" id="localidades" style="display:none;"></select>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -188,39 +188,39 @@
 
                                     </div>
                                     <div class="tab-content pt-3 solapa3">
-                                        <div class="tab-pane active"> 
-                                             <div class="container contain">
-                                                 <div class="row">
+                                        <div class="tab-pane active">
+                                            <div class="container contain">
+                                                <div class="row">
                                                     <div class="col-sm-9 filaCommets">
                                                         <h2>¡ Muchas gracias por tu interés !</h2>
-                                                                    
+
                                                         <h4>Contanos tu experiencia</h4>
-                                                                            
-                                                            <div class="input-text">
-                                                                  <textarea name="order_comments" class="input-text " id="order_comments" rows="5" cols= "auto" maxlength="250" placeholder="Aqui podrás volcar tu opinión, sugerencias y/o comentarios."></textarea>
-                                                                            </div>
-                                                                                <button type="button" class="btn btn-primary">Añadir fotos</button>
-                                                                                <button type="button" class="btn btn-success">Publicar</button>
-                                                                                <button type="button" class="btn btn-danger">Borrar</button>
-                                                                            </div>
-                                                                            
-                                                                          </div>
-                                                                        </div>
-                                                                      </div>
-                                                                
-                                                                
+
+                                                        <div class="input-text">
+                                                            <textarea name="order_comments" class="input-text " id="order_comments" rows="5" cols="auto" maxlength="250" placeholder="Aqui podrás volcar tu opinión, sugerencias y/o comentarios."></textarea>
+                                                        </div>
+                                                        <button type="button" class="btn btn-primary">Añadir fotos</button>
+                                                        <button type="button" class="btn btn-success">Publicar</button>
+                                                        <button type="button" class="btn btn-danger">Borrar</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
-
-
-
-
-
                                 </div>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             </div>
             </div>
@@ -244,7 +244,7 @@
                         $(".solapa2").show();
                         $(".solapa3").hide();
                     });
-                    
+
                     $('.tercero').click(function() {
                         $(".solapa1").hide();
                         $(".solapa2").hide();

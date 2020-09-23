@@ -7,6 +7,9 @@ const avatarMulter = require('../middlewares/avatarMulter');
 const registerValidator = require('../validations/registerValidator'); //validaciones para el registro de usuarios
 const loginValidator = require('../validations/loginValidator'); //validaciones para loguearse
 
+const userCheck = require('../middlewares/userCheck');
+
+
 //RUTAS
 
 
@@ -21,8 +24,8 @@ router.post('/registro', avatarMulter.any(), registerValidator, usersController.
 
 router.post('/login', loginValidator, usersController.loginInit); //creo un metodo que reciba y valide los datos para loguearse por SQL
 
-router.get('/perfil/:id', usersController.perfilUsuario);
-router.post('/perfil/:id', usersController.update);
+router.get('/perfil/:id', userCheck, usersController.perfilUsuario);
+router.put('/perfil/:id', usersController.update);
 
 
 module.exports = router;
