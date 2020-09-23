@@ -13,7 +13,8 @@ module.exports = {
                     products: dbProductos,
                     productos: productos,
                     user: req.session.user,
-                    titulo: "Nuestro amplio menú, solo para paladares exigentes"
+                    titulo: "Nuestro amplio menú, solo para paladares exigentes",
+                    categoria:""
                 })
             })
 
@@ -69,10 +70,12 @@ module.exports = {
             })
             .then(productos => {
                 let categoria = productos[0].categoria.nombre;
+               
                 res.render('productsView', {
                     user: req.session.user,
                     productos: productos,
-                    titulo: "Nuestro amplio menú de comida " + categoria
+                    titulo: "Nuestro amplio menú de comida " + categoria,
+                    categoria:categoria
 
                 })
             })
