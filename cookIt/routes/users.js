@@ -29,6 +29,6 @@ router.put('/perfil/upd1/:id', usersController.update1);
 router.put('/perfil/upd2/:id', usersController.update2);
 router.put('/perfil/pass/:id', usersController.pass);
 router.put('/perfil/ava/:id', avatarMulter.any(), usersController.avatar);
-router.post('/comments', usersController.processComments);
+router.post('/comments', usersController.processComments);//ruta de comentarios
 
 module.exports = router;
