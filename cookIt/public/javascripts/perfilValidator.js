@@ -8,12 +8,17 @@ window.addEventListener('load', function() {
     let errorAvatar = $("#errorAvatar");
     let regExAvatar = /(.jpg|.jpeg|.png|.gif)$/i;
 
+    let passForm = $('#passForm');
+    // let inputActual = $("input[name='actual']");
+    let inputNueva = $("input[name='nueva']");
+    let inputNueva2 = $("input[name='nueva2']");
+    // let errorActual = $("#errorActual");
+    let errorNueva2 = $("#errorNueva2");
+
     avatarForm.addEventListener('submit', function(event) {
         event.preventDefault()
 
         let erroresAvatar = {}
-        console.log(erroresAvatar);
-        console.log(inputAvatar.value);
         if (inputAvatar.value) {
             if (!regExAvatar.exec(inputAvatar.value)) {
                 erroresAvatar.avatar = "Tenés que seleccionar una imagen con un formato válido"
@@ -28,4 +33,25 @@ window.addEventListener('load', function() {
             avatarForm.submit()
         }
     })
+
+    passForm.addEventListener('submit', function(event) {
+        event.preventDefault()
+
+        let erroresPass = {}
+        if (inputNueva.value.length < 6) {
+            erroresPass.pass = "Tenés que ingresar una contraseña de al menos 6 caractéres"
+        }
+        if (inputNueva.value != inputNueva2.value) {
+            erroresPass.pass = "Las contraseñas no coinciden"
+        }
+
+        if (Object.keys(erroresPass).length != 0) {
+            errorNueva2.innerText = erroresPass.pass ? erroresPass.pass : "";
+        } else {
+            passForm.submit()
+        }
+
+    })
+
+
 })
